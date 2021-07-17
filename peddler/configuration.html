@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Configuration and customisation &mdash; Peddler  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
+    <link rel="prev" title="Kubernetes deployment" href="k8s.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #009CEA" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/./img/peddler_logo_light.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">Running OpenCart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration and customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#individual-service-activation">Individual service activation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker">Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#custom-images">Custom images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-registry">Custom registry</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#opencart-customisation">OpenCart customisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vendor-services">Vendor services</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#caddy">Caddy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nginx">Nginx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mysql">MySQL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#smtp">SMTP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ssl-tls-certificates-for-https-access">SSL/TLS certificates for HTTPS access</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peddler.html">Peddler development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Peddler</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Configuration and customisation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/alto9/peddler/blob/master/docs/configuration.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="configuration-and-customisation">
+<span id="configuration-customisation"></span><h1>Configuration and customisation<a class="headerlink" href="#configuration-and-customisation" title="Permalink to this headline">¶</a></h1>
+<p>Peddler offers plenty of possibilities for platform customisation out of the box. There are two main ways in which the base OpenCart installation can be customized:</p>
+<ol class="loweralpha simple">
+<li><p>Modifying the Peddler <a class="reference internal" href="#configuration"><span class="std std-ref">configuration parameters</span></a>.</p></li>
+<li><p>Modifying the <span class="xref std std-ref">OpenCart docker image</span> that runs the OpenCart platform.</p></li>
+</ol>
+<section id="configuration">
+<span id="id1"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>With Peddler, all OpenCart deployment parameters are stored in a single <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file. This is the file that is generated when you run <code class="docutils literal notranslate"><span class="pre">peddler</span> <span class="pre">local</span> <span class="pre">quickstart</span></code> or <code class="docutils literal notranslate"><span class="pre">peddler</span> <span class="pre">config</span> <span class="pre">save</span></code>. To view the content of this file, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="s2">&quot;$(peddler config printroot)/config.yml&quot;</span>
+</pre></div>
+</div>
+<p>By default, this file contains only the required configuration parameters for running the platform. Optional configuration parameters may also be specified to modify the default behaviour. To do so, you can edit the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file manually:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="s2">&quot;$(peddler config printroot)/config.yml&quot;</span>
+</pre></div>
+</div>
+<p>Alternatively, you can set each parameter from the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">peddler</span> <span class="n">config</span> <span class="n">save</span> <span class="o">--</span><span class="nb">set</span> <span class="n">PARAM1</span><span class="o">=</span><span class="n">VALUE1</span> <span class="o">--</span><span class="nb">set</span> <span class="n">PARAM2</span><span class="o">=</span><span class="n">VALUE2</span>
+</pre></div>
+</div>
+<p>Or from the system environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PEDDLER_PARAM1</span><span class="o">=</span><span class="n">VALUE1</span>
+</pre></div>
+</div>
+<p>Once the base configuration is created or updated, the environment is automatically re-generated. The environment is the set of all files required to manage an OpenCart platform: You can view the environment files in the <code class="docutils literal notranslate"><span class="pre">env</span></code> folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="s2">&quot;$(peddler config printroot)/env&quot;</span>
+</pre></div>
+</div>
+<p>With an up-to-date environment, Peddler is ready to launch an OpenCart platform and perform usual operations. Below, we document some of the configuration parameters.</p>
+<section id="individual-service-activation">
+<h3>Individual service activation<a class="headerlink" href="#individual-service-activation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RUN_STORE</span></code> (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RUN_SMTP</span></code> (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ENABLE_HTTPS</span></code> (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></li>
+</ul>
+<p>Every single OpenCart service may be (de)activated at will by these configuration parameters. This is useful if you want, for instance, to distribute the various OpenCart services on different servers.</p>
+</section>
+<section id="docker">
+<h3>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
+<section id="custom-images">
+<span id="docker-images"></span><h4>Custom images<a class="headerlink" href="#custom-images" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DOCKER_IMAGE_OPENCART</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;{{</span> <span class="pre">DOCKER_REGISTRY</span> <span class="pre">}}alto9/opencart:{{</span> <span class="pre">PEDDLER_VERSION</span> <span class="pre">}}&quot;</span></code>)</p></li>
+</ul>
+<p>These configuration parameters define which image to run for each service. By default, the docker image tag matches the Peddler version it was built with.</p>
+</section>
+<section id="custom-registry">
+<h4>Custom registry<a class="headerlink" href="#custom-registry" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DOCKER_REGISTRY</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;docker.io/&quot;</span></code>)</p></li>
+</ul>
+<p>You may want to pull/push images from/to a custom docker registry. For instance, for a registry running on <code class="docutils literal notranslate"><span class="pre">localhost:5000</span></code>, define:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DOCKER_REGISTRY</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>(the trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> is important)</p>
+</section>
+</section>
+<section id="opencart-customisation">
+<h3>OpenCart customisation<a class="headerlink" href="#opencart-customisation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OPENCART_COMMON_VERSION</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;open-release/lilac.1&quot;</span></code>)</p></li>
+</ul>
+<p>This defines the default version that will be pulled from all OpenCart git repositories.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OPENCART_CMS_UWSGI_WORKERS</span></code> (default: <code class="docutils literal notranslate"><span class="pre">2</span></code>)</p></li>
+</ul>
+<p>By default there are 2 <a class="reference external" href="https://uwsgi-docs.readthedocs.io/en/latest/Options.html#processes">uwsgi worker processes</a> to serve requests for the LMS and the CMS. However, each workers requires upwards of 500 Mb of RAM. You should reduce this value to 1 if your computer/server does not have enough memory.</p>
+</section>
+<section id="vendor-services">
+<h3>Vendor services<a class="headerlink" href="#vendor-services" title="Permalink to this headline">¶</a></h3>
+<section id="caddy">
+<h4>Caddy<a class="headerlink" href="#caddy" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RUN_CADDY</span></code> (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>)</p></li>
+</ul>
+<p><a class="reference external" href="https://caddyserver.com">Caddy</a> is a web server used in Peddler as a web proxy for the generation of SSL/TLS certificates at runtime. If <code class="docutils literal notranslate"><span class="pre">RUN_CADDY</span></code> is set to <code class="docutils literal notranslate"><span class="pre">false</span></code> then we assume that SSL termination does not occur in the Caddy container, and thus the <code class="docutils literal notranslate"><span class="pre">caddy</span></code> container is not started.</p>
+</section>
+<section id="nginx">
+<h4>Nginx<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NGINX_HTTP_PORT</span></code> (default: <code class="docutils literal notranslate"><span class="pre">80</span></code>)</p></li>
+</ul>
+<p>Nginx is used to route web traffic to the various applications and to serve static assets. When <code class="docutils literal notranslate"><span class="pre">RUN_CADDY</span></code> is false, the <code class="docutils literal notranslate"><span class="pre">NGINX_HTTP_PORT</span></code> is exposed on the host.</p>
+</section>
+<section id="mysql">
+<h4>MySQL<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RUN_MYSQL</span></code> (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MYSQL_HOST</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;mysql&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MYSQL_PORT</span></code> (default: <code class="docutils literal notranslate"><span class="pre">3306</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MYSQL_ROOT_USERNAME</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;root&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MYSQL_ROOT_PASSWORD</span></code> (default: randomly generated) Note that you are responsible for creating the root user if you are using a managed database.</p></li>
+</ul>
+<p>By default, a running OpenCart platform deployed with Peddler includes all necessary 3rd-party services, such as MySQL, MongoDb, etc. But it’s also possible to store data on a separate database, such as <a class="reference external" href="https://aws.amazon.com/rds/">Amazon RDS</a>. For instance, to store data on an external MySQL database, set the following configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RUN_MYSQL</span><span class="p">:</span> <span class="n">false</span>
+<span class="n">MYSQL_HOST</span><span class="p">:</span> <span class="n">yourhost</span>
+<span class="n">MYSQL_ROOT_USERNAME</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">root</span> <span class="n">user</span> <span class="n">name</span><span class="o">&gt;</span>
+<span class="n">MYSQL_ROOT_PASSWORD</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">root</span> <span class="n">user</span> <span class="n">password</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When configuring an external MySQL database, please make sure it is using version 5.7.</p>
+</div>
+</section>
+<section id="smtp">
+<h4>SMTP<a class="headerlink" href="#smtp" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RUN_SMTP</span></code> (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMTP_HOST</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;smtp&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMTP_PORT</span></code> (default: <code class="docutils literal notranslate"><span class="pre">25</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMTP_USERNAME</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMTP_PASSWORD</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMTP_USE_TLS</span></code> (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMTP_USE_SSL</span></code> (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></li>
+</ul>
+<p>Note that the SMTP server shipped with Peddler by default does not implement TLS. With external servers, only one of SSL or TLS should be enabled, at most.</p>
+</section>
+</section>
+<section id="ssl-tls-certificates-for-https-access">
+<h3>SSL/TLS certificates for HTTPS access<a class="headerlink" href="#ssl-tls-certificates-for-https-access" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ENABLE_HTTPS</span></code> (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></li>
+</ul>
+<p>By activating this feature, a free SSL/TLS certificate from the <a class="reference external" href="https://letsencrypt.org/">Let’s Encrypt</a> certificate authority will be created for your platform. With this feature, <strong>your platform will no longer be accessible in HTTP</strong>. Calls to http urls will be redirected to https url.</p>
+<p>The following DNS records must exist and point to your server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">STORE_HOST</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="p">:</span> <span class="n">mystore</span><span class="o">.</span><span class="n">com</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Thus, <strong>this feature will (probably) not work in development</strong> because the DNS records will (probably) not point to your development machine.</p>
+<p>The SSL/TLS certificates will automatically be generated and updated by the Caddy proxy server container at runtime. Thus, as of v11.0.0 you no longer have to generate the certificates manually.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="k8s.html" class="btn btn-neutral float-left" title="Kubernetes deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

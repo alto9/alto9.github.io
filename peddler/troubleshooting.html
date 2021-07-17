@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Troubleshooting &mdash; Peddler  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Peddler development" href="peddler.html" />
+    <link rel="prev" title="Configuration and customisation" href="configuration.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #009CEA" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/./img/peddler_logo_light.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">Running OpenCart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration and customisation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peddler.html">Peddler development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Peddler</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Troubleshooting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/alto9/peddler/blob/master/docs/troubleshooting.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="troubleshooting">
+<span id="id1"></span><h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<p>What should you do if you have a problem?</p>
+<ol class="arabic simple">
+<li><p>Read the error logs that appear in the console. When running a single server platform as daemon, you can view the logs with the <code class="docutils literal notranslate"><span class="pre">peddler</span> <span class="pre">local</span> <span class="pre">logs</span></code> command. (see <a class="reference internal" href="#logging"><span class="std std-ref">Logging</span></a> below)</p></li>
+<li><p>Check if your problem already has a solution right here in the <a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> section.</p></li>
+<li><p>Search for your problem in the <a class="reference external" href="https://github.com/alto9/peddler/issues?utf8=%E2%9C%93&amp;q=is%3Aissue">open and closed Github issues</a>.</p></li>
+</ol>
+<p>Do you need professional assistance with your peddler-managed OpenCart platform? Alto9 offers online support as part of its <a class="reference external" href="https://alto9.com/">Kubernetes Support Program</a>.</p>
+<section id="logging">
+<span id="id2"></span><h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Logs are of paramount importance for debugging Peddler.</p>
+<blockquote>
+<div><p>peddler local logs –tail=100 -f</p>
+</div></blockquote>
+</div>
+<p>To view the logs from all containers use the <code class="docutils literal notranslate"><span class="pre">peddler</span> <span class="pre">local</span> <span class="pre">logs</span></code> command, which was modeled on the standard <a class="reference external" href="https://docs.docker.com/compose/reference/logs/">docker-compose logs</a> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">peddler</span> <span class="n">local</span> <span class="n">logs</span> <span class="o">--</span><span class="n">follow</span>
+</pre></div>
+</div>
+<p>To view the logs from just one container, for instance the OpenCart server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">peddler</span> <span class="n">local</span> <span class="n">logs</span> <span class="o">--</span><span class="n">follow</span> <span class="n">opencart</span>
+</pre></div>
+</div>
+<p>The last commands produce the logs since the creation of the containers, which can be a lot. Similar to a <code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-f</span></code>, you can run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">peddler</span> <span class="n">local</span> <span class="n">logs</span> <span class="o">--</span><span class="n">tail</span><span class="o">=</span><span class="mi">0</span> <span class="o">-</span><span class="n">f</span>
+</pre></div>
+</div>
+<p>If you’d rather use a graphical user interface for viewing logs, you are encouraged to try out <a class="reference internal" href="local.html#portainer"><span class="std std-ref">Portainer</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="peddler.html" class="btn btn-neutral float-right" title="Peddler development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="configuration.html" class="btn btn-neutral float-left" title="Configuration and customisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
