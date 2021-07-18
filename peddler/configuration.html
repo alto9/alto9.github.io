@@ -57,12 +57,9 @@
           
 
           
-            <a href="index.html">
+            <a href="index.html" class="icon icon-home"> Peddler
           
 
-          
-            
-            <img src="_static/./img/peddler_logo_light.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -103,7 +100,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#custom-registry">Custom registry</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#opencart-customisation">OpenCart customisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#vendor-services">Vendor services</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#caddy">Caddy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#nginx">Nginx</a></li>
@@ -190,11 +186,6 @@
             
   <section id="configuration-and-customisation">
 <span id="configuration-customisation"></span><h1>Configuration and customisation<a class="headerlink" href="#configuration-and-customisation" title="Permalink to this headline">¶</a></h1>
-<p>Peddler offers plenty of possibilities for platform customisation out of the box. There are two main ways in which the base OpenCart installation can be customized:</p>
-<ol class="loweralpha simple">
-<li><p>Modifying the Peddler <a class="reference internal" href="#configuration"><span class="std std-ref">configuration parameters</span></a>.</p></li>
-<li><p>Modifying the <span class="xref std std-ref">OpenCart docker image</span> that runs the OpenCart platform.</p></li>
-</ol>
 <section id="configuration">
 <span id="id1"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>With Peddler, all OpenCart deployment parameters are stored in a single <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file. This is the file that is generated when you run <code class="docutils literal notranslate"><span class="pre">peddler</span> <span class="pre">local</span> <span class="pre">quickstart</span></code> or <code class="docutils literal notranslate"><span class="pre">peddler</span> <span class="pre">config</span> <span class="pre">save</span></code>. To view the content of this file, run:</p>
@@ -247,17 +238,6 @@
 </div>
 <p>(the trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> is important)</p>
 </section>
-</section>
-<section id="opencart-customisation">
-<h3>OpenCart customisation<a class="headerlink" href="#opencart-customisation" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">OPENCART_COMMON_VERSION</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;open-release/lilac.1&quot;</span></code>)</p></li>
-</ul>
-<p>This defines the default version that will be pulled from all OpenCart git repositories.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">OPENCART_CMS_UWSGI_WORKERS</span></code> (default: <code class="docutils literal notranslate"><span class="pre">2</span></code>)</p></li>
-</ul>
-<p>By default there are 2 <a class="reference external" href="https://uwsgi-docs.readthedocs.io/en/latest/Options.html#processes">uwsgi worker processes</a> to serve requests for the LMS and the CMS. However, each workers requires upwards of 500 Mb of RAM. You should reduce this value to 1 if your computer/server does not have enough memory.</p>
 </section>
 <section id="vendor-services">
 <h3>Vendor services<a class="headerlink" href="#vendor-services" title="Permalink to this headline">¶</a></h3>
