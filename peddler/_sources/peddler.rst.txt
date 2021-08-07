@@ -88,6 +88,6 @@ Third-party contributions to Peddler and its plugins are more than welcome! Just
 
 Where "TYPE" is either "Bugfix", "Improvement", "Feature" or "Security". You should add an explosion emoji ("💥") before "[TYPE]" if you are making a breaking change.
 
-- Write a good Git commit title and message: explain why you are making this change, what problem you are solving and which solution you adopted. Link to the relevant conversation topics in the forums and describe your use case. We *love* long, verbose descriptions :) As for the title, `conventional commits <https://www.conventionalcommits.org>`__ are preferred. Check the repo history!
+- Write a good Git commit title and message: explain why you are making this change, what problem you are solving and which solution you adopted. Describe your use case. We *love* long, verbose descriptions :) As for the title, `conventional commits <https://www.conventionalcommits.org>`__ are preferred. Check the repo history!
 
 Happy hacking! ☘️
