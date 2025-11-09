@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kandy - AI-Powered Kubernetes Management for VS Code</title>
+    <title>kube9 - AI-Powered Kubernetes Management for VS Code</title>
     <style>
         * {
             margin: 0;
@@ -177,7 +177,7 @@
 </head>
 <body>
     <header class="header">
-        <h1>🍬 Kandy</h1>
+        <h1>🍬 kube9</h1>
         <p>AI-Powered Kubernetes Cluster Management for VS Code</p>
         <p style="margin-top: 1rem;">
             <span class="badge">MVP</span>
@@ -193,14 +193,14 @@
             <li><a href="#getting-started">Getting Started</a></li>
             <li><a href="#architecture">Architecture</a></li>
             <li><a href="#roadmap">Roadmap</a></li>
-            <li><a href="https://github.com/alto9/kandy">GitHub</a></li>
+            <li><a href="https://github.com/alto9/kube9">GitHub</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <section id="overview" class="section">
             <h2>Overview</h2>
-            <p>Kandy transforms Kubernetes management from complex command-line operations into an intuitive, AI-assisted experience. Built as a VS Code extension, Kandy brings the power of AI directly into your development environment for seamless cluster operations.</p>
+            <p>kube9 transforms Kubernetes management from complex command-line operations into an intuitive, AI-assisted experience. Built as a VS Code extension, kube9 brings the power of AI directly into your development environment for seamless cluster operations.</p>
             
             <p style="margin-top: 1rem;">Instead of memorizing kubectl commands and YAML syntax, simply ask questions in natural language:</p>
             
@@ -221,7 +221,7 @@
                 
                 <div class="feature-card">
                     <h3>🤖 Natural Language Queries</h3>
-                    <p>Ask questions about your cluster in plain English. Kandy's AI understands your intent and provides intelligent insights and recommendations.</p>
+                    <p>Ask questions about your cluster in plain English. kube9's AI understands your intent and provides intelligent insights and recommendations.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -255,14 +255,14 @@
             <ol>
                 <li>Open VS Code</li>
                 <li>Go to Extensions (<code>Ctrl/Cmd + Shift + X</code>)</li>
-                <li>Search for "Kandy"</li>
+                <li>Search for "kube9"</li>
                 <li>Click Install</li>
             </ol>
             
             <h4>For Developers</h4>
             <pre><code># Clone the repository
-git clone https://github.com/alto9/kandy.git
-cd kandy
+git clone https://github.com/alto9/kube9.git
+cd kube9
 
 # Install dependencies (requires Node.js 22+)
 npm install
@@ -274,19 +274,19 @@ npm run compile
 # Press F5 in VS Code to open Extension Development Host</code></pre>
             
             <h3>Configuration</h3>
-            <p>Configure Kandy in your VS Code settings:</p>
+            <p>Configure kube9 in your VS Code settings:</p>
             
             <pre><code>{
-  "kandy.apiKey": "kdy_prod_abc123def456",
-  "kandy.serverUrl": "https://api.kandy.dev",
-  "kandy.debugMode": false
+  "kube9.apiKey": "kdy_prod_abc123def456",
+  "kube9.serverUrl": "https://api.kube9.dev",
+  "kube9.debugMode": false
 }</code></pre>
 
             <h3>First Steps</h3>
             <ol>
-                <li>Open the Kandy view in the Activity Bar (sidebar)</li>
-                <li>Import your kubeconfig file: <code>Ctrl/Cmd + Shift + P</code> → "Kandy: Import kubeconfig"</li>
-                <li>Select a cluster from the Kandy sidebar</li>
+                <li>Open the kube9 view in the Activity Bar (sidebar)</li>
+                <li>Import your kubeconfig file: <code>Ctrl/Cmd + Shift + P</code> → "kube9: Import kubeconfig"</li>
+                <li>Select a cluster from the kube9 sidebar</li>
                 <li>Start exploring your cluster or ask AI for analysis</li>
             </ol>
         </section>
@@ -295,7 +295,7 @@ npm run compile
             <h2>Architecture</h2>
             
             <h3>Hybrid AI Architecture</h3>
-            <p>Kandy uses a hybrid architecture that balances security, performance, and user experience:</p>
+            <p>kube9 uses a hybrid architecture that balances security, performance, and user experience:</p>
             
             <div class="feature-grid">
                 <div class="feature-card">
@@ -309,7 +309,7 @@ npm run compile
                 </div>
                 
                 <div class="feature-card">
-                    <h3>Kandy Server</h3>
+                    <h3>kube9 Server</h3>
                     <ul>
                         <li>AI Service Integration</li>
                         <li>Prompt Engineering</li>
@@ -322,7 +322,7 @@ npm run compile
             <h3>Data Flow</h3>
             <ol>
                 <li>Extension collects cluster data and user context</li>
-                <li>Extension sends structured request to Kandy Server</li>
+                <li>Extension sends structured request to kube9 Server</li>
                 <li>Server processes data and formats AI prompts</li>
                 <li>Server calls AI service (OpenAI, Anthropic, etc.)</li>
                 <li>Server processes and validates AI response</li>
@@ -375,7 +375,7 @@ npm run compile
                 <li><strong>Extension Framework:</strong> VS Code Extension API</li>
                 <li><strong>Language:</strong> TypeScript (ES2020 target)</li>
                 <li><strong>Runtime:</strong> Node.js 22+ (LTS)</li>
-                <li><strong>AI Integration:</strong> Custom NLP + LLM integration via Kandy Server</li>
+                <li><strong>AI Integration:</strong> Custom NLP + LLM integration via kube9 Server</li>
                 <li><strong>Kubernetes:</strong> Official client libraries (@kubernetes/client-node)</li>
                 <li><strong>Build:</strong> TypeScript compiler + Webpack</li>
             </ul>
@@ -384,16 +384,16 @@ npm run compile
         <section class="section">
             <h2>Related Projects</h2>
             <ul>
-                <li><strong><a href="../kandy-operator/">Kandy Operator</a></strong> - Kubernetes operator supporting Kandy VS Code Extension</li>
-                <li><strong>Kandy Server</strong> - Backend AI processing server for Kandy</li>
-                <li><strong>Kandy Portal</strong> - Web portal for API key management and analytics</li>
+                <li><strong><a href="../kube9-operator/">kube9 Operator</a></strong> - Kubernetes operator supporting kube9 VS Code Extension</li>
+                <li><strong>kube9 Server</strong> - Backend AI processing server for kube9</li>
+                <li><strong>kube9 Portal</strong> - Web portal for API key management and analytics</li>
             </ul>
         </section>
     </div>
 
     <footer class="footer">
-        <p><strong>Kandy</strong> - Made with ❤️ for DevOps teams who love Kubernetes but hate complexity</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">MIT License | <a href="https://github.com/alto9/kandy" style="color: #667eea;">GitHub</a> | <a href="https://alto9.com" style="color: #667eea;">Alto9</a></p>
+        <p><strong>kube9</strong> - Made with ❤️ for DevOps teams who love Kubernetes but hate complexity</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">MIT License | <a href="https://github.com/alto9/kube9" style="color: #667eea;">GitHub</a> | <a href="https://alto9.com" style="color: #667eea;">Alto9</a></p>
     </footer>
 </body>
 </html>

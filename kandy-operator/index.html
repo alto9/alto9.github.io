@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kandy Operator - Kubernetes Operator for Kandy</title>
+    <title>kube9 Operator - Kubernetes Operator for kube9</title>
     <style>
         * {
             margin: 0;
@@ -185,8 +185,8 @@
 </head>
 <body>
     <header class="header">
-        <h1>⚙️ Kandy Operator</h1>
-        <p>Kubernetes Operator for Enhanced Kandy Integration</p>
+        <h1>⚙️ kube9 Operator</h1>
+        <p>Kubernetes Operator for Enhanced kube9 Integration</p>
         <p style="margin-top: 1rem;">
             <span class="badge">Kubernetes Operator</span>
             <span class="badge status-badge">In Development</span>
@@ -199,24 +199,24 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#architecture">Architecture</a></li>
             <li><a href="#getting-started">Getting Started</a></li>
-            <li><a href="https://github.com/alto9/kandy-operator">GitHub</a></li>
+            <li><a href="https://github.com/alto9/kube9-operator">GitHub</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <div class="alert alert-warning">
-            <strong>⚠️ Development Status:</strong> Kandy Operator is currently in early development. Features and APIs may change. Check back for updates or contribute to the project on GitHub.
+            <strong>⚠️ Development Status:</strong> kube9 Operator is currently in early development. Features and APIs may change. Check back for updates or contribute to the project on GitHub.
         </div>
 
         <section id="overview" class="section">
             <h2>Overview</h2>
-            <p>Kandy Operator is a Kubernetes operator that extends and enhances the capabilities of the Kandy VS Code Extension. It runs inside your Kubernetes cluster and provides advanced automation, monitoring, and management features that complement the client-side extension.</p>
+            <p>kube9 Operator is a Kubernetes operator that extends and enhances the capabilities of the kube9 VS Code Extension. It runs inside your Kubernetes cluster and provides advanced automation, monitoring, and management features that complement the client-side extension.</p>
             
-            <p style="margin-top: 1rem;">By deploying the Kandy Operator in your cluster, you unlock:</p>
+            <p style="margin-top: 1rem;">By deploying the kube9 Operator in your cluster, you unlock:</p>
             <ul style="margin-top: 1rem;">
                 <li>Automated resource optimization and recommendations</li>
                 <li>Continuous security scanning and compliance monitoring</li>
-                <li>Custom resource definitions (CRDs) for Kandy-specific workflows</li>
+                <li>Custom resource definitions (CRDs) for kube9-specific workflows</li>
                 <li>Enhanced AI analysis with direct cluster access</li>
                 <li>Team collaboration features and shared insights</li>
             </ul>
@@ -238,7 +238,7 @@
                 
                 <div class="feature-card">
                     <h3>📊 Enhanced Metrics</h3>
-                    <p>Collect and expose detailed metrics that power AI insights in the Kandy VS Code Extension.</p>
+                    <p>Collect and expose detailed metrics that power AI insights in the kube9 VS Code Extension.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -262,13 +262,13 @@
             <h2>Architecture</h2>
             
             <h3>Operator Pattern</h3>
-            <p>Kandy Operator follows the standard Kubernetes operator pattern, extending the Kubernetes API with custom resources and controllers:</p>
+            <p>kube9 Operator follows the standard Kubernetes operator pattern, extending the Kubernetes API with custom resources and controllers:</p>
             
             <pre><code>┌─────────────────────────────────────────────┐
 │         Kubernetes Cluster                  │
 │                                             │
 │  ┌─────────────────────────────────────┐   │
-│  │     Kandy Operator                  │   │
+│  │     kube9 Operator                  │   │
 │  │  ┌─────────────────────────────┐    │   │
 │  │  │  Custom Controllers          │    │   │
 │  │  │  - Optimization Controller   │    │   │
@@ -278,9 +278,9 @@
 │  │                                      │   │
 │  │  ┌─────────────────────────────┐    │   │
 │  │  │  Custom Resources (CRDs)     │    │   │
-│  │  │  - KandyAnalysis             │    │   │
-│  │  │  - KandyOptimization         │    │   │
-│  │  │  - KandySecurityScan         │    │   │
+│  │  │  - kube9Analysis             │    │   │
+│  │  │  - kube9Optimization         │    │   │
+│  │  │  - kube9SecurityScan         │    │   │
 │  │  └─────────────────────────────┘    │   │
 │  └─────────────────────────────────────┘   │
 │              ↕                              │
@@ -290,21 +290,21 @@
 └─────────────────────────────────────────────┘
          ↕
 ┌─────────────────────────────────────────────┐
-│     Kandy VS Code Extension                 │
-│  - Reads KandyAnalysis results              │
+│     kube9 VS Code Extension                 │
+│  - Reads kube9Analysis results              │
 │  - Creates optimization requests            │
 │  - Displays security scan results           │
 └─────────────────────────────────────────────┘</code></pre>
 
             <h3>Custom Resource Definitions</h3>
-            <p>The operator introduces several CRDs to manage Kandy-specific workflows:</p>
+            <p>The operator introduces several CRDs to manage kube9-specific workflows:</p>
             
             <ul>
-                <li><strong>KandyAnalysis:</strong> Stores AI analysis results for cluster resources</li>
-                <li><strong>KandyOptimization:</strong> Defines optimization recommendations and tracks application</li>
-                <li><strong>KandySecurityScan:</strong> Manages security scanning schedules and results</li>
-                <li><strong>KandyPolicy:</strong> Defines organizational policies and compliance rules</li>
-                <li><strong>KandyInsight:</strong> Stores team-shared insights and recommendations</li>
+                <li><strong>kube9Analysis:</strong> Stores AI analysis results for cluster resources</li>
+                <li><strong>kube9Optimization:</strong> Defines optimization recommendations and tracks application</li>
+                <li><strong>kube9SecurityScan:</strong> Manages security scanning schedules and results</li>
+                <li><strong>kube9Policy:</strong> Defines organizational policies and compliance rules</li>
+                <li><strong>kube9Insight:</strong> Stores team-shared insights and recommendations</li>
             </ul>
         </section>
 
@@ -312,23 +312,23 @@
             <h2>Getting Started</h2>
             
             <div class="alert alert-info">
-                <strong>ℹ️ Prerequisites:</strong> Kandy Operator requires a running Kubernetes cluster (1.20+) and kubectl configured for cluster access.
+                <strong>ℹ️ Prerequisites:</strong> kube9 Operator requires a running Kubernetes cluster (1.20+) and kubectl configured for cluster access.
             </div>
 
             <h3>Installation</h3>
-            <p>Once released, you'll be able to install Kandy Operator using Helm:</p>
+            <p>Once released, you'll be able to install kube9 Operator using Helm:</p>
             
-            <pre><code># Add the Kandy Helm repository
-helm repo add kandy https://charts.kandy.dev
+            <pre><code># Add the kube9 Helm repository
+helm repo add kube9 https://charts.kube9.dev
 helm repo update
 
 # Install the operator
-helm install kandy-operator kandy/kandy-operator \
-  --namespace kandy-system \
+helm install kube9-operator kube9/kube9-operator \
+  --namespace kube9-system \
   --create-namespace
 
 # Verify installation
-kubectl get pods -n kandy-system</code></pre>
+kubectl get pods -n kube9-system</code></pre>
 
             <h3>Configuration</h3>
             <p>Configure the operator through the Helm values file:</p>
@@ -352,9 +352,9 @@ operator:
     enabled: true
     autoApply: false  # Require manual approval
 
-# Connection to Kandy Server
-kandyServer:
-  url: "https://api.kandy.dev"
+# Connection to kube9 Server
+kube9Server:
+  url: "https://api.kube9.dev"
   # API key stored as secret
 
 # Resource limits
@@ -370,7 +370,7 @@ resources:
             <p>The VS Code extension automatically detects when the operator is installed in your cluster and enables additional features:</p>
             
             <ol>
-                <li>Open Kandy in VS Code</li>
+                <li>Open kube9 in VS Code</li>
                 <li>Connect to a cluster with the operator installed</li>
                 <li>Look for the "Operator Enabled" badge in the cluster view</li>
                 <li>Access operator features through the context menu</li>
@@ -383,7 +383,7 @@ resources:
             <h3>Phase 1 - Core Operator (Q2 2025)</h3>
             <ul>
                 <li>Basic operator framework and CRD definitions</li>
-                <li>Integration with Kandy VS Code Extension</li>
+                <li>Integration with kube9 VS Code Extension</li>
                 <li>Initial AI analysis controller</li>
                 <li>Security scanning capabilities</li>
             </ul>
@@ -418,7 +418,7 @@ resources:
 
         <section class="section">
             <h2>Contributing</h2>
-            <p>Kandy Operator is in early development and we welcome contributions! Here's how you can help:</p>
+            <p>kube9 Operator is in early development and we welcome contributions! Here's how you can help:</p>
             
             <ul>
                 <li><strong>Design Feedback:</strong> Share your ideas for operator features</li>
@@ -427,22 +427,22 @@ resources:
                 <li><strong>Documentation:</strong> Improve documentation and examples</li>
             </ul>
             
-            <p style="margin-top: 1rem;">Check out the <a href="https://github.com/alto9/kandy-operator">GitHub repository</a> to get started.</p>
+            <p style="margin-top: 1rem;">Check out the <a href="https://github.com/alto9/kube9-operator">GitHub repository</a> to get started.</p>
         </section>
 
         <section class="section">
             <h2>Related Projects</h2>
             <ul>
-                <li><strong><a href="../kandy/">Kandy VS Code Extension</a></strong> - AI-powered Kubernetes management for VS Code</li>
-                <li><strong>Kandy Server</strong> - Backend AI processing server</li>
-                <li><strong>Kandy Portal</strong> - Web portal for API key management</li>
+                <li><strong><a href="../kube9/">kube9 VS Code Extension</a></strong> - AI-powered Kubernetes management for VS Code</li>
+                <li><strong>kube9 Server</strong> - Backend AI processing server</li>
+                <li><strong>kube9 Portal</strong> - Web portal for API key management</li>
             </ul>
         </section>
     </div>
 
     <footer class="footer">
-        <p><strong>Kandy Operator</strong> - Kubernetes operator supporting the Kandy ecosystem</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">MIT License | <a href="https://github.com/alto9/kandy-operator" style="color: #f5576c;">GitHub</a> | <a href="https://alto9.com" style="color: #f5576c;">Alto9</a></p>
+        <p><strong>kube9 Operator</strong> - Kubernetes operator supporting the kube9 ecosystem</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">MIT License | <a href="https://github.com/alto9/kube9-operator" style="color: #f5576c;">GitHub</a> | <a href="https://alto9.com" style="color: #f5576c;">Alto9</a></p>
     </footer>
 </body>
 </html>
