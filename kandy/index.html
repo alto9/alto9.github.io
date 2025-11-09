@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kandy - AI-Powered Kubernetes Management for VS Code</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        .nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #667eea;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        pre {
+            background: #2d3748;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: #fff;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: #764ba2;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🍬 Kandy</h1>
+        <p>AI-Powered Kubernetes Cluster Management for VS Code</p>
+        <p style="margin-top: 1rem;">
+            <span class="badge">MVP</span>
+            <span class="badge">VS Code Extension</span>
+            <span class="badge">AI-Powered</span>
+        </p>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="https://github.com/alto9/kandy">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="overview" class="section">
+            <h2>Overview</h2>
+            <p>Kandy transforms Kubernetes management from complex command-line operations into an intuitive, AI-assisted experience. Built as a VS Code extension, Kandy brings the power of AI directly into your development environment for seamless cluster operations.</p>
+            
+            <p style="margin-top: 1rem;">Instead of memorizing kubectl commands and YAML syntax, simply ask questions in natural language:</p>
+            
+            <pre><code>🤖 "Show me pods using high CPU"
+🤖 "Why is my deployment failing?"
+🤖 "Suggest resource limits for my Node.js app"
+🤖 "Check security vulnerabilities"</code></pre>
+        </section>
+
+        <section id="features" class="section">
+            <h2>Features</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📂 Multi-Cluster Management</h3>
+                    <p>Import and manage multiple kubeconfig files. Switch between clusters with ease and view all your Kubernetes environments in one place.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🤖 Natural Language Queries</h3>
+                    <p>Ask questions about your cluster in plain English. Kandy's AI understands your intent and provides intelligent insights and recommendations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>👁️ Real-Time Visualization</h3>
+                    <p>View pods, services, deployments, and other resources in real-time with an intuitive tree view interface integrated directly into VS Code.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🔍 Context-Aware Assistance</h3>
+                    <p>AI understands your cluster state and provides relevant suggestions based on current conditions and best practices.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>⚡ Intelligent Troubleshooting</h3>
+                    <p>Get AI-generated explanations for failures and errors with actionable recommendations to resolve issues quickly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🔐 Secure by Design</h3>
+                    <p>Hybrid architecture keeps your cluster data secure. Sensitive information stays in your environment while leveraging AI capabilities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="getting-started" class="section">
+            <h2>Getting Started</h2>
+            
+            <h3>Installation</h3>
+            
+            <h4>For Users</h4>
+            <ol>
+                <li>Open VS Code</li>
+                <li>Go to Extensions (<code>Ctrl/Cmd + Shift + X</code>)</li>
+                <li>Search for "Kandy"</li>
+                <li>Click Install</li>
+            </ol>
+            
+            <h4>For Developers</h4>
+            <pre><code># Clone the repository
+git clone https://github.com/alto9/kandy.git
+cd kandy
+
+# Install dependencies (requires Node.js 22+)
+npm install
+
+# Compile TypeScript
+npm run compile
+
+# Run in development mode
+# Press F5 in VS Code to open Extension Development Host</code></pre>
+            
+            <h3>Configuration</h3>
+            <p>Configure Kandy in your VS Code settings:</p>
+            
+            <pre><code>{
+  "kandy.apiKey": "kdy_prod_abc123def456",
+  "kandy.serverUrl": "https://api.kandy.dev",
+  "kandy.debugMode": false
+}</code></pre>
+
+            <h3>First Steps</h3>
+            <ol>
+                <li>Open the Kandy view in the Activity Bar (sidebar)</li>
+                <li>Import your kubeconfig file: <code>Ctrl/Cmd + Shift + P</code> → "Kandy: Import kubeconfig"</li>
+                <li>Select a cluster from the Kandy sidebar</li>
+                <li>Start exploring your cluster or ask AI for analysis</li>
+            </ol>
+        </section>
+
+        <section id="architecture" class="section">
+            <h2>Architecture</h2>
+            
+            <h3>Hybrid AI Architecture</h3>
+            <p>Kandy uses a hybrid architecture that balances security, performance, and user experience:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>VS Code Extension</h3>
+                    <ul>
+                        <li>UI Management & Tree Views</li>
+                        <li>Cluster Communication</li>
+                        <li>Data Collection</li>
+                        <li>Recommendation Display</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Kandy Server</h3>
+                    <ul>
+                        <li>AI Service Integration</li>
+                        <li>Prompt Engineering</li>
+                        <li>Response Processing</li>
+                        <li>Caching & Optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Data Flow</h3>
+            <ol>
+                <li>Extension collects cluster data and user context</li>
+                <li>Extension sends structured request to Kandy Server</li>
+                <li>Server processes data and formats AI prompts</li>
+                <li>Server calls AI service (OpenAI, Anthropic, etc.)</li>
+                <li>Server processes and validates AI response</li>
+                <li>Server returns formatted recommendations to Extension</li>
+                <li>Extension displays recommendations in webview panels</li>
+            </ol>
+
+            <h3>Security Model</h3>
+            <ul>
+                <li><strong>Data Sanitization:</strong> Remove sensitive information before AI processing</li>
+                <li><strong>Request Validation:</strong> Validate all requests from extension</li>
+                <li><strong>Secure Storage:</strong> API keys stored in VS Code's secret storage</li>
+                <li><strong>Audit Logging:</strong> Log all AI interactions for debugging and compliance</li>
+            </ul>
+        </section>
+
+        <section id="roadmap" class="section">
+            <h2>Development Roadmap</h2>
+            
+            <h3>Phase 1 - MVP (Current)</h3>
+            <ul>
+                <li>✅ kubeconfig file support</li>
+                <li>✅ Basic cluster management</li>
+                <li>✅ Natural language AI queries</li>
+                <li>✅ Multi-cluster switching</li>
+                <li>🔄 Real-time resource monitoring</li>
+            </ul>
+            
+            <h3>Phase 2 - Enhanced AI</h3>
+            <ul>
+                <li>🤖 Advanced troubleshooting assistance</li>
+                <li>🤖 Configuration generation and validation</li>
+                <li>🤖 Security recommendations</li>
+                <li>🤖 Performance optimization suggestions</li>
+            </ul>
+            
+            <h3>Phase 3 - Enterprise Features</h3>
+            <ul>
+                <li>🔐 Advanced authentication methods (OIDC, certificates)</li>
+                <li>🔐 Multi-cloud support (AWS, Azure, GCP)</li>
+                <li>🔐 Team collaboration features</li>
+                <li>🔐 Audit logging and compliance</li>
+                <li>☁️ AWS CDK v2 Infrastructure as Code deployment</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Technology Stack</h2>
+            <ul>
+                <li><strong>Extension Framework:</strong> VS Code Extension API</li>
+                <li><strong>Language:</strong> TypeScript (ES2020 target)</li>
+                <li><strong>Runtime:</strong> Node.js 22+ (LTS)</li>
+                <li><strong>AI Integration:</strong> Custom NLP + LLM integration via Kandy Server</li>
+                <li><strong>Kubernetes:</strong> Official client libraries (@kubernetes/client-node)</li>
+                <li><strong>Build:</strong> TypeScript compiler + Webpack</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Related Projects</h2>
+            <ul>
+                <li><strong><a href="../kandy-operator/">Kandy Operator</a></strong> - Kubernetes operator supporting Kandy VS Code Extension</li>
+                <li><strong>Kandy Server</strong> - Backend AI processing server for Kandy</li>
+                <li><strong>Kandy Portal</strong> - Web portal for API key management and analytics</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p><strong>Kandy</strong> - Made with ❤️ for DevOps teams who love Kubernetes but hate complexity</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">MIT License | <a href="https://github.com/alto9/kandy" style="color: #667eea;">GitHub</a> | <a href="https://alto9.com" style="color: #667eea;">Alto9</a></p>
+    </footer>
+</body>
+</html>
+

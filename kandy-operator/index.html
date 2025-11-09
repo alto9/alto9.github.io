@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kandy Operator - Kubernetes Operator for Kandy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        .nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #f093fb;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #f5576c;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        .section h3 {
+            color: #f093fb;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #f5576c;
+        }
+        
+        .feature-card h3 {
+            color: #f5576c;
+            margin-top: 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #f5576c;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+        }
+        
+        .status-badge {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        pre {
+            background: #2d3748;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: #fff;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            border-left: 4px solid;
+        }
+        
+        .alert-info {
+            background: #e3f2fd;
+            border-color: #2196f3;
+            color: #0d47a1;
+        }
+        
+        .alert-warning {
+            background: #fff3e0;
+            border-color: #ff9800;
+            color: #e65100;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>⚙️ Kandy Operator</h1>
+        <p>Kubernetes Operator for Enhanced Kandy Integration</p>
+        <p style="margin-top: 1rem;">
+            <span class="badge">Kubernetes Operator</span>
+            <span class="badge status-badge">In Development</span>
+        </p>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="https://github.com/alto9/kandy-operator">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="alert alert-warning">
+            <strong>⚠️ Development Status:</strong> Kandy Operator is currently in early development. Features and APIs may change. Check back for updates or contribute to the project on GitHub.
+        </div>
+
+        <section id="overview" class="section">
+            <h2>Overview</h2>
+            <p>Kandy Operator is a Kubernetes operator that extends and enhances the capabilities of the Kandy VS Code Extension. It runs inside your Kubernetes cluster and provides advanced automation, monitoring, and management features that complement the client-side extension.</p>
+            
+            <p style="margin-top: 1rem;">By deploying the Kandy Operator in your cluster, you unlock:</p>
+            <ul style="margin-top: 1rem;">
+                <li>Automated resource optimization and recommendations</li>
+                <li>Continuous security scanning and compliance monitoring</li>
+                <li>Custom resource definitions (CRDs) for Kandy-specific workflows</li>
+                <li>Enhanced AI analysis with direct cluster access</li>
+                <li>Team collaboration features and shared insights</li>
+            </ul>
+        </section>
+
+        <section id="features" class="section">
+            <h2>Planned Features</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🔄 Automated Optimization</h3>
+                    <p>Continuously monitor cluster resources and automatically apply AI-recommended optimizations for performance and cost efficiency.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🛡️ Security Scanning</h3>
+                    <p>Real-time security scanning of deployments, services, and configurations with automated remediation suggestions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📊 Enhanced Metrics</h3>
+                    <p>Collect and expose detailed metrics that power AI insights in the Kandy VS Code Extension.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🤝 Team Collaboration</h3>
+                    <p>Share AI insights, recommendations, and configurations across your team through custom resources.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>⚡ Event Automation</h3>
+                    <p>React to cluster events automatically based on AI analysis and predefined rules.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📝 Compliance Monitoring</h3>
+                    <p>Continuous compliance checking against organizational policies and industry standards.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="section">
+            <h2>Architecture</h2>
+            
+            <h3>Operator Pattern</h3>
+            <p>Kandy Operator follows the standard Kubernetes operator pattern, extending the Kubernetes API with custom resources and controllers:</p>
+            
+            <pre><code>┌─────────────────────────────────────────────┐
+│         Kubernetes Cluster                  │
+│                                             │
+│  ┌─────────────────────────────────────┐   │
+│  │     Kandy Operator                  │   │
+│  │  ┌─────────────────────────────┐    │   │
+│  │  │  Custom Controllers          │    │   │
+│  │  │  - Optimization Controller   │    │   │
+│  │  │  - Security Controller       │    │   │
+│  │  │  - Analysis Controller       │    │   │
+│  │  └─────────────────────────────┘    │   │
+│  │                                      │   │
+│  │  ┌─────────────────────────────┐    │   │
+│  │  │  Custom Resources (CRDs)     │    │   │
+│  │  │  - KandyAnalysis             │    │   │
+│  │  │  - KandyOptimization         │    │   │
+│  │  │  - KandySecurityScan         │    │   │
+│  │  └─────────────────────────────┘    │   │
+│  └─────────────────────────────────────┘   │
+│              ↕                              │
+│  ┌─────────────────────────────────────┐   │
+│  │    Kubernetes API Server            │   │
+│  └─────────────────────────────────────┘   │
+└─────────────────────────────────────────────┘
+         ↕
+┌─────────────────────────────────────────────┐
+│     Kandy VS Code Extension                 │
+│  - Reads KandyAnalysis results              │
+│  - Creates optimization requests            │
+│  - Displays security scan results           │
+└─────────────────────────────────────────────┘</code></pre>
+
+            <h3>Custom Resource Definitions</h3>
+            <p>The operator introduces several CRDs to manage Kandy-specific workflows:</p>
+            
+            <ul>
+                <li><strong>KandyAnalysis:</strong> Stores AI analysis results for cluster resources</li>
+                <li><strong>KandyOptimization:</strong> Defines optimization recommendations and tracks application</li>
+                <li><strong>KandySecurityScan:</strong> Manages security scanning schedules and results</li>
+                <li><strong>KandyPolicy:</strong> Defines organizational policies and compliance rules</li>
+                <li><strong>KandyInsight:</strong> Stores team-shared insights and recommendations</li>
+            </ul>
+        </section>
+
+        <section id="getting-started" class="section">
+            <h2>Getting Started</h2>
+            
+            <div class="alert alert-info">
+                <strong>ℹ️ Prerequisites:</strong> Kandy Operator requires a running Kubernetes cluster (1.20+) and kubectl configured for cluster access.
+            </div>
+
+            <h3>Installation</h3>
+            <p>Once released, you'll be able to install Kandy Operator using Helm:</p>
+            
+            <pre><code># Add the Kandy Helm repository
+helm repo add kandy https://charts.kandy.dev
+helm repo update
+
+# Install the operator
+helm install kandy-operator kandy/kandy-operator \
+  --namespace kandy-system \
+  --create-namespace
+
+# Verify installation
+kubectl get pods -n kandy-system</code></pre>
+
+            <h3>Configuration</h3>
+            <p>Configure the operator through the Helm values file:</p>
+            
+            <pre><code># values.yaml
+replicaCount: 1
+
+operator:
+  # Enable AI analysis features
+  aiAnalysis:
+    enabled: true
+    interval: 5m
+  
+  # Security scanning configuration
+  securityScanning:
+    enabled: true
+    schedule: "0 */6 * * *"
+  
+  # Optimization features
+  optimization:
+    enabled: true
+    autoApply: false  # Require manual approval
+
+# Connection to Kandy Server
+kandyServer:
+  url: "https://api.kandy.dev"
+  # API key stored as secret
+
+# Resource limits
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi</code></pre>
+
+            <h3>Integration with VS Code Extension</h3>
+            <p>The VS Code extension automatically detects when the operator is installed in your cluster and enables additional features:</p>
+            
+            <ol>
+                <li>Open Kandy in VS Code</li>
+                <li>Connect to a cluster with the operator installed</li>
+                <li>Look for the "Operator Enabled" badge in the cluster view</li>
+                <li>Access operator features through the context menu</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>Development Roadmap</h2>
+            
+            <h3>Phase 1 - Core Operator (Q2 2025)</h3>
+            <ul>
+                <li>Basic operator framework and CRD definitions</li>
+                <li>Integration with Kandy VS Code Extension</li>
+                <li>Initial AI analysis controller</li>
+                <li>Security scanning capabilities</li>
+            </ul>
+            
+            <h3>Phase 2 - Automation & Optimization (Q3 2025)</h3>
+            <ul>
+                <li>Automated resource optimization</li>
+                <li>Event-driven automation</li>
+                <li>Policy enforcement</li>
+                <li>Team collaboration features</li>
+            </ul>
+            
+            <h3>Phase 3 - Enterprise Features (Q4 2025)</h3>
+            <ul>
+                <li>Multi-cluster management</li>
+                <li>Advanced compliance monitoring</li>
+                <li>Custom plugin system</li>
+                <li>HA deployment support</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Technology Stack</h2>
+            <ul>
+                <li><strong>Language:</strong> Go</li>
+                <li><strong>Framework:</strong> Kubebuilder / Operator SDK</li>
+                <li><strong>Kubernetes Client:</strong> client-go</li>
+                <li><strong>Deployment:</strong> Helm Charts</li>
+                <li><strong>CI/CD:</strong> GitHub Actions</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Contributing</h2>
+            <p>Kandy Operator is in early development and we welcome contributions! Here's how you can help:</p>
+            
+            <ul>
+                <li><strong>Design Feedback:</strong> Share your ideas for operator features</li>
+                <li><strong>Code Contributions:</strong> Submit PRs for features or bug fixes</li>
+                <li><strong>Testing:</strong> Help test the operator in different cluster environments</li>
+                <li><strong>Documentation:</strong> Improve documentation and examples</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;">Check out the <a href="https://github.com/alto9/kandy-operator">GitHub repository</a> to get started.</p>
+        </section>
+
+        <section class="section">
+            <h2>Related Projects</h2>
+            <ul>
+                <li><strong><a href="../kandy/">Kandy VS Code Extension</a></strong> - AI-powered Kubernetes management for VS Code</li>
+                <li><strong>Kandy Server</strong> - Backend AI processing server</li>
+                <li><strong>Kandy Portal</strong> - Web portal for API key management</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p><strong>Kandy Operator</strong> - Kubernetes operator supporting the Kandy ecosystem</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">MIT License | <a href="https://github.com/alto9/kandy-operator" style="color: #f5576c;">GitHub</a> | <a href="https://alto9.com" style="color: #f5576c;">Alto9</a></p>
+    </footer>
+</body>
+</html>
+
