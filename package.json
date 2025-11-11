@@ -1,0 +1,13 @@
+{
+  "name": "alto9-github-io",
+  "version": "1.0.0",
+  "description": "Alto9 Open Source Projects Documentation Site",
+  "scripts": {
+    "serve": "npx serve . -p 8080",
+    "dev": "npx serve . -p 8080 --listen"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
+
