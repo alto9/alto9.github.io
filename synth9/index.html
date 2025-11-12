@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>synth9 - Connect CDK/SAM Code to CloudFormation Stacks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        .nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ee5a6f;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        .section h3 {
+            color: #ee5a6f;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .feature-card h3 {
+            color: #ff6b6b;
+            margin-top: 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #ff6b6b;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+        }
+        
+        .badge.status-dev {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        pre {
+            background: #2d3748;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: #fff;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: #ee5a6f;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .workflow-diagram {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .workflow-step {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .workflow-step::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🔗 synth9</h1>
+        <p>Connect Your CDK/SAM Code to CloudFormation Stacks</p>
+        <p style="margin-top: 1rem;">
+            <span class="badge status-dev">Early Development</span>
+            <span class="badge">VS Code Extension</span>
+            <span class="badge">AWS</span>
+        </p>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="https://github.com/alto9/synth9">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="overview" class="section">
+            <h2>Overview</h2>
+            <p>synth9 bridges the gap between your local CDK/SAM code and deployed CloudFormation stacks. No more navigating AWS Console or manually matching stack names—right-click your stack code to instantly view resources, access Lambda logs, and debug without leaving VS Code.</p>
+            
+            <p style="margin-top: 1rem;"><strong>The Problem:</strong> When debugging issues in dev or staging environments, finding the right CloudFormation stack and accessing its resources (especially Lambda logs) requires:</p>
+            
+            <ul>
+                <li>Remembering or guessing deployed stack names</li>
+                <li>Navigating through AWS Console or AWS Explorer</li>
+                <li>Manually matching code constructs to deployed resources</li>
+                <li>Switching between multiple environments</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong>The Solution:</strong> synth9 automatically:</p>
+            
+            <ul>
+                <li>Synthesizes your CDK/SAM code to discover stack names</li>
+                <li>Matches code to deployed CloudFormation stacks</li>
+                <li>Shows all resources in a visual tree</li>
+                <li>Provides one-click access to logs and metrics</li>
+            </ul>
+        </section>
+
+        <section id="features" class="section">
+            <h2>Features</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🔍 Code-to-Stack Mapping</h3>
+                    <p>Automatically synthesizes your CDK/SAM code and matches it to deployed CloudFormation stacks. No manual stack name lookup required.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🌳 Resource Tree View</h3>
+                    <p>Visual tree of all resources created by your selected stack—Lambda functions, API Gateway, DynamoDB tables, and more—all in one place.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📋 Quick Log Access</h3>
+                    <p>One-click access to Lambda function logs directly from your code. No more navigating through AWS Explorer or Console.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🌍 Multi-Environment Support</h3>
+                    <p>Handle multiple environments (dev, staging, prod) in the same AWS account. When multiple stacks match, pick the one you want to inspect.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🔐 AWS Profile Aware</h3>
+                    <p>Uses your selected AWS CLI profile for account/region context. Switch profiles to view stacks in different accounts or regions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>⚡ Fast & Local</h3>
+                    <p>Everything runs locally using AWS CLI. No backend servers, no data collection—just fast, secure stack exploration.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="getting-started" class="section">
+            <h2>Getting Started</h2>
+            
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>VS Code 1.80.0+</li>
+                <li>AWS CLI installed and configured</li>
+                <li>CDK CLI installed (for CDK projects) or SAM CLI (for SAM projects)</li>
+                <li>AWS credentials configured (<code>~/.aws/credentials</code> or environment variables)</li>
+            </ul>
+            
+            <h3>Installation</h3>
+            
+            <h4>For Users</h4>
+            <ol>
+                <li>Open VS Code</li>
+                <li>Go to Extensions (<code>Ctrl/Cmd + Shift + X</code>)</li>
+                <li>Search for "synth9"</li>
+                <li>Click Install</li>
+            </ol>
+            
+            <h4>For Developers</h4>
+            <pre><code># Clone the repository
+git clone https://github.com/alto9/synth9.git
+cd synth9
+
+# Install dependencies (requires Node.js 22+)
+npm install
+
+# Compile TypeScript
+npm run compile
+
+# Run in development mode
+# Press F5 in VS Code to open Extension Development Host</code></pre>
+            
+            <h3>Quick Start</h3>
+            <div class="workflow-diagram">
+                <div class="workflow-step">Open a CDK or SAM project in VS Code</div>
+                <div class="workflow-step">Right-click on <code>cdk.json</code>, a stack definition file, or a Lambda construct</div>
+                <div class="workflow-step">Select "synth9: Show Stack Resources"</div>
+                <div class="workflow-step">If multiple matching stacks exist, choose the environment you want</div>
+                <div class="workflow-step">Explore resources in the tree view</div>
+                <div class="workflow-step">Click on Lambda functions to view logs or open resources in AWS Console</div>
+            </div>
+            
+            <h3>Configuration</h3>
+            <p>Configure synth9 in your VS Code settings:</p>
+            
+            <pre><code>{
+  // Cache duration for synthesized stack names (in minutes)
+  "synth9.cacheDuration": 60,
+  
+  // AWS profile to use (leave empty to use default)
+  "synth9.awsProfile": "",
+  
+  // AWS region to use (leave empty to use profile default)
+  "synth9.awsRegion": ""
+}</code></pre>
+        </section>
+
+        <section id="how-it-works" class="section">
+            <h2>How It Works</h2>
+            
+            <h3>Architecture</h3>
+            <p>synth9 runs entirely locally using AWS CLI and CDK/SAM CLI:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>VS Code Extension</h3>
+                    <ul>
+                        <li>Discovers CDK/SAM projects</li>
+                        <li>Synthesizes stack names</li>
+                        <li>Queries CloudFormation via AWS CLI</li>
+                        <li>Displays resource tree</li>
+                        <li>Provides quick actions</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>AWS CLI Integration</h3>
+                    <ul>
+                        <li>List CloudFormation stacks</li>
+                        <li>Describe stack resources</li>
+                        <li>Access CloudWatch Logs</li>
+                        <li>Query CloudWatch Metrics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Stack Matching Process</h3>
+            <ol>
+                <li><strong>Discovery:</strong> Find all <code>cdk.json</code> files in workspace</li>
+                <li><strong>Synthesis:</strong> Run <code>cdk synth</code> to get deterministic stack names</li>
+                <li><strong>Query:</strong> Use AWS CLI to list CloudFormation stacks</li>
+                <li><strong>Match:</strong> Match synthesized names to deployed stacks (handles CDK's random suffixes)</li>
+                <li><strong>Resolve:</strong> If multiple matches, show picker for user selection</li>
+                <li><strong>Display:</strong> Show all resources in selected stack</li>
+            </ol>
+
+            <h3>Example Workflow</h3>
+            <pre><code># Your CDK code defines:
+new Stack(this, 'MyStack', { ... })
+
+# CDK synthesizes to:
+"MyApp-MyStack"
+
+# Deployed stacks might be:
+"MyApp-MyStack-Dev-ABC123"
+"MyApp-MyStack-Prod-XYZ789"
+
+# synth9 matches and shows:
+"Found 2 matching stacks:
+  [1] MyApp-MyStack-Dev-ABC123 (Last updated: 2 hours ago)
+  [2] MyApp-MyStack-Prod-XYZ789 (Last updated: 1 day ago)
+  
+  Which stack do you want to view?"</code></pre>
+        </section>
+
+        <section id="roadmap" class="section">
+            <h2>Development Roadmap</h2>
+            
+            <h3>Phase 1 - MVP (Current)</h3>
+            <ul>
+                <li>✅ CDK app discovery</li>
+                <li>✅ Stack synthesis and matching</li>
+                <li>🔄 Stack picker for ambiguous cases</li>
+                <li>🔄 Resource tree view</li>
+                <li>🔄 Lambda log viewing</li>
+            </ul>
+            
+            <h3>Phase 2 - Enhanced Resource Support</h3>
+            <ul>
+                <li>📊 API Gateway logs and metrics</li>
+                <li>📊 ECS task logs</li>
+                <li>📊 DynamoDB metrics</li>
+                <li>📊 S3 bucket information</li>
+                <li>📊 Quick actions (metrics, console links)</li>
+            </ul>
+            
+            <h3>Phase 3 - Advanced Features</h3>
+            <ul>
+                <li>🔍 SAM template support</li>
+                <li>🔍 Stack drift detection</li>
+                <li>🔍 Resource comparison (dev vs prod)</li>
+                <li>🔍 Multi-account support</li>
+                <li>🔍 Performance optimizations</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>How It Differs from AWS Toolkit</h2>
+            <p>While AWS Toolkit provides general AWS resource management, synth9 focuses specifically on:</p>
+            
+            <ul>
+                <li><strong>Code-to-Stack Mapping:</strong> Automatically connects your code to deployed stacks</li>
+                <li><strong>Multi-Environment Workflow:</strong> Easily switch between dev/staging/prod stacks</li>
+                <li><strong>Resource Discovery:</strong> Shows all resources created by a stack, not just individual services</li>
+                <li><strong>Quick Debugging:</strong> Fast access to logs from your code without manual navigation</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Technology Stack</h2>
+            <ul>
+                <li><strong>Extension Framework:</strong> VS Code Extension API</li>
+                <li><strong>Language:</strong> TypeScript (ES2020 target)</li>
+                <li><strong>Runtime:</strong> Node.js 22+ (LTS)</li>
+                <li><strong>AWS Integration:</strong> AWS CLI + AWS SDK for JavaScript</li>
+                <li><strong>CDK/SAM:</strong> CDK CLI and SAM CLI for synthesis</li>
+                <li><strong>Build:</strong> TypeScript compiler + Webpack</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Related Projects</h2>
+            <ul>
+                <li><strong><a href="../kube9/">kube9</a></strong> - Visual Kubernetes management for VS Code</li>
+                <li><strong><a href="../kube9-operator/">kube9 Operator</a></strong> - Kubernetes operator for kube9</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p><strong>synth9</strong> - Made with ❤️ for DevOps teams who want to debug AWS infrastructure faster</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">MIT License | <a href="https://github.com/alto9/synth9" style="color: #ff6b6b;">GitHub</a> | <a href="https://alto9.com" style="color: #ff6b6b;">Alto9</a></p>
+    </footer>
+</body>
+</html>
+
