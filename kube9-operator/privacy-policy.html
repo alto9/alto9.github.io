@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - kube9 Operator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 50%, #a78bfa 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        .nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #6d28d9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #6d28d9;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        .section h3 {
+            color: #8b5cf6;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section h4 {
+            color: #a78bfa;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta {
+            background: #f3f4f6;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .meta p {
+            margin: 0.25rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table th, table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        table th {
+            background: #f3f4f6;
+            font-weight: 600;
+            color: #6d28d9;
+        }
+        
+        table tr:hover {
+            background: #f9fafb;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            border-left: 4px solid;
+        }
+        
+        .alert-info {
+            background: #e3f2fd;
+            border-color: #2196f3;
+            color: #0d47a1;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer a {
+            color: #a78bfa;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Privacy Policy</h1>
+        <p>Your privacy is important to us</p>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="data-collection.html">Data Collection</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="data-transparency.html">Transparency</a></li>
+            <li><a href="https://github.com/alto9/kube9-operator">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="meta">
+            <p><strong>Effective Date:</strong> January 15, 2025</p>
+            <p><strong>Last Updated:</strong> January 15, 2025</p>
+            <p><strong>Version:</strong> 1.0</p>
+        </div>
+
+        <section class="section">
+            <h2>1. Introduction</h2>
+            <p>Alto9 ("we", "our", or "us") operates the kube9-operator, a Kubernetes operator that enables AI-powered features in the kube9 VS Code extension. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the kube9-operator.</p>
+            
+            <p>By using the kube9-operator, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, do not use the kube9-operator.</p>
+        </section>
+
+        <section class="section">
+            <h2>2. Information We Collect</h2>
+            
+            <h3>2.1 Cluster Data</h3>
+            <p>When you install the kube9-operator in your Kubernetes cluster, we collect sanitized, anonymized cluster metrics. This includes:</p>
+            <ul>
+                <li>Cluster metadata (Kubernetes version, node count, provider, region)</li>
+                <li>Resource inventory (counts of pods, deployments, services)</li>
+                <li>Configuration patterns (sanitized resource specifications)</li>
+                <li>Performance metrics (aggregated CPU/memory utilization)</li>
+                <li>Security posture indicators (RBAC policy counts, network policy coverage)</li>
+            </ul>
+            
+            <p>For detailed information about what we collect, see our <a href="data-collection.html">Data Collection</a> page.</p>
+
+            <h3>2.2 What We Never Collect</h3>
+            <p>We explicitly <strong>do not collect</strong>:</p>
+            <ul>
+                <li>Resource names (pods, deployments, services, namespaces)</li>
+                <li>IP addresses or network endpoints</li>
+                <li>Secret contents or sensitive values</li>
+                <li>Environment variable values (only keys, values are hashed)</li>
+                <li>User credentials or tokens</li>
+                <li>Application logs or container output</li>
+                <li>Any personally identifiable information (PII)</li>
+            </ul>
+
+            <h3>2.3 Account Information</h3>
+            <p>If you use Pro tier features, we collect:</p>
+            <ul>
+                <li>Account information (email address, name) - via kube9 Portal</li>
+                <li>API keys (stored securely, never logged)</li>
+                <li>Billing information (processed by third-party payment processors)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>3. How We Use Your Information</h2>
+            
+            <h3>3.1 Primary Uses</h3>
+            <ul>
+                <li><strong>Service Delivery:</strong> Provide AI-powered features in the VS Code extension</li>
+                <li><strong>AI Model Training:</strong> Train proprietary AI models on Kubernetes patterns (fully anonymized)</li>
+                <li><strong>Service Improvement:</strong> Understand usage patterns to improve features</li>
+                <li><strong>Business Intelligence:</strong> Aggregated analytics for product development</li>
+            </ul>
+
+            <h3>3.2 We Never</h3>
+            <ul>
+                <li>Sell or share your data with third parties</li>
+                <li>Use your data to compete with you</li>
+                <li>Identify individual applications or users</li>
+                <li>Access your cluster directly (all communication is outbound)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>4. Data Sanitization</h2>
+            <p>All data is sanitized <strong>before</strong> it leaves your cluster. Our sanitization process includes:</p>
+            <ul>
+                <li>Removing all names, IPs, and identifying information</li>
+                <li>Hashing sensitive values (environment variables, etc.)</li>
+                <li>Normalizing data (rounding numbers, relative timestamps)</li>
+                <li>Extracting patterns without raw data</li>
+                <li>Automated validation to ensure no sensitive data escapes</li>
+            </ul>
+            
+            <p>For detailed information about sanitization, see our <a href="data-collection.html">Data Collection</a> page.</p>
+        </section>
+
+        <section class="section">
+            <h2>5. Data Sharing and Disclosure</h2>
+            
+            <h3>5.1 We Do Not Sell Data</h3>
+            <p>We do not sell, trade, or rent your data to third parties.</p>
+
+            <h3>5.2 Service Providers</h3>
+            <p>We may share data with service providers who assist us in operating our service:</p>
+            <ul>
+                <li><strong>Cloud Providers:</strong> AWS, GCP, Azure for hosting (data remains encrypted)</li>
+                <li><strong>Payment Processors:</strong> For billing (they do not receive cluster data)</li>
+                <li><strong>Analytics:</strong> Aggregated, anonymized analytics only</li>
+            </ul>
+            <p>All service providers are contractually obligated to protect your data.</p>
+
+            <h3>5.3 Legal Requirements</h3>
+            <p>We may disclose data if required by law or in response to valid legal requests.</p>
+        </section>
+
+        <section class="section">
+            <h2>6. Data Retention</h2>
+            <p>We retain data only as long as necessary:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Retention Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Raw Collected Data</td>
+                        <td>90 days</td>
+                    </tr>
+                    <tr>
+                        <td>Sanitized Metrics</td>
+                        <td>2 years</td>
+                    </tr>
+                    <tr>
+                        <td>Aggregated Analytics</td>
+                        <td>5 years</td>
+                    </tr>
+                    <tr>
+                        <td>Audit Logs</td>
+                        <td>7 years</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>You can request deletion of your data at any time. See Section 8 for details.</p>
+        </section>
+
+        <section class="section">
+            <h2>7. Data Security</h2>
+            <p>We implement industry-standard security measures to protect your data:</p>
+            <ul>
+                <li><strong>Encryption in Transit:</strong> All data encrypted using HTTPS/TLS</li>
+                <li><strong>Encryption at Rest:</strong> All data encrypted using AES-256</li>
+                <li><strong>No Ingress:</strong> Operator only makes outbound connections</li>
+                <li><strong>API Key Security:</strong> API keys stored securely, never logged</li>
+                <li><strong>Access Controls:</strong> Restricted access to data on a need-to-know basis</li>
+                <li><strong>Regular Audits:</strong> Security audits and penetration testing</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>8. Your Rights</h2>
+            <p>You have the following rights regarding your data:</p>
+            
+            <h3>8.1 Right to Access</h3>
+            <p>You can request access to what data we collect about your cluster. Contact us at <a href="mailto:privacy@kube9.dev">privacy@kube9.dev</a>.</p>
+
+            <h3>8.2 Right to Correction</h3>
+            <p>You can request correction of inaccurate data.</p>
+
+            <h3>8.3 Right to Deletion</h3>
+            <p>You can request deletion of your data ("right to be forgotten"). Data will be deleted within 30 days (with grace period for recovery).</p>
+
+            <h3>8.4 Right to Opt-Out</h3>
+            <p>You can opt-out of data collection by:</p>
+            <ul>
+                <li>Installing the operator without an API key (Free tier, no data collection)</li>
+                <li>Contacting us to disable data collection (some Pro features may be limited)</li>
+            </ul>
+
+            <h3>8.5 Right to Portability</h3>
+            <p>You can request export of your data in machine-readable format (JSON, CSV).</p>
+
+            <h3>8.6 Right to Complain</h3>
+            <p>You can file complaints with regulatory authorities if you believe we have violated your privacy rights.</p>
+
+            <div class="alert alert-info">
+                <strong>To Exercise Your Rights:</strong> Contact us at <a href="mailto:privacy@kube9.dev">privacy@kube9.dev</a> or through the <a href="https://portal.kube9.dev">kube9 Portal</a>.
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>9. Compliance</h2>
+            <p>We comply with the following regulations:</p>
+            
+            <h3>9.1 GDPR (General Data Protection Regulation)</h3>
+            <p>We comply with GDPR requirements for EU customers, including:</p>
+            <ul>
+                <li>Lawful basis for processing</li>
+                <li>Data minimization</li>
+                <li>Purpose limitation</li>
+                <li>Right to access, deletion, and portability</li>
+            </ul>
+
+            <h3>9.2 SOC 2 Type II</h3>
+            <p>We maintain SOC 2 Type II certification for security, availability, and confidentiality.</p>
+
+            <h3>9.3 CCPA (California Consumer Privacy Act)</h3>
+            <p>We comply with CCPA requirements for California residents.</p>
+
+            <h3>9.4 HIPAA</h3>
+            <p>We can provide HIPAA-compliant services for healthcare customers with additional safeguards.</p>
+        </section>
+
+        <section class="section">
+            <h2>10. Children's Privacy</h2>
+            <p>The kube9-operator is not intended for use by children under 13 years of age. We do not knowingly collect data from children.</p>
+        </section>
+
+        <section class="section">
+            <h2>11. International Data Transfers</h2>
+            <p>Your data may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place, including:</p>
+            <ul>
+                <li>Standard contractual clauses</li>
+                <li>Adequate data protection measures</li>
+                <li>Compliance with applicable data protection laws</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>12. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by:</p>
+            <ul>
+                <li>Email notification (for significant changes)</li>
+                <li>30-day notice before changes take effect</li>
+                <li>Updating the "Last Updated" date at the top of this page</li>
+            </ul>
+            
+            <p>Your continued use of the kube9-operator after changes become effective constitutes acceptance of the updated policy.</p>
+        </section>
+
+        <section class="section">
+            <h2>13. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or our data practices:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:privacy@kube9.dev">privacy@kube9.dev</a></li>
+                <li><strong>Portal:</strong> <a href="https://portal.kube9.dev/support">portal.kube9.dev/support</a></li>
+                <li><strong>Address:</strong> Alto9, [Address], [City], [State] [ZIP]</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>14. Additional Resources</h2>
+            <ul>
+                <li><a href="data-collection.html">Data Collection Details</a></li>
+                <li><a href="data-transparency.html">Data Transparency</a></li>
+                <li><a href="https://portal.kube9.dev">kube9 Portal</a></li>
+                <li><a href="https://github.com/alto9/kube9-operator">GitHub Repository</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p><strong>kube9 Operator</strong> - Your privacy is our priority</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">
+            <a href="https://github.com/alto9/kube9-operator">GitHub</a> | 
+            <a href="https://alto9.com">Alto9</a> | 
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </p>
+    </footer>
+</body>
+</html>
+
