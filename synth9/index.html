@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>synth9 - Connect CDK/SAM Code to CloudFormation Stacks</title>
+    <title>Synth9 - Connect CDK/SAM Code to CloudFormation Stacks</title>
     <style>
         * {
             margin: 0;
@@ -204,7 +204,7 @@
 </head>
 <body>
     <header class="header">
-        <h1>🔗 synth9</h1>
+        <h1>🔗 Synth9</h1>
         <p>Connect Your CDK/SAM Code to CloudFormation Stacks</p>
         <p style="margin-top: 1rem;">
             <span class="badge status-dev">Early Development</span>
@@ -227,7 +227,7 @@
     <div class="container">
         <section id="overview" class="section">
             <h2>Overview</h2>
-            <p>synth9 bridges the gap between your local CDK/SAM code and deployed CloudFormation stacks. No more navigating AWS Console or manually matching stack names—right-click your stack code to instantly view resources, access Lambda logs, and debug without leaving VS Code.</p>
+            <p>Synth9 bridges the gap between your local CDK/SAM code and deployed CloudFormation stacks. No more navigating AWS Console or manually matching stack names—right-click your stack code to instantly view resources, access Lambda logs, and debug without leaving VS Code.</p>
             
             <p style="margin-top: 1rem;"><strong>The Problem:</strong> When debugging issues in dev or staging environments, finding the right CloudFormation stack and accessing its resources (especially Lambda logs) requires:</p>
             
@@ -238,7 +238,7 @@
                 <li>Switching between multiple environments</li>
             </ul>
             
-            <p style="margin-top: 1rem;"><strong>The Solution:</strong> synth9 automatically:</p>
+            <p style="margin-top: 1rem;"><strong>The Solution:</strong> Synth9 automatically:</p>
             
             <ul>
                 <li>Synthesizes your CDK/SAM code to discover stack names</li>
@@ -301,7 +301,7 @@
             <ol>
                 <li>Open VS Code</li>
                 <li>Go to Extensions (<code>Ctrl/Cmd + Shift + X</code>)</li>
-                <li>Search for "synth9"</li>
+                <li>Search for "Synth9"</li>
                 <li>Click Install</li>
             </ol>
             
@@ -323,14 +323,14 @@ npm run compile
             <div class="workflow-diagram">
                 <div class="workflow-step">Open a CDK or SAM project in VS Code</div>
                 <div class="workflow-step">Right-click on <code>cdk.json</code>, a stack definition file, or a Lambda construct</div>
-                <div class="workflow-step">Select "synth9: Show Stack Resources"</div>
+                <div class="workflow-step">Select "Synth9: Show Stack Resources"</div>
                 <div class="workflow-step">If multiple matching stacks exist, choose the environment you want</div>
                 <div class="workflow-step">Explore resources in the tree view</div>
                 <div class="workflow-step">Click on Lambda functions to view logs or open resources in AWS Console</div>
             </div>
             
             <h3>Configuration</h3>
-            <p>Configure synth9 in your VS Code settings:</p>
+            <p>Configure Synth9 in your VS Code settings:</p>
             
             <pre><code>{
   // Cache duration for synthesized stack names (in minutes)
@@ -348,7 +348,7 @@ npm run compile
             <h2>How It Works</h2>
             
             <h3>Architecture</h3>
-            <p>synth9 runs entirely locally using AWS CLI and CDK/SAM CLI:</p>
+            <p>Synth9 runs entirely locally using AWS CLI and CDK/SAM CLI:</p>
             
             <div class="feature-grid">
                 <div class="feature-card">
@@ -394,7 +394,7 @@ new Stack(this, 'MyStack', { ... })
 "MyApp-MyStack-Dev-ABC123"
 "MyApp-MyStack-Prod-XYZ789"
 
-# synth9 matches and shows:
+# Synth9 matches and shows:
 "Found 2 matching stacks:
   [1] MyApp-MyStack-Dev-ABC123 (Last updated: 2 hours ago)
   [2] MyApp-MyStack-Prod-XYZ789 (Last updated: 1 day ago)
@@ -435,7 +435,7 @@ new Stack(this, 'MyStack', { ... })
 
         <section class="section">
             <h2>How It Differs from AWS Toolkit</h2>
-            <p>While AWS Toolkit provides general AWS resource management, synth9 focuses specifically on:</p>
+            <p>While AWS Toolkit provides general AWS resource management, Synth9 focuses specifically on:</p>
             
             <ul>
                 <li><strong>Code-to-Stack Mapping:</strong> Automatically connects your code to deployed stacks</li>
@@ -467,7 +467,7 @@ new Stack(this, 'MyStack', { ... })
     </div>
 
     <footer class="footer">
-        <p><strong>synth9</strong> - Made with ❤️ for DevOps teams who want to debug AWS infrastructure faster</p>
+        <p><strong>Synth9</strong> - Made with ❤️ for DevOps teams who want to debug AWS infrastructure faster</p>
         <p style="margin-top: 0.5rem; opacity: 0.8;">MIT License | <a href="https://github.com/alto9/synth9" style="color: #ff6b6b;">GitHub</a> | <a href="https://alto9.com" style="color: #ff6b6b;">Alto9</a></p>
     </footer>
 </body>
