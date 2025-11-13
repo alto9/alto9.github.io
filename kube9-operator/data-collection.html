@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection - kube9 Operator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 50%, #a78bfa 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        .nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #6d28d9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #6d28d9;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        .section h3 {
+            color: #8b5cf6;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table th, table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        table th {
+            background: #f3f4f6;
+            font-weight: 600;
+            color: #6d28d9;
+        }
+        
+        table tr:hover {
+            background: #f9fafb;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            border-left: 4px solid;
+        }
+        
+        .alert-info {
+            background: #e3f2fd;
+            border-color: #2196f3;
+            color: #0d47a1;
+        }
+        
+        .alert-warning {
+            background: #fff3e0;
+            border-color: #ff9800;
+            color: #e65100;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        pre {
+            background: #2d3748;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: #fff;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer a {
+            color: #a78bfa;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Data Collection Details</h1>
+        <p>Comprehensive guide to what data kube9-operator collects</p>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="data-collection.html">Data Collection</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="data-transparency.html">Transparency</a></li>
+            <li><a href="https://github.com/alto9/kube9-operator">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="section">
+            <h2>Overview</h2>
+            <p>The kube9-operator collects sanitized cluster metrics to enable AI-powered features in the kube9 VS Code extension. All data collection follows strict privacy principles:</p>
+            <ul>
+                <li><strong>Privacy by Design:</strong> Data is sanitized before leaving your cluster</li>
+                <li><strong>Minimal Collection:</strong> Only collect what's necessary for service delivery</li>
+                <li><strong>No Sensitive Data:</strong> Never collect names, IPs, secrets, or PII</li>
+                <li><strong>Transparency:</strong> Complete visibility into what's collected</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Data Collection Categories</h2>
+            
+            <h3>1. Cluster Metadata</h3>
+            <p><strong>Collection Interval:</strong> Every 24 hours</p>
+            <p><strong>Data Collected:</strong></p>
+            <ul>
+                <li>Kubernetes version (e.g., "1.28.0")</li>
+                <li>Cluster identifier (SHA256 hash, non-reversible)</li>
+                <li>Approximate node count (for capacity planning)</li>
+                <li>Cluster provider/cloud (if detectable: "AWS", "GCP", "Azure")</li>
+                <li>Cluster region/zone (if available: "us-east-1")</li>
+            </ul>
+            <p><strong>Purpose:</strong> Service provisioning, version compatibility checks, provider-specific optimizations</p>
+            <p><strong>Sensitivity:</strong> Low - No PII or sensitive data</p>
+
+            <h3>2. Resource Inventory</h3>
+            <p><strong>Collection Interval:</strong> Every 6 hours</p>
+            <p><strong>Data Collected:</strong></p>
+            <ul>
+                <li>Namespace count and list (names only, no metadata)</li>
+                <li>Resource counts by type:
+                    <ul>
+                        <li>Total pod count</li>
+                        <li>Deployment count</li>
+                        <li>StatefulSet count</li>
+                        <li>ReplicaSet count</li>
+                        <li>Service count (by type: ClusterIP, NodePort, LoadBalancer)</li>
+                    </ul>
+                </li>
+                <li>Resource distribution across namespaces (counts only)</li>
+            </ul>
+            <p><strong>Purpose:</strong> Understanding cluster scale and complexity, capacity planning</p>
+            <p><strong>Sensitivity:</strong> Low - Aggregated counts only, no individual resource details</p>
+
+            <h3>3. Resource Configuration Patterns</h3>
+            <p><strong>Collection Interval:</strong> Every 12 hours</p>
+            <p><strong>Data Collected:</strong></p>
+            <ul>
+                <li>Resource specifications (requests/limits, replicas) - <strong>sanitized</strong>:
+                    <ul>
+                        <li>All names removed (replaced with placeholders)</li>
+                        <li>All labels/annotations containing PII removed</li>
+                        <li>Image tags removed (image names only)</li>
+                        <li>Environment variable values hashed (keys preserved)</li>
+                        <li>Volume mount paths removed (types only)</li>
+                        <li>Service endpoints/IPs removed</li>
+                    </ul>
+                </li>
+                <li>Resource relationships (owner references, selectors) - anonymized</li>
+                <li>Configuration patterns (common anti-patterns, resource ratios)</li>
+            </ul>
+            <p><strong>Purpose:</strong> AI model training on Kubernetes patterns, identifying common configurations</p>
+            <p><strong>Sensitivity:</strong> Medium - Contains configuration patterns but fully sanitized</p>
+
+            <h3>4. Performance Metrics</h3>
+            <p><strong>Collection Interval:</strong> Every 15 minutes</p>
+            <p><strong>Data Collected:</strong></p>
+            <ul>
+                <li>Node resource utilization (CPU/memory) - aggregated averages across all nodes</li>
+                <li>Pod resource requests vs limits ratios (aggregated)</li>
+                <li>Replica counts distribution (histogram)</li>
+                <li>Resource quota usage (if available) - percentages only</li>
+            </ul>
+            <p><strong>Purpose:</strong> Real-time performance insights, resource optimization recommendations</p>
+            <p><strong>Sensitivity:</strong> Low - Aggregated metrics only, no individual pod/node data</p>
+
+            <h3>5. Security Posture Indicators</h3>
+            <p><strong>Collection Interval:</strong> Every 24 hours</p>
+            <p><strong>Data Collected:</strong></p>
+            <ul>
+                <li>RBAC policy count (roles, rolebindings) - counts only</li>
+                <li>Network policy coverage (percentage of namespaces with policies)</li>
+                <li>Pod security policy usage (if applicable) - counts only</li>
+                <li>Secret count (total only, no content or names)</li>
+            </ul>
+            <p><strong>Purpose:</strong> Security posture assessment, compliance recommendations</p>
+            <p><strong>Sensitivity:</strong> Low - Counts and percentages only, no policy details</p>
+        </section>
+
+        <section class="section">
+            <h2>Collection Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Category</th>
+                        <th>Collection Interval</th>
+                        <th>Frequency</th>
+                        <th>Rationale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cluster Metadata</td>
+                        <td>Every 24 hours</td>
+                        <td>Daily</td>
+                        <td>Changes infrequently</td>
+                    </tr>
+                    <tr>
+                        <td>Resource Inventory</td>
+                        <td>Every 6 hours</td>
+                        <td>4x daily</td>
+                        <td>Balance freshness vs. load</td>
+                    </tr>
+                    <tr>
+                        <td>Resource Config Patterns</td>
+                        <td>Every 12 hours</td>
+                        <td>2x daily</td>
+                        <td>For AI training, less frequent</td>
+                    </tr>
+                    <tr>
+                        <td>Performance Metrics</td>
+                        <td>Every 15 minutes</td>
+                        <td>96x daily</td>
+                        <td>Needs recent data for insights</td>
+                    </tr>
+                    <tr>
+                        <td>Security Posture</td>
+                        <td>Every 24 hours</td>
+                        <td>Daily</td>
+                        <td>Changes slowly</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="alert alert-info">
+                <strong>Randomization:</strong> Collection times are randomized per cluster to distribute load and prevent thundering herd problems.
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Sanitization Process</h2>
+            <p>All data is sanitized <strong>before</strong> transmission. The sanitization process includes:</p>
+            
+            <h3>Phase 1: Field-Level Sanitization</h3>
+            <ul>
+                <li><strong>Names Removal:</strong> All resource names, namespace names, node names replaced with placeholders</li>
+                <li><strong>PII Detection:</strong> Labels/annotations containing email, user, owner, team removed</li>
+                <li><strong>Image Tag Removal:</strong> Image tags removed, only image names preserved</li>
+                <li><strong>Environment Variables:</strong> Values hashed with SHA256, keys preserved</li>
+                <li><strong>Network Information:</strong> All IP addresses, service endpoints removed</li>
+                <li><strong>Volume Paths:</strong> All file paths removed, volume types preserved</li>
+            </ul>
+
+            <h3>Phase 2: Data Normalization</h3>
+            <ul>
+                <li><strong>Numeric Rounding:</strong> Memory rounded to nearest 100Mi, CPU to 1 decimal</li>
+                <li><strong>Timestamp Normalization:</strong> Converted to relative time (e.g., "2 days ago")</li>
+            </ul>
+
+            <h3>Phase 3: Pattern Extraction</h3>
+            <ul>
+                <li>Extract resource ratios (e.g., "30% of pods have no limits")</li>
+                <li>Identify common configurations</li>
+                <li>Detect anti-patterns</li>
+            </ul>
+
+            <h3>Phase 4: Validation</h3>
+            <ul>
+                <li>Automated checks ensure no names, IPs, or PII in payload</li>
+                <li>Schema validation ensures data structure compliance</li>
+                <li>Size limits enforced (max 1MB per collection)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Data Flow</h2>
+            <pre><code>┌─────────────────────┐
+│  Kubernetes Cluster │
+│  (Your Cluster)     │
+└──────────┬──────────┘
+           │
+           │ kube9-operator reads
+           │ cluster resources
+           ↓
+┌─────────────────────┐
+│  kube9-operator     │
+│  (In-Cluster)        │
+│                     │
+│  1. Collect data    │
+│  2. Sanitize data   │
+│  3. Validate schema │
+└──────────┬──────────┘
+           │
+           │ HTTPS POST
+           │ (sanitized data only)
+           ↓
+┌─────────────────────┐
+│  kube9-server       │
+│  (api.kube9.dev)    │
+│                     │
+│  1. Validate API key│
+│  2. Store metrics   │
+│  3. Process for AI  │
+└─────────────────────┘</code></pre>
+            
+            <div class="alert alert-warning">
+                <strong>Important:</strong> The operator only makes <strong>outbound</strong> HTTPS connections. No ingress is required, and your cluster never accepts incoming connections from kube9-server.
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Opt-Out Options</h2>
+            <p>You have several options to control data collection:</p>
+            
+            <h3>1. Free Tier</h3>
+            <p>Install the operator without an API key. The operator runs in "operated" mode and does <strong>not</strong> collect or transmit any data.</p>
+            
+            <h3>2. Pro Tier with Data Collection Disabled</h3>
+            <p>Contact us to disable data collection while keeping Pro tier features (some AI features may be limited).</p>
+            
+            <h3>3. Request Data Deletion</h3>
+            <p>Request deletion of your data at any time. Data will be deleted within 30 days (with grace period for recovery).</p>
+            
+            <p style="margin-top: 1rem;">To opt-out or request deletion, contact <a href="mailto:privacy@kube9.dev">privacy@kube9.dev</a> or use the <a href="https://portal.kube9.dev">kube9 Portal</a>.</p>
+        </section>
+
+        <section class="section">
+            <h2>Questions?</h2>
+            <p>For more information about data collection:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:privacy@kube9.dev">privacy@kube9.dev</a></li>
+                <li><strong>Portal:</strong> <a href="https://portal.kube9.dev/support">portal.kube9.dev/support</a></li>
+                <li><strong>Transparency Page:</strong> <a href="data-transparency.html">Data Transparency</a></li>
+                <li><strong>Privacy Policy:</strong> <a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p><strong>kube9 Operator</strong> - Transparent, secure, privacy-focused</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">
+            <a href="https://github.com/alto9/kube9-operator">GitHub</a> | 
+            <a href="https://alto9.com">Alto9</a> | 
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </p>
+    </footer>
+</body>
+</html>
+
