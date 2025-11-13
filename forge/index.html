@@ -1,455 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="alto9">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forge - Context Engineering Framework for AI-Assisted Development</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-        }
-        
-        .nav {
-            background: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .nav-links a {
-            color: #1e40af;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #3b82f6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .section {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .section h2 {
-            color: #1e40af;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-        
-        .section h3 {
-            color: #3b82f6;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .feature-card {
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #3b82f6;
-        }
-        
-        .feature-card h3 {
-            color: #1e40af;
-            margin-top: 0;
-        }
-        
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: #3b82f6;
-            color: white;
-            border-radius: 12px;
-            font-size: 0.875rem;
-            margin-right: 0.5rem;
-        }
-        
-        code {
-            background: #f4f4f4;
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 0.9rem;
-        }
-        
-        pre {
-            background: #2d3748;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin: 1rem 0;
-        }
-        
-        pre code {
-            background: none;
-            padding: 0;
-            color: #fff;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: #3b82f6;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: background 0.3s;
-            margin-top: 1rem;
-            margin-right: 1rem;
-        }
-        
-        .cta-button:hover {
-            background: #2563eb;
-        }
-        
-        ul, ol {
-            margin-left: 2rem;
-            margin-top: 0.5rem;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .workflow-step {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            border-left: 4px solid #3b82f6;
-        }
-        
-        .workflow-step h4 {
-            color: #1e40af;
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer {
-            background: #2d3748;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-    </style>
+    <link href="../dist/output.css" rel="stylesheet">
 </head>
-<body>
-    <header class="header">
-        <h1>Forge</h1>
-        <p>Context Engineering Framework for AI-Assisted Development</p>
-        <p style="margin-top: 1rem;">
-            <span class="badge">MVP</span>
-            <span class="badge">VS Code Extension</span>
-            <span class="badge">MCP Server</span>
-        </p>
-    </header>
+<body class="bg-base-200 min-h-screen">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-primary via-primary-focus to-primary text-primary-content">
+        <div class="container mx-auto px-4 py-12 text-center">
+            <h1 class="text-5xl font-bold mb-4">Forge</h1>
+            <p class="text-xl opacity-95 mb-4">Context Engineering Framework for AI-Assisted Development</p>
+            <div class="flex justify-center gap-2 flex-wrap">
+                <span class="alto9-badge-mvp">MVP</span>
+                <span class="badge badge-outline badge-lg">VS Code Extension</span>
+                <span class="badge badge-outline badge-lg">MCP Server</span>
+            </div>
+        </div>
+    </div>
 
-    <nav class="nav">
-        <ul class="nav-links">
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#workflow">Workflow</a></li>
-            <li><a href="#getting-started">Getting Started</a></li>
-            <li><a href="#architecture">Architecture</a></li>
-            <li><a href="https://github.com/alto9/forge">GitHub</a></li>
-        </ul>
-    </nav>
+    <!-- Navigation -->
+    <div class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto">
+            <div class="flex-1">
+                <a href="../" class="btn btn-ghost normal-case text-lg">← Alto9</a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal px-1 gap-2">
+                    <li><a href="#overview" class="btn btn-ghost btn-sm">Overview</a></li>
+                    <li><a href="#features" class="btn btn-ghost btn-sm">Features</a></li>
+                    <li><a href="#workflow" class="btn btn-ghost btn-sm">Workflow</a></li>
+                    <li><a href="#getting-started" class="btn btn-ghost btn-sm">Getting Started</a></li>
+                    <li><a href="#architecture" class="btn btn-ghost btn-sm">Architecture</a></li>
+                    <li><a href="https://github.com/alto9/forge" target="_blank" class="btn btn-primary btn-sm">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    <div class="container">
-        <section id="overview" class="section">
-            <h2>Overview</h2>
-            <p>Forge is a comprehensive toolkit for structured context engineering in AI-assisted development. It provides both a VSCode extension and an MCP server to help engineers create well-structured prompts with complete context.</p>
-            
-            <p style="margin-top: 1rem;">Traditional prompting can be ad-hoc and miss important context. Forge helps you:</p>
-            
-            <ul style="margin-top: 1rem;">
-                <li><strong>Build Comprehensive Context</strong> - Systematically gather all relevant information</li>
-                <li><strong>Maintain Consistency</strong> - Use standardized formats across your project</li>
-                <li><strong>Improve AI Accuracy</strong> - Provide complete context for better AI-generated code</li>
-                <li><strong>Create Traceable Documentation</strong> - Link decisions, features, specs, and tasks</li>
-                <li><strong>Reduce Rework</strong> - Get it right the first time with well-structured prompts</li>
-            </ul>
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Overview -->
+        <section id="overview" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-primary mb-4">Overview</h2>
+                <p class="text-base-content/80 mb-4">Forge is a comprehensive toolkit for structured context engineering in AI-assisted development. It provides both a VSCode extension and an MCP server to help engineers create well-structured prompts with complete context.</p>
+                
+                <p class="mb-4">Traditional prompting can be ad-hoc and miss important context. Forge helps you:</p>
+                
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Build Comprehensive Context</strong> - Systematically gather all relevant information</li>
+                    <li><strong>Maintain Consistency</strong> - Use standardized formats across your project</li>
+                    <li><strong>Improve AI Accuracy</strong> - Provide complete context for better AI-generated code</li>
+                    <li><strong>Create Traceable Documentation</strong> - Link decisions, features, specs, and tasks</li>
+                    <li><strong>Reduce Rework</strong> - Get it right the first time with well-structured prompts</li>
+                </ul>
 
-            <h3 style="margin-top: 2rem;">What is Context Engineering?</h3>
-            <p>Context engineering is the practice of systematically designing, organizing, and maintaining the information you provide to AI assistants. By using Forge's session-driven workflow, you ensure that every implementation story has access to the complete context it needs - from user requirements (Features) to technical specifications (Specs) to implementation guidance (Contexts).</p>
+                <div class="divider"></div>
+                <h3 class="text-2xl font-semibold text-primary mb-2">What is Context Engineering?</h3>
+                <p>Context engineering is the practice of systematically designing, organizing, and maintaining the information you provide to AI assistants. By using Forge's session-driven workflow, you ensure that every implementation story has access to the complete context it needs - from user requirements (Features) to technical specifications (Specs) to implementation guidance (Contexts).</p>
+            </div>
         </section>
 
-        <section id="features" class="section">
-            <h2>Key Features</h2>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>Session-Driven Design</h3>
-                    <p>Track design changes during focused sessions. Start with a problem statement, make changes, then distill into actionable stories.</p>
+        <!-- Features -->
+        <section id="features" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-primary mb-6">Key Features</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="card bg-base-200 border-l-4 border-l-primary">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-primary">Session-Driven Design</h3>
+                            <p>Track design changes during focused sessions. Start with a problem statement, make changes, then distill into actionable stories.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-primary">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-primary">Structured File Formats</h3>
+                            <p>Use Gherkin for features, Nomnoml for diagrams, and standardized frontmatter for all file types. Consistency across your entire project.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-primary">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-primary">Intelligent Linkages</h3>
+                            <p>Connect features to specs, specs to contexts, and everything to actors. Forge follows these links to gather complete context automatically.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-primary">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-primary">Forge Studio</h3>
+                            <p>Full-featured visual interface for creating and managing all Forge files. Create nested folders, edit files, and manage sessions all in one place.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-primary">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-primary">Minimal Stories</h3>
+                            <p>Break work into &lt;30 minute implementation stories. Each story includes complete context from linked features, specs, and guidance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-primary">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-primary">MCP Integration</h3>
+                            <p>Model Context Protocol server exposes Forge capabilities to AI assistants like Claude Desktop and Cursor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workflow -->
+        <section id="workflow" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-primary mb-6">The Forge Workflow</h2>
+                <p class="mb-6">Forge uses a session-driven workflow that ensures systematic design and complete implementation context:</p>
+
+                <div class="space-y-4">
+                    <div class="alert alert-info shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-lg">1. Define Foundational Elements (No session required)</h4>
+                            <p>Create <strong>Actors</strong> to define system personas and roles. Create <strong>Contexts</strong> to provide technical guidance and standards. Build your project vocabulary and foundational knowledge. Browse existing Features and Specs for reference.</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-lg">2. Start a Design Session</h4>
+                            <p>Begin a design session with a clear problem statement. The session tracks changes to Features and Specs (at scenario-level) while you work.</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-lg">3. Design Changes (Session required for editing)</h4>
+                            <p>Create and edit <strong>Features</strong> to define user-facing functionality using Gherkin scenarios. Create and edit <strong>Specs</strong> to define technical implementation with Nomnoml diagrams. Link Features and Specs to relevant Contexts and Actors.</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-lg">4. Distill to Stories & Tasks</h4>
+                            <p>Convert the session into minimal implementation stories (&lt;30 min each) and external tasks. Stories are organized in <code class="bg-base-300 px-2 py-1 rounded">ai/sessions/&lt;session-id&gt;/tickets/</code> and include complete context from all linked files.</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-lg">5. Build Stories</h4>
+                            <p>Implement each story with complete context from linked features, specs, contexts, and actors. Forge generates comprehensive build prompts that include everything the AI needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Started -->
+        <section id="getting-started" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-primary mb-6">Getting Started</h2>
+                
+                <h3 class="text-2xl font-semibold text-primary mb-4">Installation</h3>
+                
+                <h4 class="text-xl font-semibold mb-2">From Source</h4>
+                <div class="mockup-code mb-4">
+                    <pre data-prefix="$"><code># Clone the repository</code></pre>
+                    <pre data-prefix="$"><code>git clone https://github.com/alto9/forge.git</code></pre>
+                    <pre data-prefix="$"><code>cd forge</code></pre>
+                    <pre data-prefix="$"><code># Install dependencies for all packages</code></pre>
+                    <pre data-prefix="$"><code>npm install</code></pre>
+                    <pre data-prefix="$"><code># Build all packages</code></pre>
+                    <pre data-prefix="$"><code>npm run build</code></pre>
+                    <pre data-prefix="$"><code># Package the VSCode extension</code></pre>
+                    <pre data-prefix="$"><code>npm run vscode:package</code></pre>
+                    <pre data-prefix="$"><code># Install the extension</code></pre>
+                    <pre data-prefix="$"><code>code --install-extension packages/vscode-extension/forge-0.1.0.vsix</code></pre>
                 </div>
                 
-                <div class="feature-card">
-                    <h3>Structured File Formats</h3>
-                    <p>Use Gherkin for features, Nomnoml for diagrams, and standardized frontmatter for all file types. Consistency across your entire project.</p>
-                </div>
+                <h3 class="text-2xl font-semibold text-primary mb-4 mt-6">Configure MCP Server</h3>
+                <p class="mb-2">Add to your MCP settings file to enable Forge capabilities in Claude Desktop or Cursor:</p>
                 
-                <div class="feature-card">
-                    <h3>Intelligent Linkages</h3>
-                    <p>Connect features to specs, specs to contexts, and everything to actors. Forge follows these links to gather complete context automatically.</p>
+                <p class="mb-4"><strong>macOS:</strong> <code class="bg-base-300 px-2 py-1 rounded">~/Library/Application Support/Claude/claude_desktop_config.json</code><br>
+                <strong>Windows:</strong> <code class="bg-base-300 px-2 py-1 rounded">%APPDATA%/Claude/claude_desktop_config.json</code></p>
+
+                <div class="mockup-code mb-4">
+                    <pre data-prefix=""><code>{</code></pre>
+                    <pre data-prefix="  "><code>"mcpServers": {</code></pre>
+                    <pre data-prefix="    "><code>"forge": {</code></pre>
+                    <pre data-prefix="      "><code>"command": "node",</code></pre>
+                    <pre data-prefix="      "><code>"args": ["/path/to/forge/packages/mcp-server/dist/index.js"],</code></pre>
+                    <pre data-prefix="      "><code>"cwd": "/path/to/your/project"</code></pre>
+                    <pre data-prefix="    "><code>}</code></pre>
+                    <pre data-prefix="  "><code>}</code></pre>
+                    <pre data-prefix=""><code>}</code></pre>
                 </div>
+
+                <h3 class="text-2xl font-semibold text-primary mb-4 mt-6">First Steps</h3>
+                <ol class="list-decimal list-inside space-y-2 ml-4">
+                    <li>Open the Command Palette (<code class="bg-base-300 px-2 py-1 rounded">Cmd/Ctrl + Shift + P</code>)</li>
+                    <li>Run <code class="bg-base-300 px-2 py-1 rounded">Forge: Open Forge Studio</code></li>
+                    <li>Click "Initialize Project" to create the <code class="bg-base-300 px-2 py-1 rounded">ai/</code> folder structure</li>
+                    <li>Create some Actors to define system personas</li>
+                    <li>Create some Contexts for technical guidance</li>
+                    <li>Start your first design session!</li>
+                </ol>
+
+                <div class="card-actions justify-start mt-6">
+                    <a href="https://github.com/alto9/forge#getting-started" target="_blank" class="btn btn-primary">View Full Documentation</a>
+                    <a href="https://github.com/alto9/forge/blob/main/EXAMPLES.md" target="_blank" class="btn btn-outline btn-primary">See Examples</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section id="architecture" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-primary mb-6">Architecture</h2>
                 
-                <div class="feature-card">
-                    <h3>Forge Studio</h3>
-                    <p>Full-featured visual interface for creating and managing all Forge files. Create nested folders, edit files, and manage sessions all in one place.</p>
-                </div>
+                <h3 class="text-2xl font-semibold text-primary mb-4">Project Structure</h3>
+                <p class="mb-4">When you use Forge in a project, it manages files in a nestable folder structure:</p>
                 
-                <div class="feature-card">
-                    <h3>Minimal Stories</h3>
-                    <p>Break work into &lt;30 minute implementation stories. Each story includes complete context from linked features, specs, and guidance.</p>
+                <div class="mockup-code mb-6">
+                    <pre data-prefix=""><code>your-project/</code></pre>
+                    <pre data-prefix="└── "><code>ai/</code></pre>
+                    <pre data-prefix="    ├── "><code>sessions/           # Design session tracking (*.session.md)</code></pre>
+                    <pre data-prefix="    │   ├── "><code>&lt;session-id&gt;/</code></pre>
+                    <pre data-prefix="    │   │   └── "><code>tickets/    # Stories and Tasks for this session</code></pre>
+                    <pre data-prefix="    │   │       ├── "><code>*.story.md</code></pre>
+                    <pre data-prefix="    │   │       └── "><code>*.task.md</code></pre>
+                    <pre data-prefix="    │   └── "><code>*.session.md</code></pre>
+                    <pre data-prefix="    ├── "><code>features/           # Feature definitions with Gherkin (*.feature.md)</code></pre>
+                    <pre data-prefix="    ├── "><code>specs/              # Technical specifications (*.spec.md)</code></pre>
+                    <pre data-prefix="    ├── "><code>actors/             # Actor/persona definitions (*.actor.md)</code></pre>
+                    <pre data-prefix="    ├── "><code>contexts/           # Context references and guidance (*.context.md)</code></pre>
+                    <pre data-prefix="    └── "><code>docs/               # Supporting documentation</code></pre>
                 </div>
+
+                <h3 class="text-2xl font-semibold text-primary mb-4">Components</h3>
                 
-                <div class="feature-card">
-                    <h3>MCP Integration</h3>
-                    <p>Model Context Protocol server exposes Forge capabilities to AI assistants like Claude Desktop and Cursor.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="card bg-base-200 border-l-4 border-l-primary">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-primary">VSCode Extension</h3>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Forge Studio webview interface</li>
+                                <li>Session management commands</li>
+                                <li>File creation and editing</li>
+                                <li>Context menu integration</li>
+                                <li>Real-time file watching</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-primary">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-primary">MCP Server</h3>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>get_forge_about - Workflow overview</li>
+                                <li>get_forge_schema - File schemas</li>
+                                <li>get_forge_context - Technical guidance</li>
+                                <li>get_forge_objects - Supported objects</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
+                <h3 class="text-2xl font-semibold text-primary mb-4">File Types</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Sessions (*.session.md)</strong> - Track design sessions with problem statements and changed files</li>
+                    <li><strong>Features (*.feature.md)</strong> - Define user-facing functionality using Gherkin scenarios</li>
+                    <li><strong>Specs (*.spec.md)</strong> - Document technical implementation with Nomnoml diagrams</li>
+                    <li><strong>Actors (*.actor.md)</strong> - Define system personas, roles, and responsibilities</li>
+                    <li><strong>Contexts (*.context.md)</strong> - Provide just-in-time guidance for specific technologies</li>
+                    <li><strong>Stories (*.story.md)</strong> - Code implementation work (&lt;30 minutes each)</li>
+                    <li><strong>Tasks (*.task.md)</strong> - External/manual work outside of code</li>
+                </ul>
             </div>
         </section>
 
-        <section id="workflow" class="section">
-            <h2>The Forge Workflow</h2>
-            <p>Forge uses a session-driven workflow that ensures systematic design and complete implementation context:</p>
-
-            <div class="workflow-step">
-                <h4>1. Define Foundational Elements (No session required)</h4>
-                <p>Create <strong>Actors</strong> to define system personas and roles. Create <strong>Contexts</strong> to provide technical guidance and standards. Build your project vocabulary and foundational knowledge. Browse existing Features and Specs for reference.</p>
-            </div>
-
-            <div class="workflow-step">
-                <h4>2. Start a Design Session</h4>
-                <p>Begin a design session with a clear problem statement. The session tracks changes to Features and Specs (at scenario-level) while you work.</p>
-            </div>
-
-            <div class="workflow-step">
-                <h4>3. Design Changes (Session required for editing)</h4>
-                <p>Create and edit <strong>Features</strong> to define user-facing functionality using Gherkin scenarios. Create and edit <strong>Specs</strong> to define technical implementation with Nomnoml diagrams. Link Features and Specs to relevant Contexts and Actors.</p>
-            </div>
-
-            <div class="workflow-step">
-                <h4>4. Distill to Stories & Tasks</h4>
-                <p>Convert the session into minimal implementation stories (&lt;30 min each) and external tasks. Stories are organized in <code>ai/sessions/&lt;session-id&gt;/tickets/</code> and include complete context from all linked files.</p>
-            </div>
-
-            <div class="workflow-step">
-                <h4>5. Build Stories</h4>
-                <p>Implement each story with complete context from linked features, specs, contexts, and actors. Forge generates comprehensive build prompts that include everything the AI needs.</p>
+        <!-- Best Practices -->
+        <section class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-primary mb-6">Best Practices</h2>
+                <ol class="list-decimal list-inside space-y-3 ml-4">
+                    <li><strong>Define Foundational Elements First</strong> - Create Actors and Contexts before starting design sessions</li>
+                    <li><strong>Start Sessions for Design Work</strong> - Begin each design phase with a clear problem statement</li>
+                    <li><strong>Use Forge Studio</strong> - Visual interface makes creating and organizing files easier</li>
+                    <li><strong>Organize with Folders</strong> - Group related features and specs in nested folders</li>
+                    <li><strong>Link Everything</strong> - Use IDs to create relationships between files</li>
+                    <li><strong>Keep Stories Small</strong> - Target &lt;30 minutes per story for better focus</li>
+                    <li><strong>Review Before Distilling</strong> - Ensure your design is complete before generating stories</li>
+                    <li><strong>Iterate on Foundational Elements</strong> - Update Actors and Contexts as understanding evolves</li>
+                </ol>
             </div>
         </section>
 
-        <section id="getting-started" class="section">
-            <h2>Getting Started</h2>
-            
-            <h3>Installation</h3>
-            
-            <h4>From Source</h4>
-            <pre><code># Clone the repository
-git clone https://github.com/alto9/forge.git
-cd forge
-
-# Install dependencies for all packages
-npm install
-
-# Build all packages
-npm run build
-
-# Package the VSCode extension
-npm run vscode:package
-
-# Install the extension
-code --install-extension packages/vscode-extension/forge-0.1.0.vsix</code></pre>
-            
-            <h3>Configure MCP Server</h3>
-            <p>Add to your MCP settings file to enable Forge capabilities in Claude Desktop or Cursor:</p>
-            
-            <p><strong>macOS:</strong> <code>~/Library/Application Support/Claude/claude_desktop_config.json</code><br>
-            <strong>Windows:</strong> <code>%APPDATA%/Claude/claude_desktop_config.json</code></p>
-
-            <pre><code>{
-  "mcpServers": {
-    "forge": {
-      "command": "node",
-      "args": ["/path/to/forge/packages/mcp-server/dist/index.js"],
-      "cwd": "/path/to/your/project"
-    }
-  }
-}</code></pre>
-
-            <h3>First Steps</h3>
-            <ol>
-                <li>Open the Command Palette (<code>Cmd/Ctrl + Shift + P</code>)</li>
-                <li>Run <code>Forge: Open Forge Studio</code></li>
-                <li>Click "Initialize Project" to create the <code>ai/</code> folder structure</li>
-                <li>Create some Actors to define system personas</li>
-                <li>Create some Contexts for technical guidance</li>
-                <li>Start your first design session!</li>
-            </ol>
-
-            <a href="https://github.com/alto9/forge#getting-started" class="cta-button">View Full Documentation</a>
-            <a href="https://github.com/alto9/forge/blob/main/EXAMPLES.md" class="cta-button">See Examples</a>
-        </section>
-
-        <section id="architecture" class="section">
-            <h2>Architecture</h2>
-            
-            <h3>Project Structure</h3>
-            <p>When you use Forge in a project, it manages files in a nestable folder structure:</p>
-            
-            <pre><code>your-project/
-└── ai/
-    ├── sessions/           # Design session tracking (*.session.md)
-    │   ├── &lt;session-id&gt;/
-    │   │   └── tickets/    # Stories and Tasks for this session
-    │   │       ├── *.story.md
-    │   │       └── *.task.md
-    │   └── *.session.md
-    ├── features/           # Feature definitions with Gherkin (*.feature.md)
-    ├── specs/              # Technical specifications (*.spec.md)
-    ├── actors/             # Actor/persona definitions (*.actor.md)
-    ├── contexts/           # Context references and guidance (*.context.md)
-    └── docs/               # Supporting documentation</code></pre>
-
-            <h3>Components</h3>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>VSCode Extension</h3>
-                    <ul>
-                        <li>Forge Studio webview interface</li>
-                        <li>Session management commands</li>
-                        <li>File creation and editing</li>
-                        <li>Context menu integration</li>
-                        <li>Real-time file watching</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>MCP Server</h3>
-                    <ul>
-                        <li>get_forge_about - Workflow overview</li>
-                        <li>get_forge_schema - File schemas</li>
-                        <li>get_forge_context - Technical guidance</li>
-                        <li>get_forge_objects - Supported objects</li>
-                    </ul>
-                </div>
+        <!-- Technology Stack -->
+        <section class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-primary mb-6">Technology Stack</h2>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Extension Framework:</strong> VS Code Extension API with Webview</li>
+                    <li><strong>Language:</strong> TypeScript</li>
+                    <li><strong>Runtime:</strong> Node.js 20+</li>
+                    <li><strong>UI Framework:</strong> React with TailwindCSS</li>
+                    <li><strong>MCP:</strong> Model Context Protocol (@modelcontextprotocol/sdk)</li>
+                    <li><strong>Build:</strong> Vite + TypeScript compiler</li>
+                </ul>
             </div>
-
-            <h3>File Types</h3>
-            <ul>
-                <li><strong>Sessions (*.session.md)</strong> - Track design sessions with problem statements and changed files</li>
-                <li><strong>Features (*.feature.md)</strong> - Define user-facing functionality using Gherkin scenarios</li>
-                <li><strong>Specs (*.spec.md)</strong> - Document technical implementation with Nomnoml diagrams</li>
-                <li><strong>Actors (*.actor.md)</strong> - Define system personas, roles, and responsibilities</li>
-                <li><strong>Contexts (*.context.md)</strong> - Provide just-in-time guidance for specific technologies</li>
-                <li><strong>Stories (*.story.md)</strong> - Code implementation work (&lt;30 minutes each)</li>
-                <li><strong>Tasks (*.task.md)</strong> - External/manual work outside of code</li>
-            </ul>
         </section>
 
-        <section class="section">
-            <h2>Best Practices</h2>
-            <ol>
-                <li><strong>Define Foundational Elements First</strong> - Create Actors and Contexts before starting design sessions</li>
-                <li><strong>Start Sessions for Design Work</strong> - Begin each design phase with a clear problem statement</li>
-                <li><strong>Use Forge Studio</strong> - Visual interface makes creating and organizing files easier</li>
-                <li><strong>Organize with Folders</strong> - Group related features and specs in nested folders</li>
-                <li><strong>Link Everything</strong> - Use IDs to create relationships between files</li>
-                <li><strong>Keep Stories Small</strong> - Target &lt;30 minutes per story for better focus</li>
-                <li><strong>Review Before Distilling</strong> - Ensure your design is complete before generating stories</li>
-                <li><strong>Iterate on Foundational Elements</strong> - Update Actors and Contexts as understanding evolves</li>
-            </ol>
-        </section>
-
-        <section class="section">
-            <h2>Technology Stack</h2>
-            <ul>
-                <li><strong>Extension Framework:</strong> VS Code Extension API with Webview</li>
-                <li><strong>Language:</strong> TypeScript</li>
-                <li><strong>Runtime:</strong> Node.js 20+</li>
-                <li><strong>UI Framework:</strong> React with TailwindCSS</li>
-                <li><strong>MCP:</strong> Model Context Protocol (@modelcontextprotocol/sdk)</li>
-                <li><strong>Build:</strong> Vite + TypeScript compiler</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Future Plans</h2>
-            <ul>
-                <li>Real-time file editing in Studio (currently requires save/reload)</li>
-                <li>Drag-and-drop folder reorganization</li>
-                <li>Visualization of feature/spec relationships</li>
-                <li>Template customization for different project types</li>
-                <li>Validation and linting for file formats</li>
-                <li>Export to various documentation formats</li>
-                <li>Story execution tracking and status updates</li>
-                <li>AI-assisted content generation for features and specs</li>
-            </ul>
+        <!-- Future Plans -->
+        <section class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-primary mb-6">Future Plans</h2>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li>Real-time file editing in Studio (currently requires save/reload)</li>
+                    <li>Drag-and-drop folder reorganization</li>
+                    <li>Visualization of feature/spec relationships</li>
+                    <li>Template customization for different project types</li>
+                    <li>Validation and linting for file formats</li>
+                    <li>Export to various documentation formats</li>
+                    <li>Story execution tracking and status updates</li>
+                    <li>AI-assisted content generation for features and specs</li>
+                </ul>
+            </div>
         </section>
     </div>
 
-    <footer class="footer">
-        <p><strong>Forge</strong> - Structured context engineering for AI-assisted development</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">MIT License | <a href="https://github.com/alto9/forge" style="color: #60a5fa;">GitHub</a> | <a href="https://alto9.com" style="color: #60a5fa;">Alto9</a></p>
+    <!-- Footer -->
+    <footer class="footer bg-neutral text-neutral-content p-10 mt-12">
+        <div class="container mx-auto text-center">
+            <p><strong class="font-semibold">Forge</strong> - Structured context engineering for AI-assisted development</p>
+            <p class="mt-2 opacity-80">MIT License | <a href="https://github.com/alto9/forge" class="link link-hover">GitHub</a> | <a href="https://alto9.com" class="link link-hover">Alto9</a></p>
+        </div>
     </footer>
 </body>
 </html>
-

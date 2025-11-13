@@ -1,400 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="alto9">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kube9 - AI-Powered Kubernetes Management for VS Code</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-        }
-        
-        .nav {
-            background: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .nav-links a {
-            color: #059669;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #10b981;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .section {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .section h2 {
-            color: #059669;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-        
-        .section h3 {
-            color: #10b981;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .feature-card {
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #10b981;
-        }
-        
-        .feature-card h3 {
-            color: #059669;
-            margin-top: 0;
-        }
-        
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: #10b981;
-            color: white;
-            border-radius: 12px;
-            font-size: 0.875rem;
-            margin-right: 0.5rem;
-        }
-        
-        code {
-            background: #f4f4f4;
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 0.9rem;
-        }
-        
-        pre {
-            background: #2d3748;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin: 1rem 0;
-        }
-        
-        pre code {
-            background: none;
-            padding: 0;
-            color: #fff;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: #10b981;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: background 0.3s;
-            margin-top: 1rem;
-        }
-        
-        .cta-button:hover {
-            background: #059669;
-        }
-        
-        ul, ol {
-            margin-left: 2rem;
-            margin-top: 0.5rem;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer {
-            background: #2d3748;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-    </style>
+    <link href="../dist/output.css" rel="stylesheet">
 </head>
-<body>
-    <header class="header">
-        <h1>Kube9</h1>
-        <p>AI-Powered Kubernetes Cluster Management for VS Code</p>
-        <p style="margin-top: 1rem;">
-            <span class="badge">MVP</span>
-            <span class="badge">VS Code Extension</span>
-            <span class="badge">AI-Powered</span>
-        </p>
-    </header>
+<body class="bg-base-200 min-h-screen">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-success via-success/90 to-success/80 text-success-content">
+        <div class="container mx-auto px-4 py-12 text-center">
+            <h1 class="text-5xl font-bold mb-4">Kube9</h1>
+            <p class="text-xl opacity-95 mb-4">AI-Powered Kubernetes Cluster Management for VS Code</p>
+            <div class="flex justify-center gap-2 flex-wrap">
+                <span class="alto9-badge-mvp">MVP</span>
+                <span class="badge badge-outline badge-lg">VS Code Extension</span>
+                <span class="badge badge-outline badge-lg">AI-Powered</span>
+            </div>
+        </div>
+    </div>
 
-    <nav class="nav">
-        <ul class="nav-links">
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#getting-started">Getting Started</a></li>
-            <li><a href="#architecture">Architecture</a></li>
-            <li><a href="#roadmap">Roadmap</a></li>
-            <li><a href="https://github.com/alto9/kube9">GitHub</a></li>
-        </ul>
-    </nav>
+    <!-- Navigation -->
+    <div class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto">
+            <div class="flex-1">
+                <a href="../" class="btn btn-ghost normal-case text-lg">← Alto9</a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal px-1 gap-2">
+                    <li><a href="#overview" class="btn btn-ghost btn-sm">Overview</a></li>
+                    <li><a href="#features" class="btn btn-ghost btn-sm">Features</a></li>
+                    <li><a href="#getting-started" class="btn btn-ghost btn-sm">Getting Started</a></li>
+                    <li><a href="#architecture" class="btn btn-ghost btn-sm">Architecture</a></li>
+                    <li><a href="#roadmap" class="btn btn-ghost btn-sm">Roadmap</a></li>
+                    <li><a href="https://github.com/alto9/kube9" target="_blank" class="btn btn-success btn-sm">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    <div class="container">
-        <section id="overview" class="section">
-            <h2>Overview</h2>
-            <p>kube9 transforms Kubernetes management from complex command-line operations into an intuitive, AI-assisted experience. Built as a VS Code extension, kube9 brings the power of AI directly into your development environment for seamless cluster operations.</p>
-            
-            <p style="margin-top: 1rem;">Instead of memorizing kubectl commands and YAML syntax, simply ask questions in natural language:</p>
-            
-            <pre><code>"Show me pods using high CPU"
-"Why is my deployment failing?"
-"Suggest resource limits for my Node.js app"
-"Check security vulnerabilities"</code></pre>
-        </section>
-
-        <section id="features" class="section">
-            <h2>Features</h2>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>Multi-Cluster Management</h3>
-                    <p>Import and manage multiple kubeconfig files. Switch between clusters with ease and view all your Kubernetes environments in one place.</p>
-                </div>
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Overview -->
+        <section id="overview" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-success mb-4">Overview</h2>
+                <p class="text-base-content/80 mb-4">kube9 transforms Kubernetes management from complex command-line operations into an intuitive, AI-assisted experience. Built as a VS Code extension, kube9 brings the power of AI directly into your development environment for seamless cluster operations.</p>
                 
-                <div class="feature-card">
-                    <h3>Natural Language Queries</h3>
-                    <p>Ask questions about your cluster in plain English. kube9's AI understands your intent and provides intelligent insights and recommendations.</p>
-                </div>
+                <p class="mb-4">Instead of memorizing kubectl commands and YAML syntax, simply ask questions in natural language:</p>
                 
-                <div class="feature-card">
-                    <h3>Real-Time Visualization</h3>
-                    <p>View pods, services, deployments, and other resources in real-time with an intuitive tree view interface integrated directly into VS Code.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Context-Aware Assistance</h3>
-                    <p>AI understands your cluster state and provides relevant suggestions based on current conditions and best practices.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Intelligent Troubleshooting</h3>
-                    <p>Get AI-generated explanations for failures and errors with actionable recommendations to resolve issues quickly.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Secure by Design</h3>
-                    <p>Hybrid architecture keeps your cluster data secure. Sensitive information stays in your environment while leveraging AI capabilities.</p>
+                <div class="mockup-code mb-4">
+                    <pre data-prefix=""><code>"Show me pods using high CPU"</code></pre>
+                    <pre data-prefix=""><code>"Why is my deployment failing?"</code></pre>
+                    <pre data-prefix=""><code>"Suggest resource limits for my Node.js app"</code></pre>
+                    <pre data-prefix=""><code>"Check security vulnerabilities"</code></pre>
                 </div>
             </div>
         </section>
 
-        <section id="getting-started" class="section">
-            <h2>Getting Started</h2>
-            
-            <h3>Installation</h3>
-            
-            <h4>For Users</h4>
-            <ol>
-                <li>Open VS Code</li>
-                <li>Go to Extensions (<code>Ctrl/Cmd + Shift + X</code>)</li>
-                <li>Search for "kube9"</li>
-                <li>Click Install</li>
-            </ol>
-            
-            <h4>For Developers</h4>
-            <pre><code># Clone the repository
-git clone https://github.com/alto9/kube9.git
-cd kube9
-
-# Install dependencies (requires Node.js 22+)
-npm install
-
-# Compile TypeScript
-npm run compile
-
-# Run in development mode
-# Press F5 in VS Code to open Extension Development Host</code></pre>
-            
-            <h3>Configuration</h3>
-            <p>Configure kube9 in your VS Code settings:</p>
-            
-            <pre><code>{
-  "kube9.apiKey": "kdy_prod_abc123def456",
-  "kube9.serverUrl": "https://api.kube9.dev",
-  "kube9.debugMode": false
-}</code></pre>
-
-            <h3>First Steps</h3>
-            <ol>
-                <li>Open the kube9 view in the Activity Bar (sidebar)</li>
-                <li>Import your kubeconfig file: <code>Ctrl/Cmd + Shift + P</code> → "kube9: Import kubeconfig"</li>
-                <li>Select a cluster from the kube9 sidebar</li>
-                <li>Start exploring your cluster or ask AI for analysis</li>
-            </ol>
-        </section>
-
-        <section id="architecture" class="section">
-            <h2>Architecture</h2>
-            
-            <h3>Hybrid AI Architecture</h3>
-            <p>kube9 uses a hybrid architecture that balances security, performance, and user experience:</p>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>VS Code Extension</h3>
-                    <ul>
-                        <li>UI Management & Tree Views</li>
-                        <li>Cluster Communication</li>
-                        <li>Data Collection</li>
-                        <li>Recommendation Display</li>
-                    </ul>
-                </div>
+        <!-- Features -->
+        <section id="features" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-success mb-6">Features</h2>
                 
-                <div class="feature-card">
-                    <h3>kube9 Server</h3>
-                    <ul>
-                        <li>AI Service Integration</li>
-                        <li>Prompt Engineering</li>
-                        <li>Response Processing</li>
-                        <li>Caching & Optimization</li>
-                    </ul>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="card bg-base-200 border-l-4 border-l-success">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-success">Multi-Cluster Management</h3>
+                            <p>Import and manage multiple kubeconfig files. Switch between clusters with ease and view all your Kubernetes environments in one place.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-success">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-success">Natural Language Queries</h3>
+                            <p>Ask questions about your cluster in plain English. kube9's AI understands your intent and provides intelligent insights and recommendations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-success">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-success">Real-Time Visualization</h3>
+                            <p>View pods, services, deployments, and other resources in real-time with an intuitive tree view interface integrated directly into VS Code.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-success">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-success">Context-Aware Assistance</h3>
+                            <p>AI understands your cluster state and provides relevant suggestions based on current conditions and best practices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-success">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-success">Intelligent Troubleshooting</h3>
+                            <p>Get AI-generated explanations for failures and errors with actionable recommendations to resolve issues quickly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-success">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-success">Secure by Design</h3>
+                            <p>Hybrid architecture keeps your cluster data secure. Sensitive information stays in your environment while leveraging AI capabilities.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <h3>Data Flow</h3>
-            <ol>
-                <li>Extension collects cluster data and user context</li>
-                <li>Extension sends structured request to kube9 Server</li>
-                <li>Server processes data and formats AI prompts</li>
-                <li>Server calls AI service (OpenAI, Anthropic, etc.)</li>
-                <li>Server processes and validates AI response</li>
-                <li>Server returns formatted recommendations to Extension</li>
-                <li>Extension displays recommendations in webview panels</li>
-            </ol>
-
-            <h3>Security Model</h3>
-            <ul>
-                <li><strong>Data Sanitization:</strong> Remove sensitive information before AI processing</li>
-                <li><strong>Request Validation:</strong> Validate all requests from extension</li>
-                <li><strong>Secure Storage:</strong> API keys stored in VS Code's secret storage</li>
-                <li><strong>Audit Logging:</strong> Log all AI interactions for debugging and compliance</li>
-            </ul>
         </section>
 
-        <section id="roadmap" class="section">
-            <h2>Development Roadmap</h2>
-            
-            <h3>Phase 1 - MVP (Current)</h3>
-            <ul>
-                <li>kubeconfig file support</li>
-                <li>Basic cluster management</li>
-                <li>Natural language AI queries</li>
-                <li>Multi-cluster switching</li>
-                <li>Real-time resource monitoring</li>
-            </ul>
-            
-            <h3>Phase 2 - Enhanced AI</h3>
-            <ul>
-                <li>Advanced troubleshooting assistance</li>
-                <li>Configuration generation and validation</li>
-                <li>Security recommendations</li>
-                <li>Performance optimization suggestions</li>
-            </ul>
-            
-            <h3>Phase 3 - Enterprise Features</h3>
-            <ul>
-                <li>Advanced authentication methods (OIDC, certificates)</li>
-                <li>Multi-cloud support (AWS, Azure, GCP)</li>
-                <li>Team collaboration features</li>
-                <li>Audit logging and compliance</li>
-                <li>AWS CDK v2 Infrastructure as Code deployment</li>
-            </ul>
+        <!-- Getting Started -->
+        <section id="getting-started" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-success mb-6">Getting Started</h2>
+                
+                <h3 class="text-2xl font-semibold text-success mb-4">Installation</h3>
+                
+                <h4 class="text-xl font-semibold mb-2">For Users</h4>
+                <ol class="list-decimal list-inside space-y-2 ml-4 mb-6">
+                    <li>Open VS Code</li>
+                    <li>Go to Extensions (<code class="bg-base-300 px-2 py-1 rounded">Ctrl/Cmd + Shift + X</code>)</li>
+                    <li>Search for "kube9"</li>
+                    <li>Click Install</li>
+                </ol>
+                
+                <h4 class="text-xl font-semibold mb-2">For Developers</h4>
+                <div class="mockup-code mb-6">
+                    <pre data-prefix="$"><code># Clone the repository</code></pre>
+                    <pre data-prefix="$"><code>git clone https://github.com/alto9/kube9.git</code></pre>
+                    <pre data-prefix="$"><code>cd kube9</code></pre>
+                    <pre data-prefix="$"><code># Install dependencies (requires Node.js 22+)</code></pre>
+                    <pre data-prefix="$"><code>npm install</code></pre>
+                    <pre data-prefix="$"><code># Compile TypeScript</code></pre>
+                    <pre data-prefix="$"><code>npm run compile</code></pre>
+                    <pre data-prefix="$"><code># Run in development mode</code></pre>
+                    <pre data-prefix="$"><code># Press F5 in VS Code to open Extension Development Host</code></pre>
+                </div>
+                
+                <h3 class="text-2xl font-semibold text-success mb-4">Configuration</h3>
+                <p class="mb-2">Configure kube9 in your VS Code settings:</p>
+                
+                <div class="mockup-code mb-6">
+                    <pre data-prefix=""><code>{</code></pre>
+                    <pre data-prefix="  "><code>"kube9.apiKey": "kdy_prod_abc123def456",</code></pre>
+                    <pre data-prefix="  "><code>"kube9.serverUrl": "https://api.kube9.dev",</code></pre>
+                    <pre data-prefix="  "><code>"kube9.debugMode": false</code></pre>
+                    <pre data-prefix=""><code>}</code></pre>
+                </div>
+
+                <h3 class="text-2xl font-semibold text-success mb-4">First Steps</h3>
+                <ol class="list-decimal list-inside space-y-2 ml-4">
+                    <li>Open the kube9 view in the Activity Bar (sidebar)</li>
+                    <li>Import your kubeconfig file: <code class="bg-base-300 px-2 py-1 rounded">Ctrl/Cmd + Shift + P</code> → "kube9: Import kubeconfig"</li>
+                    <li>Select a cluster from the kube9 sidebar</li>
+                    <li>Start exploring your cluster or ask AI for analysis</li>
+                </ol>
+            </div>
         </section>
 
-        <section class="section">
-            <h2>Technology Stack</h2>
-            <ul>
-                <li><strong>Extension Framework:</strong> VS Code Extension API</li>
-                <li><strong>Language:</strong> TypeScript (ES2020 target)</li>
-                <li><strong>Runtime:</strong> Node.js 22+ (LTS)</li>
-                <li><strong>AI Integration:</strong> Custom NLP + LLM integration via kube9 Server</li>
-                <li><strong>Kubernetes:</strong> Official client libraries (@kubernetes/client-node)</li>
-                <li><strong>Build:</strong> TypeScript compiler + Webpack</li>
-            </ul>
+        <!-- Architecture -->
+        <section id="architecture" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-success mb-6">Architecture</h2>
+                
+                <h3 class="text-2xl font-semibold text-success mb-4">Hybrid AI Architecture</h3>
+                <p class="mb-4">kube9 uses a hybrid architecture that balances security, performance, and user experience:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="card bg-base-200 border-l-4 border-l-success">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-success">VS Code Extension</h3>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>UI Management & Tree Views</li>
+                                <li>Cluster Communication</li>
+                                <li>Data Collection</li>
+                                <li>Recommendation Display</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-success">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-success">kube9 Server</h3>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>AI Service Integration</li>
+                                <li>Prompt Engineering</li>
+                                <li>Response Processing</li>
+                                <li>Caching & Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-semibold text-success mb-4">Data Flow</h3>
+                <ol class="list-decimal list-inside space-y-2 ml-4 mb-6">
+                    <li>Extension collects cluster data and user context</li>
+                    <li>Extension sends structured request to kube9 Server</li>
+                    <li>Server processes data and formats AI prompts</li>
+                    <li>Server calls AI service (OpenAI, Anthropic, etc.)</li>
+                    <li>Server processes and validates AI response</li>
+                    <li>Server returns formatted recommendations to Extension</li>
+                    <li>Extension displays recommendations in webview panels</li>
+                </ol>
+
+                <h3 class="text-2xl font-semibold text-success mb-4">Security Model</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Data Sanitization:</strong> Remove sensitive information before AI processing</li>
+                    <li><strong>Request Validation:</strong> Validate all requests from extension</li>
+                    <li><strong>Secure Storage:</strong> API keys stored in VS Code's secret storage</li>
+                    <li><strong>Audit Logging:</strong> Log all AI interactions for debugging and compliance</li>
+                </ul>
+            </div>
         </section>
 
-        <section class="section">
-            <h2>Related Projects</h2>
-            <ul>
-                <li><strong><a href="../kube9-operator/">kube9 Operator</a></strong> - Kubernetes operator supporting kube9 VS Code Extension</li>
-                <li><strong>kube9 Server</strong> - Backend AI processing server for kube9</li>
-                <li><strong>kube9 Portal</strong> - Web portal for API key management and analytics</li>
-            </ul>
+        <!-- Roadmap -->
+        <section id="roadmap" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-success mb-6">Development Roadmap</h2>
+                
+                <h3 class="text-2xl font-semibold text-success mb-4">Phase 1 - MVP (Current)</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4 mb-6">
+                    <li>kubeconfig file support</li>
+                    <li>Basic cluster management</li>
+                    <li>Natural language AI queries</li>
+                    <li>Multi-cluster switching</li>
+                    <li>Real-time resource monitoring</li>
+                </ul>
+                
+                <h3 class="text-2xl font-semibold text-success mb-4">Phase 2 - Enhanced AI</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4 mb-6">
+                    <li>Advanced troubleshooting assistance</li>
+                    <li>Configuration generation and validation</li>
+                    <li>Security recommendations</li>
+                    <li>Performance optimization suggestions</li>
+                </ul>
+                
+                <h3 class="text-2xl font-semibold text-success mb-4">Phase 3 - Enterprise Features</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li>Advanced authentication methods (OIDC, certificates)</li>
+                    <li>Multi-cloud support (AWS, Azure, GCP)</li>
+                    <li>Team collaboration features</li>
+                    <li>Audit logging and compliance</li>
+                    <li>AWS CDK v2 Infrastructure as Code deployment</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-success mb-6">Technology Stack</h2>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Extension Framework:</strong> VS Code Extension API</li>
+                    <li><strong>Language:</strong> TypeScript (ES2020 target)</li>
+                    <li><strong>Runtime:</strong> Node.js 22+ (LTS)</li>
+                    <li><strong>AI Integration:</strong> Custom NLP + LLM integration via kube9 Server</li>
+                    <li><strong>Kubernetes:</strong> Official client libraries (@kubernetes/client-node)</li>
+                    <li><strong>Build:</strong> TypeScript compiler + Webpack</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Related Projects -->
+        <section class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-success mb-6">Related Projects</h2>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong><a href="../kube9-operator/" class="link link-success">kube9 Operator</a></strong> - Kubernetes operator supporting kube9 VS Code Extension</li>
+                    <li><strong>kube9 Server</strong> - Backend AI processing server for kube9</li>
+                    <li><strong>kube9 Portal</strong> - Web portal for API key management and analytics</li>
+                </ul>
+            </div>
         </section>
     </div>
 
-    <footer class="footer">
-        <p><strong>Kube9</strong> - Made for DevOps teams who love Kubernetes but hate complexity</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">MIT License | <a href="https://github.com/alto9/kube9" style="color: #34d399;">GitHub</a> | <a href="https://alto9.com" style="color: #34d399;">Alto9</a></p>
+    <!-- Footer -->
+    <footer class="footer bg-neutral text-neutral-content p-10 mt-12">
+        <div class="container mx-auto text-center">
+            <p><strong class="font-semibold">Kube9</strong> - Made for DevOps teams who love Kubernetes but hate complexity</p>
+            <p class="mt-2 opacity-80">MIT License | <a href="https://github.com/alto9/kube9" class="link link-hover">GitHub</a> | <a href="https://alto9.com" class="link link-hover">Alto9</a></p>
+        </div>
     </footer>
 </body>
 </html>
-
