@@ -212,7 +212,7 @@
             <h3>2.2 What We Never Collect</h3>
             <p>We explicitly <strong>do not collect</strong>:</p>
             <ul>
-                <li>Resource names (pods, deployments, services, namespaces)</li>
+                <li>Resource names in original form (replaced with <code>{resource-type}-{hash}</code> format, e.g., <code>pod-a1b2c3d4e5f6</code>)</li>
                 <li>IP addresses or network endpoints</li>
                 <li>Secret contents or sensitive values</li>
                 <li>Environment variable values (only keys, values are hashed)</li>
@@ -254,7 +254,8 @@
             <h2>4. Data Sanitization</h2>
             <p>All data is sanitized <strong>before</strong> it leaves your cluster. Our sanitization process includes:</p>
             <ul>
-                <li>Removing all names, IPs, and identifying information</li>
+                <li>Hashing all resource names with <code>{resource-type}-{hash}</code> format (e.g., <code>pod-a1b2c3d4e5f6</code>). Same name always produces same hash, allowing relationship tracking without revealing names.</li>
+                <li>Removing all IPs and identifying information</li>
                 <li>Hashing sensitive values (environment variables, etc.)</li>
                 <li>Normalizing data (rounding numbers, relative timestamps)</li>
                 <li>Extracting patterns without raw data</li>

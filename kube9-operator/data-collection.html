@@ -244,7 +244,7 @@
             <ul>
                 <li>Resource specifications (requests/limits, replicas) - <strong>sanitized</strong>:
                     <ul>
-                        <li>All names removed (replaced with placeholders)</li>
+                        <li>All names replaced with <code>{resource-type}-{hash}</code> format (e.g., <code>pod-a1b2c3d4e5f6</code>, <code>namespace-9z8y7x6w5v4</code>)</li>
                         <li>All labels/annotations containing PII removed</li>
                         <li>Image tags removed (image names only)</li>
                         <li>Environment variable values hashed (keys preserved)</li>
@@ -339,7 +339,7 @@
             
             <h3>Phase 1: Field-Level Sanitization</h3>
             <ul>
-                <li><strong>Names Removal:</strong> All resource names, namespace names, node names replaced with placeholders</li>
+                <li><strong>Names Hashing:</strong> All resource names replaced with <code>{resource-type}-{hash}</code> format (e.g., <code>pod-a1b2c3d4e5f6</code>, <code>namespace-9z8y7x6w5v4</code>). Same name always produces same hash, allowing relationship tracking.</li>
                 <li><strong>PII Detection:</strong> Labels/annotations containing email, user, owner, team removed</li>
                 <li><strong>Image Tag Removal:</strong> Image tags removed, only image names preserved</li>
                 <li><strong>Environment Variables:</strong> Values hashed with SHA256, keys preserved</li>
