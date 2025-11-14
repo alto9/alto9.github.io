@@ -260,15 +260,31 @@
 
             <h3>4. Performance Metrics</h3>
             <p><strong>Collection Interval:</strong> Every 15 minutes</p>
+            <p><strong>Collection Method:</strong></p>
+            <ul>
+                <li><strong>Primary for Performance Metrics (if available):</strong> Prometheus metrics integration - automatically detects and queries Prometheus for rich time-series data</li>
+                <li><strong>Fallback for Performance Metrics:</strong> Kubernetes API metrics - uses Kubernetes API when Prometheus is not available</li>
+                <li><strong>Note:</strong> Prometheus integration applies only to performance metrics. Other data categories (cluster metadata, resource inventory, config patterns, security posture) are always collected via Kubernetes API.</li>
+            </ul>
             <p><strong>Data Collected:</strong></p>
             <ul>
                 <li>Node resource utilization (CPU/memory) - aggregated averages across all nodes</li>
                 <li>Pod resource requests vs limits ratios (aggregated)</li>
                 <li>Replica counts distribution (histogram)</li>
                 <li>Resource quota usage (if available) - percentages only</li>
+                <li><strong>With Prometheus:</strong> Additional application-level metrics, custom metrics, detailed resource usage trends, network I/O, pod restart trends</li>
             </ul>
-            <p><strong>Purpose:</strong> Real-time performance insights, resource optimization recommendations</p>
-            <p><strong>Sensitivity:</strong> Low - Aggregated metrics only, no individual pod/node data</p>
+            <p><strong>Prometheus Integration (Performance Metrics Only):</strong></p>
+            <ul>
+                <li>Operator automatically detects if Prometheus is available in your cluster</li>
+                <li>Works with any Prometheus installation (Prometheus Operator, kube-prometheus-stack, standalone Prometheus)</li>
+                <li>No additional configuration required - operator detects and adapts automatically</li>
+                <li>If Prometheus detected: Queries Prometheus HTTP API for enhanced performance metrics and trend analysis</li>
+                <li>If Prometheus not available: Falls back to Kubernetes API metrics collection for performance metrics</li>
+                <li><strong>Scope:</strong> Prometheus integration applies only to performance metrics collection. All other data categories (cluster metadata, resource inventory, config patterns, security posture) are collected via Kubernetes API regardless of Prometheus availability.</li>
+            </ul>
+            <p><strong>Purpose:</strong> Real-time performance insights, resource optimization recommendations, trend analysis, anomaly detection (with Prometheus)</p>
+            <p><strong>Sensitivity:</strong> Low - Aggregated metrics only, no individual pod/node data. Prometheus queries sanitized before transmission.</p>
 
             <h3>5. Security Posture Indicators</h3>
             <p><strong>Collection Interval:</strong> Every 24 hours</p>
@@ -382,9 +398,14 @@
 │  kube9-operator     │
 │  (In-Cluster)        │
 │                     │
-│  1. Collect data    │
-│  2. Sanitize data   │
-│  3. Validate schema │
+│  1. Detect Prometheus│
+│     (if available)   │
+│  2. Collect data    │
+│     - Kubernetes API │
+│     - Prometheus API │
+│       (if available) │
+│  3. Sanitize data   │
+│  4. Validate schema │
 └──────────┬──────────┘
            │
            │ HTTPS POST
@@ -397,7 +418,12 @@
 │  1. Validate API key│
 │  2. Store metrics   │
 │  3. Process for AI  │
+│  4. Trend analysis  │
 └─────────────────────┘</code></pre>
+            
+            <div class="alert alert-info">
+                <strong>Prometheus Integration:</strong> If you have Prometheus installed in your cluster, the operator automatically detects it and uses Prometheus metrics for enhanced performance metrics and trend analysis. This applies only to performance metrics collection - other data categories use Kubernetes API. No configuration required!
+            </div>
             
             <div class="alert alert-warning">
                 <strong>Important:</strong> The operator only makes <strong>outbound</strong> HTTPS connections. No ingress is required, and your cluster never accepts incoming connections from kube9-server.
