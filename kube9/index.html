@@ -44,15 +44,15 @@
         <section id="overview" class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
                 <h2 class="card-title text-3xl text-success mb-4">Overview</h2>
-                <p class="text-base-content/80 mb-4">kube9 transforms Kubernetes management from complex command-line operations into an intuitive, AI-assisted experience. Built as a VS Code extension, kube9 brings the power of AI directly into your development environment for seamless cluster operations.</p>
+                <p class="text-base-content/80 mb-4">kube9 transforms Kubernetes management from reactive troubleshooting into proactive problem prevention. Built as a VS Code extension, kube9 brings automated AI intelligence directly into your development environment for seamless cluster operations.</p>
                 
-                <p class="mb-4">Instead of memorizing kubectl commands and YAML syntax, simply ask questions in natural language:</p>
+                <p class="mb-4">Instead of waiting for issues to impact users, AI continuously watches your clusters and surfaces problems before they become critical:</p>
                 
                 <div class="mockup-code mb-4">
-                    <pre data-prefix=""><code>"Show me pods using high CPU"</code></pre>
-                    <pre data-prefix=""><code>"Why is my deployment failing?"</code></pre>
-                    <pre data-prefix=""><code>"Suggest resource limits for my Node.js app"</code></pre>
-                    <pre data-prefix=""><code>"Check security vulnerabilities"</code></pre>
+                    <pre data-prefix="🤖"><code>"Pod 'api-server' is CPU throttling 40% of the time"</code></pre>
+                    <pre data-prefix="🤖"><code>"ConfigMap changed but pods not restarted - drift detected"</code></pre>
+                    <pre data-prefix="🤖"><code>"Certificate 'tls-cert' expires in 14 days"</code></pre>
+                    <pre data-prefix="🤖"><code>"5 containers running as root - security vulnerability"</code></pre>
                 </div>
             </div>
         </section>
@@ -72,8 +72,8 @@
                     
                     <div class="card bg-base-200 border-l-4 border-l-success">
                         <div class="card-body">
-                            <h3 class="card-title text-lg text-success">Natural Language Queries</h3>
-                            <p>Ask questions about your cluster in plain English. kube9's AI understands your intent and provides intelligent insights and recommendations.</p>
+                            <h3 class="card-title text-lg text-success">Proactive AI Insights</h3>
+                            <p>AI continuously monitors your clusters and automatically surfaces issues before they become critical. 24 automated insights per day on Pro tier find problems you didn't know existed.</p>
                         </div>
                     </div>
                     
@@ -86,8 +86,8 @@
                     
                     <div class="card bg-base-200 border-l-4 border-l-success">
                         <div class="card-body">
-                            <h3 class="card-title text-lg text-success">Context-Aware Assistance</h3>
-                            <p>AI understands your cluster state and provides relevant suggestions based on current conditions and best practices.</p>
+                            <h3 class="card-title text-lg text-success">Context-Aware Analysis</h3>
+                            <p>Click any resource to get instant AI analysis. Understand why deployments fail, why pods consume high resources, and get actionable recommendations - all without leaving your IDE.</p>
                         </div>
                     </div>
                     
@@ -100,8 +100,8 @@
                     
                     <div class="card bg-base-200 border-l-4 border-l-success">
                         <div class="card-body">
-                            <h3 class="card-title text-lg text-success">Secure by Design</h3>
-                            <p>Hybrid architecture keeps your cluster data secure. Sensitive information stays in your environment while leveraging AI capabilities.</p>
+                            <h3 class="card-title text-lg text-success">Zero-Trust Security</h3>
+                            <p>Name obfuscation ensures your resource names never leave your cluster. All communication is egress-only - no cluster ingress required. Your kubeconfig stays on your machine.</p>
                         </div>
                     </div>
 
@@ -169,52 +169,65 @@
             <div class="card-body">
                 <h2 class="card-title text-3xl text-success mb-6">Architecture</h2>
                 
-                <h3 class="text-2xl font-semibold text-success mb-4">Hybrid AI Architecture</h3>
-                <p class="mb-4">kube9 uses a hybrid architecture that balances security, performance, and user experience:</p>
+                <h3 class="text-2xl font-semibold text-success mb-4">Proactive AI Architecture</h3>
+                <p class="mb-4">kube9 uses a zero-trust architecture with proactive background analysis:</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     <div class="card bg-base-200 border-l-4 border-l-success">
                         <div class="card-body">
                             <h3 class="card-title text-lg text-success">VS Code Extension</h3>
                             <ul class="list-disc list-inside space-y-1 ml-4">
-                                <li>UI Management & Tree Views</li>
-                                <li>Cluster Communication</li>
-                                <li>Data Collection</li>
-                                <li>Recommendation Display</li>
+                                <li>UI & Tree Views</li>
+                                <li>Local Cluster Access</li>
+                                <li>Insight Display</li>
+                                <li>User Interactions</li>
                             </ul>
                         </div>
                     </div>
                     
                     <div class="card bg-base-200 border-l-4 border-l-success">
                         <div class="card-body">
+                            <h3 class="card-title text-lg text-success">kube9 Operator</h3>
+                            <ul class="list-disc list-inside space-y-1 ml-4">
+                                <li>Metrics Collection</li>
+                                <li>Name Obfuscation</li>
+                                <li>Hourly Polling</li>
+                                <li>Insight De-obfuscation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-200 border-l-4 border-l-success">
+                        <div class="card-body">
                             <h3 class="card-title text-lg text-success">kube9 Server</h3>
                             <ul class="list-disc list-inside space-y-1 ml-4">
-                                <li>AI Service Integration</li>
-                                <li>Prompt Engineering</li>
-                                <li>Response Processing</li>
-                                <li>Caching & Optimization</li>
+                                <li>Background AI Analysis</li>
+                                <li>LangChain Orchestration</li>
+                                <li>Insight Generation</li>
+                                <li>Caching & Storage</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <h3 class="text-2xl font-semibold text-success mb-4">Data Flow</h3>
+                <h3 class="text-2xl font-semibold text-success mb-4">How It Works</h3>
                 <ol class="list-decimal list-inside space-y-2 ml-4 mb-6">
-                    <li>Extension collects cluster data and user context</li>
-                    <li>Extension sends structured request to kube9 Server</li>
-                    <li>Server processes data and formats AI prompts</li>
-                    <li>Server calls AI service (OpenAI, Anthropic, etc.)</li>
-                    <li>Server processes and validates AI response</li>
-                    <li>Server returns formatted recommendations to Extension</li>
-                    <li>Extension displays recommendations in webview panels</li>
+                    <li><strong>Operator collects metrics</strong> - Sanitizes data and obfuscates resource names</li>
+                    <li><strong>Metrics sent to server</strong> - Egress-only, no waiting for AI processing</li>
+                    <li><strong>Background AI analysis</strong> - LangChain orchestrates multi-step reasoning on server</li>
+                    <li><strong>Insights generated & cached</strong> - Stored with obfuscated names for security</li>
+                    <li><strong>Operator polls hourly</strong> - Retrieves cached insights, no real-time AI calls</li>
+                    <li><strong>Local de-obfuscation</strong> - Operator maps mock names back to real resource names</li>
+                    <li><strong>Extension displays insights</strong> - Reads from local operator, shows in VS Code</li>
                 </ol>
 
-                <h3 class="text-2xl font-semibold text-success mb-4">Security Model</h3>
+                <h3 class="text-2xl font-semibold text-success mb-4">Zero-Trust Security Model</h3>
                 <ul class="list-disc list-inside space-y-2 ml-4">
-                    <li><strong>Data Sanitization:</strong> Remove sensitive information before AI processing</li>
-                    <li><strong>Request Validation:</strong> Validate all requests from extension</li>
+                    <li><strong>Name Obfuscation:</strong> Resource names replaced with mock names before leaving cluster</li>
+                    <li><strong>Egress-Only:</strong> No cluster ingress required - operator initiates all communication</li>
+                    <li><strong>Local De-obfuscation:</strong> Real names never leave cluster, mapping stays in operator</li>
                     <li><strong>Secure Storage:</strong> API keys stored in VS Code's secret storage</li>
-                    <li><strong>Audit Logging:</strong> Log all AI interactions for debugging and compliance</li>
+                    <li><strong>Audit Logging:</strong> All AI interactions logged for compliance and debugging</li>
                 </ul>
             </div>
         </section>
@@ -227,10 +240,11 @@
                 <h3 class="text-2xl font-semibold text-success mb-4">Phase 1 - MVP (Current)</h3>
                 <ul class="list-disc list-inside space-y-2 ml-4 mb-6">
                     <li>kubeconfig file support</li>
-                    <li>Basic cluster management</li>
-                    <li>Natural language AI queries</li>
+                    <li>Visual cluster management with tree view</li>
+                    <li>Proactive AI insights (24/day on Pro tier)</li>
                     <li>Multi-cluster switching</li>
                     <li>Real-time resource monitoring</li>
+                    <li>Context-aware AI analysis</li>
                 </ul>
                 
                 <h3 class="text-2xl font-semibold text-success mb-4">Phase 2 - Enhanced AI</h3>
