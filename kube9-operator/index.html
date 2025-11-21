@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kube9 Operator - Kubernetes Operator for kube9</title>
+    <title>Kube9 Operator - Kubernetes Operator for Kube9</title>
     <link href="../dist/output.css" rel="stylesheet">
 </head>
 <body class="bg-base-200 min-h-screen">
@@ -11,7 +11,7 @@
     <div class="bg-gradient-to-r from-secondary via-secondary/90 to-secondary/80 text-secondary-content">
         <div class="container mx-auto px-4 py-12 text-center">
             <h1 class="text-5xl font-bold mb-4">Kube9 Operator</h1>
-            <p class="text-xl opacity-95 mb-4">Kubernetes Operator for Enhanced kube9 Integration</p>
+            <p class="text-xl opacity-95 mb-4">Kubernetes Operator for Enhanced Kube9 Integration</p>
             <div class="flex justify-center gap-2 flex-wrap">
                 <span class="badge badge-lg badge-outline">Kubernetes Operator</span>
                 <span class="alto9-badge-dev">In Development</span>
@@ -45,7 +45,7 @@
             </svg>
             <div>
                 <h3 class="font-bold">Development Status</h3>
-                <div class="text-xs">kube9 Operator is currently in early development. Features and APIs may change. Check back for updates or contribute to the project on GitHub.</div>
+                <div class="text-xs">Kube9 Operator is currently in early development. Features and APIs may change. Check back for updates or contribute to the project on GitHub.</div>
             </div>
         </div>
 
@@ -53,12 +53,12 @@
         <section id="overview" class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
                 <h2 class="card-title text-3xl text-secondary mb-4">Overview</h2>
-                <p class="text-base-content/80 mb-4">kube9 Operator is a Kubernetes operator that extends and enhances the capabilities of the kube9 VS Code Extension. It runs inside your Kubernetes cluster and provides advanced automation, monitoring, and management features that complement the client-side extension.</p>
-                
-                <p class="mb-4">By deploying the kube9 Operator in your cluster, you unlock:</p>
+                <p class="text-base-content/80 mb-4">Kube9 Operator is a Kubernetes operator that extends and enhances the capabilities of the Kube9 VS Code Extension. It runs inside your Kubernetes cluster and provides advanced automation, monitoring, and management features that complement the client-side extension.</p>
+
+                <p class="mb-4">By deploying the Kube9 Operator in your cluster, you unlock:</p>
                 <ul class="list-disc list-inside space-y-2 ml-4">
                     <li>Automated resource optimization and recommendations</li>
-                    <li>Continuous security scanning and compliance monitoring</li>
+                    <li>Dual-layer security: in-cluster CVE scanning + AI configuration analysis</li>
                     <li>Custom resource definitions (CRDs) for kube9-specific workflows</li>
                     <li>Enhanced AI analysis with direct cluster access</li>
                     <li>Team collaboration features and shared insights</li>
@@ -82,14 +82,14 @@
                     <div class="card bg-base-200 border-l-4 border-l-secondary">
                         <div class="card-body">
                             <h3 class="card-title text-lg text-secondary">Security Scanning</h3>
-                            <p>Real-time security scanning of deployments, services, and configurations with automated remediation suggestions.</p>
+                            <p>Comprehensive security through dual-layer architecture: in-cluster CVE vulnerability scanning (Trivy/Grype) plus AI-powered configuration security analysis for misconfigurations, exposure risks, and RBAC issues.</p>
                         </div>
                     </div>
                     
                     <div class="card bg-base-200 border-l-4 border-l-secondary">
                         <div class="card-body">
                             <h3 class="card-title text-lg text-secondary">Enhanced Metrics</h3>
-                            <p>Collect and expose detailed metrics that power AI insights in the kube9 VS Code Extension.</p>
+                            <p>Collect and expose detailed metrics that power AI insights in the Kube9 VS Code Extension.</p>
                         </div>
                     </div>
                     
@@ -123,14 +123,14 @@
                 <h2 class="card-title text-3xl text-secondary mb-6">Architecture</h2>
                 
                 <h3 class="text-2xl font-semibold text-secondary mb-4">Operator Pattern</h3>
-                <p class="mb-4">kube9 Operator follows the standard Kubernetes operator pattern, extending the Kubernetes API with custom resources and controllers:</p>
+                <p class="mb-4">Kube9 Operator follows the standard Kubernetes operator pattern, extending the Kubernetes API with custom resources and controllers:</p>
                 
                 <div class="mockup-code mb-6">
                     <pre data-prefix=""><code>┌─────────────────────────────────────────────┐</code></pre>
                     <pre data-prefix="│ "><code>         Kubernetes Cluster                  │</code></pre>
                     <pre data-prefix="│ "><code>                                             │</code></pre>
                     <pre data-prefix="│  "><code>┌─────────────────────────────────────┐   │</code></pre>
-                    <pre data-prefix="│  │ "><code>     kube9 Operator                  │   │</code></pre>
+                    <pre data-prefix="│  │ "><code>     Kube9 Operator                  │   │</code></pre>
                     <pre data-prefix="│  │  "><code>┌─────────────────────────────┐    │   │</code></pre>
                     <pre data-prefix="│  │  │ "><code>  Custom Controllers          │    │   │</code></pre>
                     <pre data-prefix="│  │  │ "><code>  - Optimization Controller   │    │   │</code></pre>
@@ -152,7 +152,7 @@
                     <pre data-prefix=""><code>└─────────────────────────────────────────────┘</code></pre>
                     <pre data-prefix=""><code>         ↕</code></pre>
                     <pre data-prefix=""><code>┌─────────────────────────────────────────────┐</code></pre>
-                    <pre data-prefix="│ "><code>     kube9 VS Code Extension                 │</code></pre>
+                    <pre data-prefix="│ "><code>     Kube9 VS Code Extension                 │</code></pre>
                     <pre data-prefix="│  "><code>- Reads kube9Analysis results              │</code></pre>
                     <pre data-prefix="│  "><code>- Creates optimization requests            │</code></pre>
                     <pre data-prefix="│  "><code>- Displays security scan results           │</code></pre>
@@ -165,9 +165,9 @@
                 <ul class="list-disc list-inside space-y-2 ml-4">
                     <li><strong>kube9Analysis:</strong> Stores AI analysis results for cluster resources</li>
                     <li><strong>kube9Optimization:</strong> Defines optimization recommendations and tracks application</li>
-                    <li><strong>kube9SecurityScan:</strong> Manages security scanning schedules and results</li>
+                    <li><strong>kube9SecurityScan:</strong> Manages CVE vulnerability scanning schedules and results (in-cluster with Trivy/Grype)</li>
                     <li><strong>kube9Policy:</strong> Defines organizational policies and compliance rules</li>
-                    <li><strong>kube9Insight:</strong> Stores team-shared insights and recommendations</li>
+                    <li><strong>kube9Insight:</strong> Stores team-shared insights including AI security configuration analysis</li>
                 </ul>
             </div>
         </section>
@@ -183,7 +183,7 @@
                     </svg>
                     <div>
                         <h3 class="font-bold">Prerequisites</h3>
-                        <div class="text-xs">kube9 Operator requires a running Kubernetes cluster (1.20+) and kubectl configured for cluster access.</div>
+                        <div class="text-xs">Kube9 Operator requires a running Kubernetes cluster (1.20+) and kubectl configured for cluster access.</div>
                     </div>
                 </div>
 
@@ -192,7 +192,7 @@
                 
                 <div class="mockup-code mb-6">
                     <pre data-prefix="$"><code># Add the kube9 Helm repository</code></pre>
-                    <pre data-prefix="$"><code>helm repo add kube9 https://charts.kube9.dev</code></pre>
+                    <pre data-prefix="$"><code>helm repo add kube9 https://charts.kube9.io</code></pre>
                     <pre data-prefix="$"><code>helm repo update</code></pre>
                     <pre data-prefix="$"><code># Install the operator</code></pre>
                     <pre data-prefix="$"><code>helm install kube9-operator kube9/kube9-operator \</code></pre>
@@ -221,9 +221,9 @@
                     <pre data-prefix="  "><code>optimization:</code></pre>
                     <pre data-prefix="    "><code>enabled: true</code></pre>
                     <pre data-prefix="    "><code>autoApply: false  # Require manual approval</code></pre>
-                    <pre data-prefix=""><code># Connection to kube9 Server</code></pre>
+                    <pre data-prefix=""><code># Connection to Kube9 Server</code></pre>
                     <pre data-prefix=""><code>kube9Server:</code></pre>
-                    <pre data-prefix="  "><code>url: "https://api.kube9.dev"</code></pre>
+                    <pre data-prefix="  "><code>url: "https://api.kube9.io"</code></pre>
                     <pre data-prefix="  "><code># API key stored as secret</code></pre>
                 </div>
 
@@ -231,7 +231,7 @@
                 <p class="mb-4">The VS Code extension automatically detects when the operator is installed in your cluster and enables additional features:</p>
                 
                 <ol class="list-decimal list-inside space-y-2 ml-4">
-                    <li>Open kube9 in VS Code</li>
+                    <li>Open Kube9 in VS Code</li>
                     <li>Connect to a cluster with the operator installed</li>
                     <li>Look for the "Operator Enabled" badge in the cluster view</li>
                     <li>Access operator features through the context menu</li>
@@ -247,7 +247,7 @@
                 <h3 class="text-2xl font-semibold text-secondary mb-4">Phase 1 - Core Operator (Q2 2025)</h3>
                 <ul class="list-disc list-inside space-y-2 ml-4 mb-6">
                     <li>Basic operator framework and CRD definitions</li>
-                    <li>Integration with kube9 VS Code Extension</li>
+                    <li>Integration with Kube9 VS Code Extension</li>
                     <li>Initial AI analysis controller</li>
                     <li>Security scanning capabilities</li>
                 </ul>
@@ -288,7 +288,7 @@
         <section class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
                 <h2 class="card-title text-3xl text-secondary mb-6">Contributing</h2>
-                <p class="mb-4">kube9 Operator is in early development and we welcome contributions! Here's how you can help:</p>
+                <p class="mb-4">Kube9 Operator is in early development and we welcome contributions! Here's how you can help:</p>
                 
                 <ul class="list-disc list-inside space-y-2 ml-4 mb-4">
                     <li><strong>Design Feedback:</strong> Share your ideas for operator features</li>
@@ -306,9 +306,9 @@
             <div class="card-body">
                 <h2 class="card-title text-3xl text-secondary mb-6">Related Projects</h2>
                 <ul class="list-disc list-inside space-y-2 ml-4">
-                    <li><strong><a href="../kube9/" class="link link-secondary">kube9 VS Code Extension</a></strong> - AI-powered Kubernetes management for VS Code</li>
-                    <li><strong>kube9 Server</strong> - Backend AI processing server</li>
-                    <li><strong>kube9 Portal</strong> - Web portal for API key management</li>
+                    <li><strong><a href="../kube9/" class="link link-secondary">Kube9 VS Code Extension</a></strong> - AI-powered Kubernetes management for VS Code</li>
+                    <li><strong>Kube9 Server</strong> - Backend AI processing server</li>
+                    <li><strong>Kube9 Portal</strong> - Web portal for API key management</li>
                 </ul>
             </div>
         </section>
@@ -317,7 +317,7 @@
     <!-- Footer -->
     <footer class="footer bg-neutral text-neutral-content p-10 mt-12">
         <div class="container mx-auto text-center">
-            <p><strong class="font-semibold">kube9 Operator</strong> - Kubernetes operator supporting the kube9 ecosystem</p>
+            <p><strong class="font-semibold">Kube9 Operator</strong> - Kubernetes operator supporting the Kube9 ecosystem</p>
             <p class="mt-2 opacity-80">MIT License | <a href="https://github.com/alto9/kube9-operator" class="link link-hover">GitHub</a> | <a href="https://alto9.com" class="link link-hover">Alto9</a></p>
         </div>
     </footer>
