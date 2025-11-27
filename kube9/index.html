@@ -32,6 +32,7 @@
                     <li><a href="#features" class="btn btn-ghost btn-sm">Features</a></li>
                     <li><a href="#getting-started" class="btn btn-ghost btn-sm">Getting Started</a></li>
                     <li><a href="#architecture" class="btn btn-ghost btn-sm">Architecture</a></li>
+                    <li><a href="well-architected-framework.html" class="btn btn-ghost btn-sm">Well-Architected Framework</a></li>
                     <li><a href="#roadmap" class="btn btn-ghost btn-sm">Roadmap</a></li>
                     <li><a href="https://github.com/alto9/kube9" target="_blank" class="btn btn-success btn-sm">GitHub</a></li>
                 </ul>
@@ -44,9 +45,11 @@
         <section id="overview" class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
                 <h2 class="card-title text-3xl text-success mb-4">Overview</h2>
-                <p class="text-base-content/80 mb-4">Kube9 transforms Kubernetes management from reactive troubleshooting into proactive problem prevention. Built as a VS Code extension, Kube9 brings automated AI intelligence directly into your development environment for seamless cluster operations.
+                <p class="text-base-content/80 mb-4">Kube9 is an open source toolkit for Kubernetes Well-Architected Framework validation and intelligent cluster management. The toolkit consists of a Kubernetes operator (the core component), a VS Code extension, and optional Helm-based UI components.</p>
                 
-                <p class="mb-4">Instead of waiting for issues to impact users, AI continuously watches your clusters and surfaces problems before they become critical:</p>
+                <p class="mb-4">The kube9-operator runs in your cluster, performing scheduled Well-Architected Framework assessments across all 6 pillars. In Free tier mode, it generates point-in-time reports. With an API key configured, it establishes scheduled data reporting to kube9-server, enabling Pro tier insights and continuous compliance tracking.</p>
+                
+                <p class="mb-4">The VS Code extension and optional UI components provide access to framework assessments and cluster management capabilities. The extension can also work without the operator for basic kubectl operations.</p>
                 
                 <div class="mockup-code mb-4">
                     <pre data-prefix="🤖"><code>"Pod 'api-server' is CPU throttling 40% of the time"</code></pre>
@@ -108,7 +111,14 @@
                     <div class="card bg-base-200 border-l-4 border-l-success">
                         <div class="card-body">
                             <h3 class="card-title text-lg text-success">ArgoCD Integration</h3>
-                            <p>Seamless integration with ArgoCD for enhanced drift detection and GitOps visibility. AI-powered insights based on ArgoCD deployment data when available in your cluster.</p>
+                            <p>Seamless integration with ArgoCD for enhanced drift detection and GitOps visibility. Pro tier insights based on ArgoCD deployment data when available in your cluster.</p>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-200 border-l-4 border-l-success">
+                        <div class="card-body">
+                            <h3 class="card-title text-lg text-success">Well-Architected Framework</h3>
+                            <p>Comprehensive Kubernetes Well-Architected Framework assessment across 6 pillars (Security, Reliability, Performance, Cost, Operations, Sustainability). <a href="well-architected-framework.html" class="link link-success">Learn more →</a></p>
                         </div>
                     </div>
                 </div>
@@ -251,7 +261,7 @@
                 <ul class="list-disc list-inside space-y-2 ml-4 mb-6">
                     <li>Advanced troubleshooting assistance</li>
                     <li>Configuration generation and validation</li>
-                    <li>Dual-layer security: in-cluster CVE scanning + AI configuration analysis</li>
+                    <li>Dual-tier security: Free tier CVE scanning + Pro tier configuration analysis</li>
                     <li>Performance optimization suggestions</li>
                 </ul>
                 
@@ -261,7 +271,7 @@
                     <li>Multi-cloud support (AWS, Azure, GCP)</li>
                     <li>Team collaboration features</li>
                     <li>Audit logging and compliance</li>
-                    <li><strong>Enhanced ArgoCD Integration</strong> - Deep integration with ArgoCD for drift detection and AI-powered GitOps insights</li>
+                    <li><strong>Enhanced ArgoCD Integration</strong> - Deep integration with ArgoCD for drift detection and Pro tier GitOps insights</li>
                     <li>AWS CDK v2 Infrastructure as Code deployment</li>
                 </ul>
             </div>
