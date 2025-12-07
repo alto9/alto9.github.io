@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="alto9">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes Well-Architected Framework - Kube9</title>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-base-200 min-h-screen">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-success via-success/90 to-success/80 text-success-content">
+        <div class="container mx-auto px-4 py-12 text-center">
+            <h1 class="text-5xl font-bold mb-4">Kubernetes Well-Architected Framework</h1>
+            <p class="text-xl opacity-95 mb-4">Comprehensive Best Practices for Production Kubernetes Clusters</p>
+            <div class="flex justify-center gap-2 flex-wrap">
+                <span class="alto9-badge-mvp">Kube9</span>
+                <span class="badge badge-outline badge-lg">6 Pillars</span>
+                <span class="badge badge-outline badge-lg">AI-Powered</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto">
+            <div class="flex-1">
+                <a href="index.html" class="btn btn-ghost normal-case text-lg">← Kube9</a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal px-1 gap-2">
+                    <li><a href="#overview" class="btn btn-ghost btn-sm">Overview</a></li>
+                    <li><a href="#pillars" class="btn btn-ghost btn-sm">Pillars</a></li>
+                    <li><a href="#architecture" class="btn btn-ghost btn-sm">Architecture</a></li>
+                    <li><a href="#assessment" class="btn btn-ghost btn-sm">Assessment</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Overview -->
+        <section id="overview" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-success mb-4">Overview</h2>
+                <p class="text-base-content/80 mb-4">
+                    The Kubernetes Well-Architected Framework provides a comprehensive set of best practices for designing and operating reliable, secure, high-performing, and cost-effective Kubernetes clusters. Similar to the AWS Well-Architected Framework, this framework helps you understand the pros and cons of decisions you make while building and operating Kubernetes workloads.
+                </p>
+                
+                    <p class="mb-4">
+                    <strong>Kube9</strong> implements and audits this framework through a dual-tier architecture that combines Free tier validation with Pro tier analysis, providing comprehensive coverage while maintaining data privacy.
+                </p>
+
+                <div class="alert alert-info mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div>
+                        <h3 class="font-bold">Dual-Tier Architecture</h3>
+                        <div class="text-sm">
+                            <p class="mb-2">Kube9 uses both <strong>Free tier checks</strong> (deterministic validation) and <strong>Pro tier analysis</strong> (pattern detection and AI insights) to provide comprehensive framework coverage.</p>
+                            <p class="mb-2"><strong>Free Tier:</strong> Deterministic checks that can be validated directly (e.g., "does this service have a network policy?", "does this certificate expire in 14 days?"). Available without an API key.</p>
+                            <p><strong>Pro Tier:</strong> Pattern detection, trend analysis, anomaly detection, and complex reasoning across multiple resources or time periods. Requires API key for scheduled data reporting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Framework Pillars -->
+        <section id="pillars" class="mb-8">
+            <h2 class="text-3xl font-bold text-success mb-6">Framework Pillars</h2>
+            
+            <!-- Pillar 1: Security -->
+            <div class="card bg-base-100 shadow-xl mb-6">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl text-success mb-4">1. Security Pillar</h3>
+                    <p class="mb-4">Protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies.</p>
+                    
+                    <div class="divider"></div>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Free Tier Checks</h4>
+                    <p class="text-sm text-base-content/70 mb-3">These checks run inside your cluster via kube9-operator with full access to real resource names and configurations. Available without an API key.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Image CVE Scanning</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Vulnerability scanning using Trivy/Grype</li>
+                                    <li>Real image name queries (e.g., nginx:1.14.0)</li>
+                                    <li>CVE database lookups with severity scoring</li>
+                                    <li>SBOM generation and tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">CIS Kubernetes Benchmark</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Control plane configuration validation</li>
+                                    <li>Etcd security checks</li>
+                                    <li>Worker node configuration</li>
+                                    <li>Control plane file permissions</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">NSA/CISA Hardening Guide</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Pod security standards validation</li>
+                                    <li>Network policy coverage</li>
+                                    <li>Authentication/authorization checks</li>
+                                    <li>Audit logging configuration</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Security Context Validation</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>RunAsNonRoot enforcement</li>
+                                    <li>Privileged container detection</li>
+                                    <li>Capability restrictions (CAP_SYS_ADMIN, etc.)</li>
+                                    <li>ReadOnlyRootFilesystem checks</li>
+                                    <li>Seccomp/AppArmor profile validation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">RBAC Policy Analysis</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Wildcard permission detection (*)</li>
+                                    <li>Cluster-admin misuse identification</li>
+                                    <li>Service account privilege analysis</li>
+                                    <li>Anonymous authentication checks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Secret Management Audits</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Secret mounting patterns (env vars vs volumes)</li>
+                                    <li>RBAC access to secrets</li>
+                                    <li>Unused secret detection</li>
+                                    <li>Base64 secrets in ConfigMaps</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Network Exposure Validation</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>LoadBalancer/NodePort services without network policies</li>
+                                    <li>Ingress without TLS termination</li>
+                                    <li>Dangerous port exposure detection (SSH, MySQL, etc.)</li>
+                                    <li>Services without selectors (open endpoints)</li>
+                                    <li>Open egress policy detection</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Certificate Management</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Certificate expiration date validation</li>
+                                    <li>Days until expiration calculation</li>
+                                    <li>TLS secret expiration checks</li>
+                                    <li>Certificate renewal recommendations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Pro Tier Analysis</h4>
+                    <p class="text-sm text-base-content/70 mb-3">These checks run on kube9-server using obfuscated data (real names replaced with mock names) for pattern detection, trend analysis, and complex reasoning. Requires API key for scheduled data reporting.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Security Pattern Detection</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Cross-namespace security gap patterns</li>
+                                    <li>Privilege escalation risk patterns across multiple resources</li>
+                                    <li>Security anti-pattern recognition in configurations</li>
+                                    <li>Anomaly detection in security posture</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Security Trend Analysis</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Security score trends over time</li>
+                                    <li>Privileged pod growth pattern analysis</li>
+                                    <li>Network policy coverage trend analysis</li>
+                                    <li>Security posture degradation predictions</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Complex Security Reasoning</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Multi-resource security risk assessment</li>
+                                    <li>RBAC permission usage pattern analysis</li>
+                                    <li>Security control effectiveness evaluation</li>
+                                    <li>Context-aware security recommendations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pillar 2: Reliability -->
+            <div class="card bg-base-100 shadow-xl mb-6">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl text-success mb-4">2. Reliability Pillar</h3>
+                    <p class="mb-4">Ensure workloads perform their intended functions and recover quickly from failures to meet business and customer demand.</p>
+                    
+                    <div class="divider"></div>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Free Tier Checks</h4>
+                    <p class="text-sm text-base-content/70 mb-3">These checks validate cluster configuration and resource state for reliability.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">High Availability Configuration</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Multi-replica deployment validation</li>
+                                    <li>Pod disruption budget presence</li>
+                                    <li>Anti-affinity rule enforcement</li>
+                                    <li>Multi-zone distribution checks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Resource Limits & Requests</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>CPU/memory request validation</li>
+                                    <li>Resource limit presence checks</li>
+                                    <li>Limit/request ratio validation</li>
+                                    <li>Namespace quota compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Health Check Configuration</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Liveness probe presence</li>
+                                    <li>Readiness probe validation</li>
+                                    <li>Startup probe configuration</li>
+                                    <li>Probe timeout/threshold checks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Backup & Disaster Recovery</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Persistent volume backup validation</li>
+                                    <li>Etcd backup configuration checks</li>
+                                    <li>StatefulSet backup strategy</li>
+                                    <li>Recovery procedure documentation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Pro Tier Analysis</h4>
+                    <p class="text-sm text-base-content/70 mb-3">AI analyzes patterns and trends to predict reliability issues.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Failure Pattern Detection</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>CrashLoopBackOff trend analysis</li>
+                                    <li>Pod restart frequency patterns</li>
+                                    <li>Deployment failure root causes</li>
+                                    <li>Image pull error patterns</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Resource Exhaustion Predictions</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>CPU throttling trend analysis</li>
+                                    <li>Memory pressure predictions</li>
+                                    <li>Disk space exhaustion warnings</li>
+                                    <li>Node capacity planning</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Availability Risk Assessment</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Single point of failure detection</li>
+                                    <li>Zone distribution analysis</li>
+                                    <li>Dependency chain vulnerability</li>
+                                    <li>Rolling update risk assessment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pillar 3: Performance Efficiency -->
+            <div class="card bg-base-100 shadow-xl mb-6">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl text-success mb-4">3. Performance Efficiency Pillar</h3>
+                    <p class="mb-4">Use computing resources efficiently to meet system requirements and maintain that efficiency as demand changes and technologies evolve.</p>
+                    
+                    <div class="divider"></div>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Free Tier Checks</h4>
+                    <p class="text-sm text-base-content/70 mb-3">These checks validate autoscaling and resource configuration.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Autoscaling Configuration</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>HPA (Horizontal Pod Autoscaler) presence</li>
+                                    <li>VPA (Vertical Pod Autoscaler) configuration</li>
+                                    <li>Cluster autoscaler validation</li>
+                                    <li>Autoscaling metric selection</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Resource Quotas & Limits</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Namespace quota configuration</li>
+                                    <li>Limit range validation</li>
+                                    <li>Resource request/limit ratios</li>
+                                    <li>Priority class configuration</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Node Affinity & Anti-Affinity</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Pod affinity rule validation</li>
+                                    <li>Node selector configuration</li>
+                                    <li>Taint/toleration patterns</li>
+                                    <li>Workload placement optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Pro Tier Analysis</h4>
+                    <p class="text-sm text-base-content/70 mb-3">AI analyzes usage patterns to recommend optimizations.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Resource Right-Sizing</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>CPU over/under-provisioning detection</li>
+                                    <li>Memory utilization analysis</li>
+                                    <li>Historical usage pattern matching</li>
+                                    <li>Right-sizing recommendations</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Autoscaling Optimization</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>HPA threshold recommendations</li>
+                                    <li>Scaling policy optimization</li>
+                                    <li>Metric selection guidance</li>
+                                    <li>Scaling efficiency analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Performance Bottleneck Detection</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>CPU throttling pattern analysis</li>
+                                    <li>Network latency identification</li>
+                                    <li>Storage I/O bottlenecks</li>
+                                    <li>Application performance trends</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pillar 4: Cost Optimization -->
+            <div class="card bg-base-100 shadow-xl mb-6">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl text-success mb-4">4. Cost Optimization Pillar</h3>
+                    <p class="mb-4">Avoid unnecessary costs while maintaining system performance and meeting business requirements.</p>
+                    
+                    <div class="divider"></div>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Free Tier Checks</h4>
+                    <p class="text-sm text-base-content/70 mb-3">These checks validate resource configuration and spot instance setup.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Resource Configuration Validation</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Resource requests presence validation</li>
+                                    <li>Resource limits presence validation</li>
+                                    <li>Limits >= requests validation</li>
+                                    <li>Storage class configuration checks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Spot Instance Configuration</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Spot instance node detection</li>
+                                    <li>Taint/toleration for spot nodes</li>
+                                    <li>Interruption handling validation</li>
+                                    <li>Workload spot compatibility</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Pro Tier Analysis</h4>
+                    <p class="text-sm text-base-content/70 mb-3">AI analyzes resource utilization patterns over time, understanding startup vs steady-state usage, and provides intelligent cost optimization recommendations.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Resource Utilization Analysis</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>CPU request vs. usage analysis with temporal context</li>
+                                    <li>Memory request vs. usage analysis with temporal context</li>
+                                    <li>Startup vs. steady-state resource pattern recognition</li>
+                                    <li>Post-deployment window analysis</li>
+                                    <li>Resource floor recommendations (startup needs as minimum)</li>
+                                    <li>Storage utilization tracking and trends</li>
+                                    <li>Node capacity utilization analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Over-Provisioning Detection</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Idle resource identification</li>
+                                    <li>Over-sized workload detection (accounting for startup needs)</li>
+                                    <li>Unused namespace identification</li>
+                                    <li>Cost waste pattern analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Cost Optimization Recommendations</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Right-sizing cost calculations (with startup floor consideration)</li>
+                                    <li>Spot instance opportunity analysis</li>
+                                    <li>Cluster sizing recommendations</li>
+                                    <li>Workload placement optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Cost Trend Analysis</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Resource cost growth patterns</li>
+                                    <li>Cost per namespace tracking</li>
+                                    <li>Projected cost predictions</li>
+                                    <li>Savings opportunity identification</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pillar 5: Operational Excellence -->
+            <div class="card bg-base-100 shadow-xl mb-6">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl text-success mb-4">5. Operational Excellence Pillar</h3>
+                    <p class="mb-4">Run and monitor systems to deliver business value and continually improve supporting processes and procedures.</p>
+                    
+                    <div class="divider"></div>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Free Tier Checks</h4>
+                    <p class="text-sm text-base-content/70 mb-3">These checks validate monitoring, logging, and deployment configurations.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Monitoring & Observability</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Prometheus/metrics endpoint validation</li>
+                                    <li>Service monitor configuration</li>
+                                    <li>Alert rule presence checks</li>
+                                    <li>Dashboard availability</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Logging & Audit Trails</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Audit log configuration</li>
+                                    <li>Log aggregation setup</li>
+                                    <li>Log retention policies</li>
+                                    <li>Centralized logging validation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Deployment Strategies</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Rolling update configuration</li>
+                                    <li>Canary deployment validation</li>
+                                    <li>Blue-green deployment checks</li>
+                                    <li>Deployment strategy presence</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">GitOps Best Practices</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>ArgoCD/Flux detection</li>
+                                    <li>GitOps sync status validation</li>
+                                    <li>Source repository configuration</li>
+                                    <li>Sync policy validation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Pro Tier Analysis</h4>
+                    <p class="text-sm text-base-content/70 mb-3">AI analyzes operational patterns and provides recommendations.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Operational Pattern Analysis</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Deployment frequency patterns</li>
+                                    <li>Failure rate trends</li>
+                                    <li>MTTR (Mean Time To Recovery) analysis</li>
+                                    <li>Incident pattern recognition</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Drift Detection Intelligence</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Configuration drift pattern analysis</li>
+                                    <li>GitOps sync failure root causes</li>
+                                    <li>Manual change detection</li>
+                                    <li>Drift remediation recommendations</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Process Improvement</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>CI/CD integration recommendations</li>
+                                    <li>Deployment strategy optimization</li>
+                                    <li>Incident response procedure suggestions</li>
+                                    <li>Runbook automation opportunities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pillar 6: Sustainability -->
+            <div class="card bg-base-100 shadow-xl mb-6">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl text-success mb-4">6. Sustainability Pillar (Future)</h3>
+                    <p class="mb-4">Minimize the environmental impact of running cloud workloads while maximizing resource efficiency.</p>
+                    
+                    <div class="alert alert-warning mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                        <span>This pillar is planned for future implementation.</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="card bg-base-200">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-success mb-2">Planned Free Tier Checks</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Resource efficiency metrics</li>
+                                    <li>Workload consolidation opportunities</li>
+                                    <li>Energy-efficient node selection</li>
+                                    <li>Carbon footprint calculations</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card bg-base-200 border-l-4 border-l-warning">
+                            <div class="card-body p-4">
+                                <h5 class="font-semibold text-warning mb-2">Planned Pro Tier Analysis</h5>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>Sustainability trend analysis</li>
+                                    <li>Carbon footprint optimization</li>
+                                    <li>Energy consumption patterns</li>
+                                    <li>Green computing recommendations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section id="architecture" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-success mb-6">Dual-Tier Architecture</h2>
+                
+                <p class="mb-4">
+                    Kube9 implements the Well-Architected Framework through a dual-tier architecture that combines Free tier validation with Pro tier analysis. This approach provides comprehensive coverage while maintaining data privacy.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="card bg-base-200">
+                        <div class="card-body">
+                            <h3 class="card-title text-success mb-3">Free Tier</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Location:</strong> Runs inside your Kubernetes cluster</li>
+                                <li><strong>Access:</strong> Full access to real resource names and configurations</li>
+                                <li><strong>Privacy:</strong> All checks happen locally, results stored in CRDs</li>
+                                <li><strong>Capabilities:</strong> CVE scanning, compliance checks, configuration validation</li>
+                                <li><strong>Requires:</strong> Real names (e.g., "nginx:1.14.0" for CVE lookups)</li>
+                                <li><strong>API Key:</strong> Not required</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-warning">
+                        <div class="card-body">
+                            <h3 class="card-title text-warning mb-3">Pro Tier</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Location:</strong> Runs on kube9-server</li>
+                                <li><strong>Access:</strong> Obfuscated data only (mock names)</li>
+                                <li><strong>Privacy:</strong> Cannot see real names, cannot perform CVE lookups</li>
+                                <li><strong>Capabilities:</strong> Pattern detection, trend analysis, Pro tier recommendations</li>
+                                <li><strong>Works With:</strong> Configuration patterns (preserved despite obfuscation)</li>
+                                <li><strong>API Key:</strong> Required for scheduled data reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div>
+                        <h3 class="font-bold">Why the Split?</h3>
+                        <div class="text-sm">
+                            <p class="mb-2"><strong>Free Tier:</strong> Deterministic validation that requires real resource names or direct cluster access (e.g., CVE scanning needs "nginx:1.14.0", certificate expiration needs actual dates). These are simple rule-based checks that don't require AI.</p>
+                            <p><strong>Pro Tier:</strong> Pattern detection, trend analysis, and complex reasoning that works with obfuscated data because configuration patterns (service types, ports, security contexts) are preserved. AI identifies anomalies, predicts trends, and provides context-aware recommendations that go beyond simple rule checking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment -->
+        <section id="assessment" class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+                <h2 class="card-title text-3xl text-success mb-6">Framework Assessment</h2>
+                
+                <p class="mb-4">
+                    The kube9-operator performs Well-Architected Framework validation on a schedule, providing comprehensive assessments for your Kubernetes clusters:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="card bg-base-200">
+                        <div class="card-body">
+                            <h3 class="card-title text-success">Free Tier (No API Key)</h3>
+                            <ul class="list-disc list-inside text-sm space-y-2">
+                                <li>Scheduled framework validation runs automatically</li>
+                                <li>Point-in-time assessment reports</li>
+                                <li>0-100% score per pillar</li>
+                                <li>Overall cluster score</li>
+                                <li>Remediation roadmap with prioritized action items</li>
+                                <li>Results stored locally in cluster</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200 border-l-4 border-l-warning">
+                        <div class="card-body">
+                            <h3 class="card-title text-warning">Pro Tier (With API Key)</h3>
+                            <ul class="list-disc list-inside text-sm space-y-2">
+                                <li>All free tier features</li>
+                                <li>Scheduled data reporting to kube9-server</li>
+                                <li>Server responses include updated insights and AI recommendations</li>
+                                <li>Historical trend tracking</li>
+                                <li>Continuous compliance monitoring</li>
+                                <li>Automated re-assessment with improvement notifications</li>
+                                <li>Industry benchmark comparison</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="card bg-base-200">
+                        <div class="card-body">
+                            <h3 class="card-title text-success">Scoring System</h3>
+                            <ul class="list-disc list-inside text-sm space-y-1">
+                                <li>0-100% score per pillar</li>
+                                <li>Overall cluster score</li>
+                                <li>Historical trend tracking (Pro tier)</li>
+                                <li>Industry benchmark comparison (Pro tier)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200">
+                        <div class="card-body">
+                            <h3 class="card-title text-success">Remediation Roadmap</h3>
+                            <ul class="list-disc list-inside text-sm space-y-1">
+                                <li>Prioritized action items</li>
+                                <li>Impact assessment</li>
+                                <li>Effort estimation</li>
+                                <li>Step-by-step guidance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200">
+                        <div class="card-body">
+                            <h3 class="card-title text-success">Access Methods</h3>
+                            <ul class="list-disc list-inside text-sm space-y-1">
+                                <li>VS Code extension (kube9-vscode)</li>
+                                <li>Optional Helm-based UI components</li>
+                                <li>Operator status ConfigMap</li>
+                                <li>kubectl queries</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <div>
+                        <h3 class="font-bold">Get Started</h3>
+                        <div class="text-sm">
+                            Install the <a href="https://github.com/alto9/kube9-operator" class="link link-success">kube9-operator</a> in your cluster. Use the <a href="index.html" class="link link-success">Kube9 VS Code extension</a> or optional Helm-based UI components to view your Well-Architected Framework assessment.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-neutral text-neutral-content p-10 mt-12">
+        <div class="container mx-auto text-center">
+            <p><strong class="font-semibold">Kubernetes Well-Architected Framework</strong> - Implemented and audited by Kube9</p>
+            <p class="mt-2 opacity-80">MIT License | <a href="https://github.com/alto9/kube9" class="link link-hover">GitHub</a> | <a href="https://alto9.com" class="link link-hover">Alto9</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+
