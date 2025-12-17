@@ -58,7 +58,7 @@ graph LR
 1. **Start with the VS Code Extension** - Works immediately with any cluster
 2. **Add the Operator (Optional)** - For enhanced insights and assessments
 
-[Get Started with VS Code Extension →](/kube9/vscode-getting-started)
+[Learn more about the VS Code Extension →](/kube9/vscode)
 
 ## Links
 

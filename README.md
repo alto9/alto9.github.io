@@ -41,7 +41,26 @@ docs/
 
 ## Deployment
 
-This site is deployed to GitHub Pages. Pushes to `main` automatically trigger a deployment.
+This site is deployed to GitHub Pages using GitHub Actions.
+
+### Initial Setup (One-Time)
+
+1. Go to your repository settings
+2. Navigate to **Settings → Pages**
+3. Under **Source**, select **GitHub Actions**
+4. Push changes to `main` branch
+
+The GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically:
+- Build the VitePress site
+- Deploy to GitHub Pages
+- Make it available at `https://alto9.github.io`
+
+### Manual Deployment
+
+If needed, you can manually trigger the deployment:
+1. Go to **Actions** tab in GitHub
+2. Select **Deploy VitePress site to Pages**
+3. Click **Run workflow**
 
 ## License
 
