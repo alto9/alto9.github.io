@@ -64,4 +64,4 @@ If needed, you can manually trigger the deployment:
 
 ## License
 
-MIT License - See individual projects for their licenses.
+MIT License - See individual projects for their licenses. 
