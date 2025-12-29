@@ -5,9 +5,9 @@ Kube9 is a comprehensive Kubernetes management platform that combines intelligen
 ## Components
 
 ### 🖥️ VS Code Extension
-**Desktop app with embedded AI agent**
+**Intelligent Kubernetes management in your IDE**
 
-The Kube9 VS Code extension provides intelligent Kubernetes cluster management directly within your IDE. Features an embedded AI agent for analysis, troubleshooting, and recommendations.
+The Kube9 VS Code extension provides intelligent Kubernetes cluster management directly within your IDE. Features context-aware analysis, troubleshooting, and recommendations.
 
 - **Status:** MVP
 - **License:** Open Source & Free
@@ -26,11 +26,16 @@ The Kube9 Operator runs inside your Kubernetes cluster, performing Well-Architec
 
 [Learn more about the Operator →](/kube9/operator)
 
----
+### 🤖 Kube9 Desktop
+**AI-powered Kubernetes management**
 
-::: info Looking for a Desktop App?
-**Kube9 Desktop** is available as a freemium product for teams who want a native desktop experience with additional enterprise features. [Learn more at alto9.com](https://alto9.com)
-:::
+Kube9 Desktop is a cross-platform desktop application with an embedded AI agent that uses historical cluster data to provide expert Kubernetes guidance. Works with your preferred AI provider (OpenAI, Anthropic, etc.).
+
+- **Status:** In Development
+- **License:** Freemium (Free tier + Pro/Enterprise subscriptions)
+- **AI Features:** Embedded AI agent with historical context
+
+[Learn more about Kube9 Desktop →](/kube9/desktop)
 
 ## How They Work Together
 
@@ -41,12 +46,12 @@ graph LR
     A -->|direct access| C
 ```
 
-1. **Operator (Optional):** Runs in your cluster, performs assessments and collects insights
+1. **Operator (Optional):** Runs in your cluster, performs assessments and tracks events
 2. **VS Code Extension:** Connects to your cluster directly AND reads operator data if available
 
 ## Key Features
 
-- ✅ **Embedded AI Agent** - Local intelligent analysis in VS Code
+- ✅ **Context-Aware Analysis** - Intelligent cluster analysis in VS Code
 - ✅ **Well-Architected Framework** - Comprehensive cluster validation
 - ✅ **Multi-Cluster Management** - Handle multiple clusters easily
 - ✅ **Event Tracking** - Comprehensive cluster event history
@@ -56,7 +61,7 @@ graph LR
 ## Getting Started
 
 1. **Start with the VS Code Extension** - Works immediately with any cluster
-2. **Add the Operator (Optional)** - For enhanced insights and assessments
+2. **Add the Operator (Optional)** - For enhanced assessments and event tracking
 
 [Learn more about the VS Code Extension →](/kube9/vscode)
 
@@ -64,5 +69,5 @@ graph LR
 
 - [GitHub - VS Code Extension](https://github.com/alto9/kube9-vscode)
 - [GitHub - Operator](https://github.com/alto9/kube9-operator)
-- [Kube9 Desktop](https://alto9.com) - Freemium desktop application (not open source)
+- [Kube9 Desktop](https://alto9.com) - Freemium desktop application with AI agent
 

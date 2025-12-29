@@ -6,7 +6,7 @@ Official documentation for Alto9 open source projects, built with [VitePress](ht
 
 - **Forge** - Context engineering framework for AI-assisted development
 - **Kube9** - Kubernetes management ecosystem
-  - VS Code Extension - Desktop app with embedded AI agent
+  - VS Code Extension - Intelligent Kubernetes management in your IDE
   - Operator - In-cluster validation and monitoring
 
 ## Development

@@ -14,7 +14,8 @@ export default {
         items: [
           { text: 'Overview', link: '/kube9/' },
           { text: 'VS Code Extension', link: '/kube9/vscode' },
-          { text: 'Operator', link: '/kube9/operator' }
+          { text: 'Operator', link: '/kube9/operator' },
+          { text: 'Desktop (AI)', link: '/kube9/desktop' }
         ]
       },
       { text: 'GitHub', link: 'https://github.com/alto9' }
@@ -36,7 +37,8 @@ export default {
           items: [
             { text: 'Overview', link: '/kube9/' },
             { text: 'VS Code Extension', link: '/kube9/vscode' },
-            { text: 'Operator', link: '/kube9/operator' }
+            { text: 'Operator', link: '/kube9/operator' },
+            { text: 'Desktop (AI)', link: '/kube9/desktop' }
           ]
         }
       ]

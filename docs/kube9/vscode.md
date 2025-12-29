@@ -6,12 +6,12 @@ MVP - Available Now
 
 ## Overview
 
-The Kube9 VS Code extension is a desktop application with an embedded AI agent for intelligent Kubernetes cluster management. It provides real-time cluster visualization, intelligent analysis, and troubleshooting assistance directly within VS Code.
+The Kube9 VS Code extension provides intelligent Kubernetes cluster management directly within VS Code. It offers real-time cluster visualization, context-aware analysis, and troubleshooting assistance for your clusters.
 
 ## Key Features
 
-### 🤖 Embedded AI Agent
-Local AI agent provides intelligent analysis and troubleshooting without sending data externally. Ask questions, get explanations, and receive actionable recommendations.
+### 📊 Context-Aware Analysis
+Intelligent cluster analysis and troubleshooting assistance. Understand your resources, diagnose deployment issues, and receive actionable recommendations.
 
 ### 🗂️ Multi-Cluster Management
 Import and manage multiple kubeconfig files. Switch between clusters with ease and view all your Kubernetes environments in one place.
@@ -19,11 +19,11 @@ Import and manage multiple kubeconfig files. Switch between clusters with ease a
 ### 👁️ Real-Time Visualization
 View pods, services, deployments, and other resources in real-time with an intuitive tree view interface.
 
-### 🔍 Context-Aware Analysis
-Click any resource to get instant AI analysis. Understand why deployments fail, why pods consume high resources, and get actionable recommendations.
+### 🔍 Resource Details
+Click any resource to get detailed information and analysis. Understand deployment status, pod health, resource consumption, and cluster state.
 
 ### 🔐 Privacy-First Design
-All cluster data stays local - your kubeconfig, resource names, and cluster information never leave your machine. The embedded AI agent runs entirely within VS Code.
+All cluster data stays local - your kubeconfig, resource names, and cluster information never leave your machine.
 
 ### 🔄 ArgoCD Integration
 Seamless integration with ArgoCD for enhanced drift detection and GitOps visibility.
@@ -72,7 +72,7 @@ Configure Kube9 in your VS Code settings:
 1. Open the kube9 view in the Activity Bar (sidebar)
 2. Import your kubeconfig file: `Ctrl/Cmd + Shift + P` → "kube9: Import kubeconfig"
 3. Select a cluster from the kube9 sidebar
-4. Start exploring your cluster or ask AI for analysis
+4. Start exploring your cluster resources
 
 ## Links
 

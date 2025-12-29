@@ -21,7 +21,7 @@ features:
     
   - icon: ☸️
     title: Kube9 Ecosystem
-    details: Complete Kubernetes management platform with desktop extension, cluster operator, and optional web UI. All components work together seamlessly.
+    details: Complete Kubernetes management platform with VS Code extension, cluster operator, and AI-powered desktop app. All components work together seamlessly.
     link: /kube9/
 ---
 
@@ -29,8 +29,8 @@ features:
 
 All Alto9 open source projects (Forge, Kube9 VS Code Extension, Kube9 Operator) are completely free to use. We believe in making DevOps accessible through intelligent automation.
 
-::: info Commercial Products
-Alto9 also offers **Kube9 Desktop**, a freemium desktop application with additional enterprise features. [Learn more →](https://alto9.com)
+::: info AI-Powered Desktop App
+Alto9 also offers **Kube9 Desktop**, a freemium desktop application with an embedded AI agent that uses historical cluster data to provide expert Kubernetes guidance. [Learn more →](/kube9/desktop)
 :::
 
 ## 100% Privacy-First
