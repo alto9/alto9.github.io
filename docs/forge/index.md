@@ -30,7 +30,7 @@ Expose Forge capabilities through MCP so AI assistants can consume structured co
 ### For Users
 1. Open VS Code.
 2. Go to Extensions (`Ctrl/Cmd + Shift + X`).
-3. Search for `forge`.
+3. Search for `forge studio`.
 4. Click Install.
 
 ### For Developers
