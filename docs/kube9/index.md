@@ -18,9 +18,9 @@ The Kube9 VS Code extension provides intelligent Kubernetes cluster management d
 ### ⚙️ Kube9 Operator
 **In-cluster validation and monitoring**
 
-The Kube9 Operator runs inside your Kubernetes cluster, performing Well-Architected Framework assessments, event tracking, and security scanning. All features are completely free and open source.
+The Kube9 Operator runs inside your Kubernetes cluster, performs scheduled Well-Architected Framework validation, and exposes cluster/operator status for connected Kube9 tools.
 
-- **Status:** In Development
+- **Status:** In Development (Active Preview)
 - **License:** Open Source & Free
 - **Privacy:** All data stays in your cluster
 
@@ -29,7 +29,7 @@ The Kube9 Operator runs inside your Kubernetes cluster, performing Well-Architec
 ### 🤖 Kube9 Desktop
 **AI-powered Kubernetes management**
 
-Kube9 Desktop is a cross-platform desktop application with an embedded AI agent that uses historical cluster data to provide expert Kubernetes guidance. Works with your preferred AI provider (OpenAI, Anthropic, etc.).
+Kube9 Desktop is a cross-platform desktop application with an AI-powered experience that uses operator-backed cluster history and your preferred AI provider.
 
 - **Status:** In Development
 - **License:** Freemium (Free tier + Pro/Enterprise subscriptions)
@@ -41,20 +41,22 @@ Kube9 Desktop is a cross-platform desktop application with an embedded AI agent 
 
 ```mermaid
 graph LR
-    A[VS Code Extension] -->|reads| B[Kube9 Operator]
-    B -->|runs in| C[Your Cluster]
-    A -->|direct access| C
+    vscode[Kube9 VS Code Extension] -->|reads status| operator[Kube9 Operator]
+    operator -->|runs in| cluster[Your Cluster]
+    vscode -->|direct access| cluster
+    desktop[Kube9 Desktop] -->|uses history from| operator
 ```
 
-1. **Operator (Optional):** Runs in your cluster, performs assessments and tracks events
-2. **VS Code Extension:** Connects to your cluster directly AND reads operator data if available
+1. **Operator (Optional):** Runs in-cluster and provides validation plus status signaling
+2. **VS Code Extension:** Connects directly to Kubernetes and unlocks additional views when operator data is available
+3. **Desktop App:** Uses operator-backed history to improve AI-assisted Kubernetes workflows
 
 ## Key Features
 
 - ✅ **Context-Aware Analysis** - Intelligent cluster analysis in VS Code
 - ✅ **Well-Architected Framework** - Comprehensive cluster validation
 - ✅ **Multi-Cluster Management** - Handle multiple clusters easily
-- ✅ **Event Tracking** - Comprehensive cluster event history
+- ✅ **Operator Status Signaling** - Tier and health visibility for connected tools
 - ✅ **100% Privacy** - All data stays local or in your cluster
 - ✅ **Open Source** - Completely free with full transparency
 

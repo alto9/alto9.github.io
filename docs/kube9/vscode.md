@@ -14,7 +14,7 @@ The Kube9 VS Code extension provides intelligent Kubernetes cluster management d
 Intelligent cluster analysis and troubleshooting assistance. Understand your resources, diagnose deployment issues, and receive actionable recommendations.
 
 ### 🗂️ Multi-Cluster Management
-Import and manage multiple kubeconfig files. Switch between clusters with ease and view all your Kubernetes environments in one place.
+Manage multiple clusters and contexts from one place. The extension uses your local kubeconfig and keeps all cluster data on your machine.
 
 ### 👁️ Real-Time Visualization
 View pods, services, deployments, and other resources in real-time with an intuitive tree view interface.
@@ -56,21 +56,32 @@ npm run compile
 # Press F5 in VS Code to open Extension Development Host
 ```
 
+### Optional: Install Kube9 Operator for Enhanced Monitoring
+
+```bash
+helm repo add kube9 https://charts.kube9.io
+helm repo update
+helm install kube9-operator kube9/kube9-operator \
+  --namespace kube9-system \
+  --create-namespace
+```
+
 ## Configuration
 
 Configure Kube9 in your VS Code settings:
 
 ```json
 {
-  "kube9.debugMode": false,
-  "kube9.refreshInterval": 5000
+  "kube9.debugMode": false
 }
 ```
+
+Enhanced monitoring features are automatically enabled when the operator is detected.
 
 ## First Steps
 
 1. Open the kube9 view in the Activity Bar (sidebar)
-2. Import your kubeconfig file: `Ctrl/Cmd + Shift + P` → "kube9: Import kubeconfig"
+2. Confirm your local kubeconfig is available (default: `~/.kube/config`)
 3. Select a cluster from the kube9 sidebar
 4. Start exploring your cluster resources
 
