@@ -26,7 +26,8 @@ export default {
         {
           text: 'Forge',
           items: [
-            { text: 'Overview', link: '/forge/' }
+            { text: 'Overview', link: '/forge/' },
+            { text: 'Agent Workflow', link: '/forge/workflow' }
           ]
         }
       ],
