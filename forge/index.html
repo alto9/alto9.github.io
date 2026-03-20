@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forge - Context Engineering Framework for AI-Assisted Development</title>
+    <title>Forge Studio - Context Engineering for Agentic Development</title>
     <link href="../dist/output.css" rel="stylesheet">
 </head>
 <body class="bg-base-200 min-h-screen">
     <!-- Header -->
     <div class="bg-gradient-to-r from-primary via-primary-focus to-primary text-primary-content">
         <div class="container mx-auto px-4 py-12 text-center">
-            <h1 class="text-5xl font-bold mb-4">Forge</h1>
-            <p class="text-xl opacity-95 mb-4">Context Engineering Framework for AI-Assisted Development</p>
+            <h1 class="text-5xl font-bold mb-4">Forge Studio</h1>
+            <p class="text-xl opacity-95 mb-4">Context engineering for AI-assisted, agentic development</p>
             <div class="flex justify-center gap-2 flex-wrap">
                 <span class="alto9-badge-mvp">MVP</span>
                 <span class="badge badge-outline badge-lg">VS Code Extension</span>
-                <span class="badge badge-outline badge-lg">MCP Server</span>
+                <span class="badge badge-outline badge-lg">Cursor</span>
             </div>
         </div>
     </div>
@@ -44,21 +44,20 @@
         <section id="overview" class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
                 <h2 class="card-title text-3xl text-primary mb-4">Overview</h2>
-                <p class="text-base-content/80 mb-4">Forge is a comprehensive toolkit for structured context engineering in AI-assisted development. It provides both a VSCode extension and an MCP server to help engineers create well-structured prompts with complete context.</p>
-                
-                <p class="mb-4">Traditional prompting can be ad-hoc and miss important context. Forge helps you:</p>
-                
+                <p class="text-base-content/80 mb-4"><strong>Forge Studio</strong> is a VS Code and Cursor extension that helps teams keep product vision, technical contracts, and roadmaps in sync—then drive GitHub issues through a <strong>staged agent workflow</strong> from refinement to implementation and review.</p>
+
+                <p class="mb-4">Running <strong>Forge: Initialize Agents</strong> installs shared Cursor/VS Code assets under <code class="bg-base-300 px-2 py-1 rounded">~/.cursor/</code> and project context under <code class="bg-base-300 px-2 py-1 rounded">.forge/</code>, including a skill registry so agents run the right scripts for tests, lint, branches, and GitHub operations.</p>
+
                 <ul class="list-disc list-inside space-y-2 ml-4">
-                    <li><strong>Build Comprehensive Context</strong> - Systematically gather all relevant information</li>
-                    <li><strong>Maintain Consistency</strong> - Use standardized formats across your project</li>
-                    <li><strong>Improve AI Accuracy</strong> - Provide complete context for better AI-generated code</li>
-                    <li><strong>Create Traceable Documentation</strong> - Link decisions, features, specs, and tasks</li>
-                    <li><strong>Reduce Rework</strong> - Get it right the first time with well-structured prompts</li>
+                    <li><strong>Agentic SDLC</strong> — Product Owner, Architect, Planner, Technical Writer, domain experts, Engineer, and Quality Assurance roles encoded as agents</li>
+                    <li><strong>GitHub-native flow</strong> — Commands for roadmap sync, issue refinement, implementation from an issue link, and PR review</li>
+                    <li><strong>Quality gates</strong> — Engineer runs project test and lint skills from <code class="bg-base-300 px-2 py-1 rounded">.forge/skill_registry.json</code> and does not commit until checks pass</li>
+                    <li><strong>Branch discipline</strong> — Technical Writer creates and links the <strong>parent</strong> issue branch; implementation branches for parent or sub-issues are created during build</li>
                 </ul>
 
                 <div class="divider"></div>
-                <h3 class="text-2xl font-semibold text-primary mb-2">What is Context Engineering?</h3>
-                <p>Context engineering is the practice of systematically designing, organizing, and maintaining the information you provide to AI assistants. By using Forge's session-driven workflow, you ensure that every implementation story has access to the complete context it needs - from user requirements (Features) to technical specifications (Specs) to implementation guidance (Contexts).</p>
+                <h3 class="text-2xl font-semibold text-primary mb-2">What is context engineering here?</h3>
+                <p>Forge treats context as code: <code class="bg-base-300 px-2 py-1 rounded">vision.json</code>, a <code class="bg-base-300 px-2 py-1 rounded">knowledge_map.json</code>, and domain docs under <code class="bg-base-300 px-2 py-1 rounded">.forge/</code> give agents a single place to read constraints. That context flows into GitHub issues and into implementation, so AI-assisted work stays aligned with what the team agreed.</p>
             </div>
         </section>
 
@@ -66,47 +65,47 @@
         <section id="features" class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
                 <h2 class="card-title text-3xl text-primary mb-6">Key Features</h2>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div class="card bg-base-200 border-l-4 border-l-primary">
                         <div class="card-body">
-                            <h3 class="card-title text-lg text-primary">Session-Driven Design</h3>
-                            <p>Track design changes during focused sessions. Start with a problem statement, make changes, then distill into actionable stories.</p>
+                            <h3 class="card-title text-lg text-primary">Initialize Agents</h3>
+                            <p>Detects Cursor vs VS Code, copies agents, commands, skills, and hooks into <code class="bg-base-300 px-1 rounded">~/.cursor/</code>, and seeds <code class="bg-base-300 px-1 rounded">.forge/</code> in the repo.</p>
                         </div>
                     </div>
-                    
+
                     <div class="card bg-base-200 border-l-4 border-l-primary">
                         <div class="card-body">
-                            <h3 class="card-title text-lg text-primary">Structured File Formats</h3>
-                            <p>Use Gherkin for features, Nomnoml for diagrams, and standardized frontmatter for all file types. Consistency across your entire project.</p>
+                            <h3 class="card-title text-lg text-primary">Staged agent workflow</h3>
+                            <p>From vision and architecture through planning, ticket refinement, implementation, and QA—each phase has a dedicated agent and handoff.</p>
                         </div>
                     </div>
-                    
+
                     <div class="card bg-base-200 border-l-4 border-l-primary">
                         <div class="card-body">
-                            <h3 class="card-title text-lg text-primary">Intelligent Linkages</h3>
-                            <p>Connect features to specs, specs to contexts, and everything to actors. Forge follows these links to gather complete context automatically.</p>
+                            <h3 class="card-title text-lg text-primary">Slash commands</h3>
+                            <p><code class="bg-base-300 px-1 rounded">/architect-this</code>, <code class="bg-base-300 px-1 rounded">/plan-roadmap</code>, <code class="bg-base-300 px-1 rounded">/refine-issue</code>, <code class="bg-base-300 px-1 rounded">/build-from-github</code>, <code class="bg-base-300 px-1 rounded">/review-pr</code> orchestrate the flow with your repo.</p>
                         </div>
                     </div>
-                    
+
                     <div class="card bg-base-200 border-l-4 border-l-primary">
                         <div class="card-body">
-                            <h3 class="card-title text-lg text-primary">Forge Studio</h3>
-                            <p>Full-featured visual interface for creating and managing all Forge files. Create nested folders, edit files, and manage sessions all in one place.</p>
+                            <h3 class="card-title text-lg text-primary">Chat participants</h3>
+                            <p>In VS Code chat, use <code class="bg-base-300 px-1 rounded">@forge</code>, <code class="bg-base-300 px-1 rounded">@forge-refine</code>, <code class="bg-base-300 px-1 rounded">@forge-build-issue</code>, <code class="bg-base-300 px-1 rounded">@forge-review-pr</code>, and helpers for commit, push, and PR creation.</p>
                         </div>
                     </div>
-                    
+
                     <div class="card bg-base-200 border-l-4 border-l-primary">
                         <div class="card-body">
-                            <h3 class="card-title text-lg text-primary">Minimal Stories</h3>
-                            <p>Break work into &lt;30 minute implementation stories. Each story includes complete context from linked features, specs, and guidance.</p>
+                            <h3 class="card-title text-lg text-primary">Skill registry</h3>
+                            <p>Maps agents to scripts for create-feature-branch, push-branch, unit-test, integration-test, lint-test, and more—so validation is explicit and repeatable.</p>
                         </div>
                     </div>
-                    
+
                     <div class="card bg-base-200 border-l-4 border-l-primary">
                         <div class="card-body">
-                            <h3 class="card-title text-lg text-primary">MCP Integration</h3>
-                            <p>Model Context Protocol server exposes Forge capabilities to AI assistants like Claude Desktop and Cursor.</p>
+                            <h3 class="card-title text-lg text-primary">Domain SMEs</h3>
+                            <p>Runtime, business logic, data, interface, integration, and operations subagents maintain contracts under <code class="bg-base-300 px-1 rounded">.forge/</code> when the Architect delegates.</p>
                         </div>
                     </div>
                 </div>
@@ -116,42 +115,49 @@
         <!-- Workflow -->
         <section id="workflow" class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
-                <h2 class="card-title text-3xl text-primary mb-6">The Forge Workflow</h2>
-                <p class="mb-6">Forge uses a session-driven workflow that ensures systematic design and complete implementation context:</p>
+                <h2 class="card-title text-3xl text-primary mb-6">End-to-end workflow</h2>
+                <p class="mb-6">Typical flow from idea to merged PR (details live in the repo’s <code class="bg-base-300 px-2 py-1 rounded">AGENT_FLOW.md</code>):</p>
 
                 <div class="space-y-4">
                     <div class="alert alert-info shadow-lg">
                         <div>
-                            <h4 class="font-bold text-lg">1. Define Foundational Elements (No session required)</h4>
-                            <p>Create <strong>Actors</strong> to define system personas and roles. Create <strong>Contexts</strong> to provide technical guidance and standards. Build your project vocabulary and foundational knowledge. Browse existing Features and Specs for reference.</p>
+                            <h4 class="font-bold text-lg">1. Product Owner</h4>
+                            <p>Align <code class="bg-base-300 px-1 rounded">vision.json</code> and project config with strategy and market input.</p>
                         </div>
                     </div>
 
                     <div class="alert alert-info shadow-lg">
                         <div>
-                            <h4 class="font-bold text-lg">2. Start a Design Session</h4>
-                            <p>Begin a design session with a clear problem statement. The session tracks changes to Features and Specs (at scenario-level) while you work.</p>
+                            <h4 class="font-bold text-lg">2. Architect (+ domain SMEs)</h4>
+                            <p>Update the knowledge map and domain contracts; invoke SMEs (runtime, data, interface, etc.) when scope touches their areas.</p>
                         </div>
                     </div>
 
                     <div class="alert alert-info shadow-lg">
                         <div>
-                            <h4 class="font-bold text-lg">3. Design Changes (Session required for editing)</h4>
-                            <p>Create and edit <strong>Features</strong> to define user-facing functionality using Gherkin scenarios. Create and edit <strong>Specs</strong> to define technical implementation with Nomnoml diagrams. Link Features and Specs to relevant Contexts and Actors.</p>
+                            <h4 class="font-bold text-lg">3. Planner</h4>
+                            <p>Sync GitHub milestones and issues from the roadmap using milestone and issue skills.</p>
                         </div>
                     </div>
 
                     <div class="alert alert-info shadow-lg">
                         <div>
-                            <h4 class="font-bold text-lg">4. Distill to Stories & Tasks</h4>
-                            <p>Convert the session into minimal implementation stories (&lt;30 min each) and external tasks. Stories are organized in <code class="bg-base-300 px-2 py-1 rounded">ai/sessions/&lt;session-id&gt;/tickets/</code> and include complete context from all linked files.</p>
+                            <h4 class="font-bold text-lg">4. Technical Writer (<code class="bg-base-300 px-1 rounded">/refine-issue</code>)</h4>
+                            <p>Refine the GitHub issue with SMEs, create the <strong>parent</strong> branch from <code class="bg-base-300 px-1 rounded">main</code>, push it, and link it to the issue. Optional sub-issues stay on GitHub only—no separate git branch per sub-issue.</p>
                         </div>
                     </div>
 
                     <div class="alert alert-info shadow-lg">
                         <div>
-                            <h4 class="font-bold text-lg">5. Build Stories</h4>
-                            <p>Implement each story with complete context from linked features, specs, contexts, and actors. Forge generates comprehensive build prompts that include everything the AI needs.</p>
+                            <h4 class="font-bold text-lg">5. Engineer (<code class="bg-base-300 px-1 rounded">/build-from-github</code>)</h4>
+                            <p>Create or checkout <code class="bg-base-300 px-1 rounded">feature/issue-&lt;N&gt;</code> (from <code class="bg-base-300 px-1 rounded">main</code> or the parent branch for sub-issues), link it to the issue, implement, then run <strong>all</strong> configured unit, integration, and lint skills until green before commit and PR.</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-lg">6. Quality Assurance (<code class="bg-base-300 px-1 rounded">/review-pr</code>)</h4>
+                            <p>Review the PR for correctness and security; post feedback. A human merges when satisfied.</p>
                         </div>
                     </div>
                 </div>
@@ -162,55 +168,30 @@
         <section id="getting-started" class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
                 <h2 class="card-title text-3xl text-primary mb-6">Getting Started</h2>
-                
+
                 <h3 class="text-2xl font-semibold text-primary mb-4">Installation</h3>
-                
-                <h4 class="text-xl font-semibold mb-2">From Source</h4>
+
+                <h4 class="text-xl font-semibold mb-2">From source</h4>
                 <div class="mockup-code mb-4">
-                    <pre data-prefix="$"><code># Clone the repository</code></pre>
                     <pre data-prefix="$"><code>git clone https://github.com/alto9/forge.git</code></pre>
                     <pre data-prefix="$"><code>cd forge</code></pre>
-                    <pre data-prefix="$"><code># Install dependencies for all packages</code></pre>
                     <pre data-prefix="$"><code>npm install</code></pre>
-                    <pre data-prefix="$"><code># Build all packages</code></pre>
                     <pre data-prefix="$"><code>npm run build</code></pre>
-                    <pre data-prefix="$"><code># Package the VSCode extension</code></pre>
-                    <pre data-prefix="$"><code>npm run vscode:package</code></pre>
-                    <pre data-prefix="$"><code># Install the extension</code></pre>
-                    <pre data-prefix="$"><code>code --install-extension packages/vscode-extension/forge-0.1.0.vsix</code></pre>
+                    <pre data-prefix="$"><code>npm run package</code></pre>
+                    <pre data-prefix="$"><code>code --install-extension forge-studio-*.vsix</code></pre>
                 </div>
-                
-                <h3 class="text-2xl font-semibold text-primary mb-4 mt-6">Configure MCP Server</h3>
-                <p class="mb-2">Add to your MCP settings file to enable Forge capabilities in Claude Desktop or Cursor:</p>
-                
-                <p class="mb-4"><strong>macOS:</strong> <code class="bg-base-300 px-2 py-1 rounded">~/Library/Application Support/Claude/claude_desktop_config.json</code><br>
-                <strong>Windows:</strong> <code class="bg-base-300 px-2 py-1 rounded">%APPDATA%/Claude/claude_desktop_config.json</code></p>
+                <p class="text-sm text-base-content/70 mb-4">Requires <strong>Node.js 22.14+</strong> and npm 10+ per the extension manifest. See the repository README if paths differ by version.</p>
 
-                <div class="mockup-code mb-4">
-                    <pre data-prefix=""><code>{</code></pre>
-                    <pre data-prefix="  "><code>"mcpServers": {</code></pre>
-                    <pre data-prefix="    "><code>"forge": {</code></pre>
-                    <pre data-prefix="      "><code>"command": "node",</code></pre>
-                    <pre data-prefix="      "><code>"args": ["/path/to/forge/packages/mcp-server/dist/index.js"],</code></pre>
-                    <pre data-prefix="      "><code>"cwd": "/path/to/your/project"</code></pre>
-                    <pre data-prefix="    "><code>}</code></pre>
-                    <pre data-prefix="  "><code>}</code></pre>
-                    <pre data-prefix=""><code>}</code></pre>
-                </div>
-
-                <h3 class="text-2xl font-semibold text-primary mb-4 mt-6">First Steps</h3>
+                <h3 class="text-2xl font-semibold text-primary mb-4 mt-6">First steps in a project</h3>
                 <ol class="list-decimal list-inside space-y-2 ml-4">
-                    <li>Open the Command Palette (<code class="bg-base-300 px-2 py-1 rounded">Cmd/Ctrl + Shift + P</code>)</li>
-                    <li>Run <code class="bg-base-300 px-2 py-1 rounded">Forge: Open Forge Studio</code></li>
-                    <li>Click "Initialize Project" to create the <code class="bg-base-300 px-2 py-1 rounded">ai/</code> folder structure</li>
-                    <li>Create some Actors to define system personas</li>
-                    <li>Create some Contexts for technical guidance</li>
-                    <li>Start your first design session!</li>
+                    <li>Open your repository in VS Code or Cursor.</li>
+                    <li>Command Palette (<code class="bg-base-300 px-2 py-1 rounded">Cmd/Ctrl + Shift + P</code>) → <strong>Forge: Initialize Agents</strong>.</li>
+                    <li>Confirm creation of <code class="bg-base-300 px-2 py-1 rounded">~/.cursor/</code> assets and <code class="bg-base-300 px-2 py-1 rounded">.forge/</code> in the project.</li>
+                    <li>Edit <code class="bg-base-300 px-2 py-1 rounded">.forge/vision.json</code> and domain docs; use slash commands or chat participants to run the workflow.</li>
                 </ol>
 
                 <div class="card-actions justify-start mt-6">
-                    <a href="https://github.com/alto9/forge#getting-started" target="_blank" class="btn btn-primary">View Full Documentation</a>
-                    <a href="https://github.com/alto9/forge/blob/main/EXAMPLES.md" target="_blank" class="btn btn-outline btn-primary">See Examples</a>
+                    <a href="https://github.com/alto9/forge" target="_blank" class="btn btn-primary">Repository &amp; README</a>
                 </div>
             </div>
         </section>
@@ -219,64 +200,33 @@
         <section id="architecture" class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
                 <h2 class="card-title text-3xl text-primary mb-6">Architecture</h2>
-                
-                <h3 class="text-2xl font-semibold text-primary mb-4">Project Structure</h3>
-                <p class="mb-4">When you use Forge in a project, it manages files in a nestable folder structure:</p>
-                
+
+                <h3 class="text-2xl font-semibold text-primary mb-4">Where files live</h3>
+                <p class="mb-4">After <strong>Initialize Agents</strong>:</p>
+
                 <div class="mockup-code mb-6">
-                    <pre data-prefix=""><code>your-project/</code></pre>
-                    <pre data-prefix="└── "><code>ai/</code></pre>
-                    <pre data-prefix="    ├── "><code>sessions/           # Design session tracking (*.session.md)</code></pre>
-                    <pre data-prefix="    │   ├── "><code>&lt;session-id&gt;/</code></pre>
-                    <pre data-prefix="    │   │   └── "><code>tickets/    # Stories and Tasks for this session</code></pre>
-                    <pre data-prefix="    │   │       ├── "><code>*.story.md</code></pre>
-                    <pre data-prefix="    │   │       └── "><code>*.task.md</code></pre>
-                    <pre data-prefix="    │   └── "><code>*.session.md</code></pre>
-                    <pre data-prefix="    ├── "><code>features/           # Feature definitions with Gherkin (*.feature.md)</code></pre>
-                    <pre data-prefix="    ├── "><code>specs/              # Technical specifications (*.spec.md)</code></pre>
-                    <pre data-prefix="    ├── "><code>actors/             # Actor/persona definitions (*.actor.md)</code></pre>
-                    <pre data-prefix="    ├── "><code>contexts/           # Context references and guidance (*.context.md)</code></pre>
-                    <pre data-prefix="    └── "><code>docs/               # Supporting documentation</code></pre>
+                    <pre data-prefix=""><code>~/.cursor/</code></pre>
+                    <pre data-prefix="├── "><code>agents/          # product-owner, architect, planner, tech-writer, engineer, quality-assurance, SMEs</code></pre>
+                    <pre data-prefix="├── "><code>commands/        # architect-this, plan-roadmap, refine-issue, build-from-github, review-pr</code></pre>
+                    <pre data-prefix="├── "><code>skills/          # create-feature-branch, push-branch, tests, lint, …</code></pre>
+                    <pre data-prefix="├── "><code>hooks/           # e.g. JSON schema validation for .forge</code></pre>
+                    <pre data-prefix="└── "><code>hooks.json</code></pre>
                 </div>
 
-                <h3 class="text-2xl font-semibold text-primary mb-4">Components</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div class="card bg-base-200 border-l-4 border-l-primary">
-                        <div class="card-body">
-                            <h3 class="card-title text-lg text-primary">VSCode Extension</h3>
-                            <ul class="list-disc list-inside space-y-1 ml-4">
-                                <li>Forge Studio webview interface</li>
-                                <li>Session management commands</li>
-                                <li>File creation and editing</li>
-                                <li>Context menu integration</li>
-                                <li>Real-time file watching</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="card bg-base-200 border-l-4 border-l-primary">
-                        <div class="card-body">
-                            <h3 class="card-title text-lg text-primary">MCP Server</h3>
-                            <ul class="list-disc list-inside space-y-1 ml-4">
-                                <li>get_forge_about - Workflow overview</li>
-                                <li>get_forge_schema - File schemas</li>
-                                <li>get_forge_context - Technical guidance</li>
-                                <li>get_forge_objects - Supported objects</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="mockup-code mb-6">
+                    <pre data-prefix=""><code>your-project/.forge/</code></pre>
+                    <pre data-prefix="├── "><code>vision.json           # Product vision</code></pre>
+                    <pre data-prefix="├── "><code>project.json          # GitHub URLs, project metadata</code></pre>
+                    <pre data-prefix="├── "><code>skill_registry.json   # Agent → skill assignments (copied from Forge templates)</code></pre>
+                    <pre data-prefix="├── "><code>knowledge_map.json    # Domain layout</code></pre>
+                    <pre data-prefix="├── "><code>schemas/              # JSON Schema for .forge files</code></pre>
+                    <pre data-prefix="└── "><code>runtime/, business_logic/, data/, …  # Domain contract docs</code></pre>
                 </div>
 
-                <h3 class="text-2xl font-semibold text-primary mb-4">File Types</h3>
+                <h3 class="text-2xl font-semibold text-primary mb-4">Extension</h3>
                 <ul class="list-disc list-inside space-y-2 ml-4">
-                    <li><strong>Sessions (*.session.md)</strong> - Track design sessions with problem statements and changed files</li>
-                    <li><strong>Features (*.feature.md)</strong> - Define user-facing functionality using Gherkin scenarios</li>
-                    <li><strong>Specs (*.spec.md)</strong> - Document technical implementation with Nomnoml diagrams</li>
-                    <li><strong>Actors (*.actor.md)</strong> - Define system personas, roles, and responsibilities</li>
-                    <li><strong>Contexts (*.context.md)</strong> - Provide just-in-time guidance for specific technologies</li>
-                    <li><strong>Stories (*.story.md)</strong> - Code implementation work (&lt;30 minutes each)</li>
-                    <li><strong>Tasks (*.task.md)</strong> - External/manual work outside of code</li>
+                    <li>Registers chat participants and contributes setup commands</li>
+                    <li>Copies workflow templates from the packaged <code class="bg-base-300 px-1 rounded">resources/workflow</code> tree into the user and project locations above</li>
                 </ul>
             </div>
         </section>
@@ -284,16 +234,13 @@
         <!-- Best Practices -->
         <section class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
-                <h2 class="card-title text-3xl text-primary mb-6">Best Practices</h2>
+                <h2 class="card-title text-3xl text-primary mb-6">Best practices</h2>
                 <ol class="list-decimal list-inside space-y-3 ml-4">
-                    <li><strong>Define Foundational Elements First</strong> - Create Actors and Contexts before starting design sessions</li>
-                    <li><strong>Start Sessions for Design Work</strong> - Begin each design phase with a clear problem statement</li>
-                    <li><strong>Use Forge Studio</strong> - Visual interface makes creating and organizing files easier</li>
-                    <li><strong>Organize with Folders</strong> - Group related features and specs in nested folders</li>
-                    <li><strong>Link Everything</strong> - Use IDs to create relationships between files</li>
-                    <li><strong>Keep Stories Small</strong> - Target &lt;30 minutes per story for better focus</li>
-                    <li><strong>Review Before Distilling</strong> - Ensure your design is complete before generating stories</li>
-                    <li><strong>Iterate on Foundational Elements</strong> - Update Actors and Contexts as understanding evolves</li>
+                    <li><strong>Keep vision and knowledge map current</strong> before large roadmap or refine passes.</li>
+                    <li><strong>Let Technical Writer own the parent branch</strong>; let Engineer create implementation branches per issue.</li>
+                    <li><strong>Trust the skill registry</strong> for test and lint commands instead of ad-hoc scripts.</li>
+                    <li><strong>Do not skip green checks</strong>—the intended flow blocks commit/PR until tests and lint pass.</li>
+                    <li><strong>Re-run Initialize Agents</strong> after upgrading Forge so skills and agents stay in sync.</li>
                 </ol>
             </div>
         </section>
@@ -301,31 +248,12 @@
         <!-- Technology Stack -->
         <section class="card bg-base-100 shadow-xl mb-8">
             <div class="card-body">
-                <h2 class="card-title text-3xl text-primary mb-6">Technology Stack</h2>
+                <h2 class="card-title text-3xl text-primary mb-6">Technology stack</h2>
                 <ul class="list-disc list-inside space-y-2 ml-4">
-                    <li><strong>Extension Framework:</strong> VS Code Extension API with Webview</li>
+                    <li><strong>Platform:</strong> VS Code Extension API (Cursor-compatible)</li>
                     <li><strong>Language:</strong> TypeScript</li>
-                    <li><strong>Runtime:</strong> Node.js 20+</li>
-                    <li><strong>UI Framework:</strong> React with TailwindCSS</li>
-                    <li><strong>MCP:</strong> Model Context Protocol (@modelcontextprotocol/sdk)</li>
-                    <li><strong>Build:</strong> Vite + TypeScript compiler</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Future Plans -->
-        <section class="card bg-base-100 shadow-xl mb-8">
-            <div class="card-body">
-                <h2 class="card-title text-3xl text-primary mb-6">Future Plans</h2>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                    <li>Real-time file editing in Studio (currently requires save/reload)</li>
-                    <li>Drag-and-drop folder reorganization</li>
-                    <li>Visualization of feature/spec relationships</li>
-                    <li>Template customization for different project types</li>
-                    <li>Validation and linting for file formats</li>
-                    <li>Export to various documentation formats</li>
-                    <li>Story execution tracking and status updates</li>
-                    <li>AI-assisted content generation for features and specs</li>
+                    <li><strong>Runtime:</strong> Node.js 22.14+ (see repo engines)</li>
+                    <li><strong>Build:</strong> webpack / project scripts as defined in the repository</li>
                 </ul>
             </div>
         </section>
@@ -334,7 +262,7 @@
     <!-- Footer -->
     <footer class="footer bg-neutral text-neutral-content p-10 mt-12">
         <div class="container mx-auto text-center">
-            <p><strong class="font-semibold">Forge</strong> - Structured context engineering for AI-assisted development</p>
+            <p><strong class="font-semibold">Forge Studio</strong> — Context engineering for agentic development</p>
             <p class="mt-2 opacity-80">MIT License | <a href="https://github.com/alto9/forge" class="link link-hover">GitHub</a> | <a href="https://alto9.com" class="link link-hover">Alto9</a></p>
         </div>
     </footer>

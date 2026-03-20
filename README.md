@@ -11,7 +11,7 @@ This repository contains the static HTML documentation site for Alto9's open sou
 ```
 alto9.github.io/
 ├── index.html              # Main landing page
-├── forge/                  # Forge documentation
+├── forge/                  # Forge Studio documentation
 ├── kube9/                  # Kube9 documentation
 ├── kube9-operator/         # Kube9 Operator documentation
 ├── synth9/                 # Synth9 documentation
@@ -27,7 +27,7 @@ alto9.github.io/
 
 ## Products Documented
 
-- **Forge** - Context engineering framework for AI-assisted development
+- **Forge Studio** - VS Code/Cursor extension: `.forge/` context, staged agents, GitHub refine/build/review workflow
 - **Kube9** - Visual Kubernetes management VS Code extension
 - **Kube9 Operator** - Kubernetes operator for Kube9 Pro features
 - **Synth9** - (Coming soon)
@@ -108,7 +108,7 @@ When adding or updating documentation:
 
 - [kube9-vscode](https://github.com/alto9/kube9-vscode) - VS Code extension
 - [kube9-operator](https://github.com/alto9/kube9-operator) - Kubernetes operator
-- [forge](https://github.com/alto9/forge) - Context engineering framework
+- [forge](https://github.com/alto9/forge) - Forge Studio (VS Code/Cursor extension)
 - [kube9-portal](https://github.com/alto9/kube9-portal) - User portal (future design theme reference)
 
 ## License
