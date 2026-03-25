@@ -29,7 +29,7 @@ The Architect delegates to six domain agents—**Runtime**, **Business Logic**, 
 
 ### Commands and chat participants
 
-Commands: `/architect-this`, `/plan-roadmap`, `/refine-issue`, `/build-from-github`, `/review-pr`. Chat: `@forge`, `@forge-refine`, `@forge-build-issue`, `@forge-review-pr`, plus helpers for commit, push, and PR creation.
+Commands: `/architect-this`, `/plan-roadmap`, `/refine-issue`, `/build-from-github`, `/build-from-pr-review`, `/review-pr`. Chat: `@forge-help`, `@product-owner`, `@architect`, `@planner`, `@technical-writer`, `@engineer`, `@quality-assurance`.
 
 ## The workflow
 
@@ -49,7 +49,7 @@ Forge follows: **Market input → Vision → Knowledge → Roadmap → Refining 
 ### Quick start (after install)
 
 1. Open a repository.
-2. Command Palette → **Forge: Initialize Agents**.
+2. Command Palette → **Forge: Initialize Cursor Agents**.
 3. Confirm `~/.cursor/` (agents, commands, skills, hooks) and project `.forge/` (vision, `skill_registry.json`, schemas, knowledge map).
 
 ## Links

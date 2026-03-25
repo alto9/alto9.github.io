@@ -120,11 +120,10 @@ Each owns `.forge/<domain>/` and updates it when the Architect delegates.
 
 | Participant | Purpose |
 |-------------|---------|
-| **@forge** | General Forge guidance |
-| **@forge-refine** | Refine issues (Technical Writer flow) |
-| **@forge-commit** | Commit with validation |
-| **@forge-push** | Push safely |
-| **@forge-pullrequest** | Create PR |
-| **@forge-setup-issue** | Branch prep (`create-feature-branch` from main or parent) |
-| **@forge-build-issue** | End-to-end build-from-github |
-| **@forge-review-pr** | PR review |
+| **@forge-help** | Workflow guide and next-step guidance |
+| **@product-owner** | Step 1: maintain product vision and project direction |
+| **@architect** | Step 2: update technical contracts and knowledge map |
+| **@planner** | Step 3: align milestones/issues with documented direction |
+| **@technical-writer** | Step 4: refine issues into implementation-ready tickets |
+| **@engineer** | Step 5: implement and validate changes before PR |
+| **@quality-assurance** | Step 6: review PR correctness and security |
