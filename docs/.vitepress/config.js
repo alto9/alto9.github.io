@@ -41,6 +41,12 @@ export default {
             { text: 'Operator', link: '/kube9/operator' },
             { text: 'Desktop (AI)', link: '/kube9/desktop' }
           ]
+        },
+        {
+          text: 'VS Code features',
+          items: [
+            { text: 'Pod logs viewer', link: '/kube9/features/pod-logs/' }
+          ]
         }
       ]
     },
