@@ -23,7 +23,7 @@ View pods, services, deployments, and other resources in real-time with an intui
 Click any resource to get detailed information and analysis. Understand deployment status, pod health, resource consumption, and cluster state.
 
 ### 🔐 Privacy-First Design
-All cluster data stays local - your kubeconfig, resource names, and cluster information never leave your machine.
+Routine cluster operations use your kubeconfig and the Kubernetes API from your machine; manifests, resource names, and log content are not uploaded for normal management. The extension may emit **optional product telemetry** (governed by your VS Code / marketplace telemetry settings) for coarse feature usage and outcomes—never cluster names, kubeconfig paths, manifests, log lines, or API bodies. See the [extension README](https://github.com/alto9/kube9-vscode#privacy-and-product-telemetry).
 
 ### 🔄 ArgoCD Integration
 Seamless integration with ArgoCD for enhanced drift detection and GitOps visibility.
@@ -68,22 +68,31 @@ helm install kube9-operator kube9/kube9-operator \
 
 ## Configuration
 
-Configure Kube9 in your VS Code settings:
+Configure Kube9 in VS Code **Settings**. Common options:
 
 ```json
 {
-  "kube9.debugMode": false
+  "kube9.debugMode": false,
+  "kube9.serverUrl": "https://api.kube9.io",
+  "kube9.operatorNamespace": null,
+  "kube9.timeout.connection": 10000,
+  "kube9.timeout.apiRequest": 30000,
+  "kube9.errors.showDetails": false,
+  "kube9.errors.throttleWindow": 5000
 }
 ```
 
-Enhanced monitoring features are automatically enabled when the operator is detected.
+- **`kube9.operatorNamespace`:** Leave unset for auto-detection, or set a string (all clusters) or an object mapping context name → namespace if the operator is not in the default location.
+- **Operator features:** Assessment and operator health views are available when the kube9-operator is installed and its status ConfigMap is readable with your kubeconfig.
+
+[Pod logs viewer](/kube9/features/pod-logs/) — stream and inspect pod logs inside VS Code.
 
 ## First Steps
 
-1. Open the kube9 view in the Activity Bar (sidebar)
-2. Confirm your local kubeconfig is available (default: `~/.kube/config`)
-3. Select a cluster from the kube9 sidebar
-4. Start exploring your cluster resources
+1. Open **Kube9 Cluster Manager** in the Activity Bar, then the **Clusters** view.
+2. Confirm your kubeconfig is available (default: `~/.kube/config`).
+3. Expand a cluster and namespaces, or switch the active context from the tree.
+4. Use context menus or the Command Palette for actions such as **View Logs**, assessments, ArgoCD sync, and port forwarding.
 
 ## Links
 

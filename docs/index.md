@@ -33,7 +33,7 @@ All Alto9 open source projects (Forge, Kube9 VS Code Extension, Kube9 Operator) 
 Alto9 also offers **Kube9 Desktop**, a freemium desktop application with an embedded AI agent that uses historical cluster data to provide expert Kubernetes guidance. [Learn more →](/kube9/desktop)
 :::
 
-## 100% Privacy-First
+## Privacy-first open source
 
-Your data stays local in our open source tools. No external servers, no data collection. Complete transparency with open source code you can review yourself.
+For **Forge** and the **Kube9 operator**, routine use keeps your cluster data in your environment. The **Kube9 VS Code extension** uses your kubeconfig locally; it may participate in **optional** VS Code or marketplace telemetry for coarse product insight when you allow it—never your manifests, log content, or cluster-identifying details in those payloads. See each project’s README for specifics.
 

@@ -6,7 +6,7 @@ Stream and inspect logs from Kubernetes pods directly inside VS Code. Logs are r
 
 1. Open the **Kube9** view in the Activity Bar.
 2. Expand a cluster and namespace, then find a **Pod**.
-3. Use **View Pod Logs** (command or context action on the pod).
+3. Right-click the pod and choose **View Logs**, or run **Kube9: View Logs** from the Command Palette (`kube9.viewPodLogs`).
 
 For multi-container pods, choose a container or **All containers** when prompted.
 

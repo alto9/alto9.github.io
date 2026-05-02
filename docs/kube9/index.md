@@ -11,18 +11,18 @@ The Kube9 VS Code extension provides intelligent Kubernetes cluster management d
 
 - **Status:** MVP
 - **License:** Open Source & Free
-- **Privacy:** All data stays local
+- **Privacy:** Routine cluster data stays local; optional VS Code telemetry follows IDE settings (see extension README)
 
 [Learn more about the VS Code Extension →](/kube9/vscode)
 
 ### ⚙️ Kube9 Operator
 **In-cluster validation and monitoring**
 
-The Kube9 Operator runs inside your Kubernetes cluster, performs scheduled Well-Architected Framework validation, and exposes cluster/operator status for connected Kube9 tools.
+The Kube9 Operator runs inside your Kubernetes cluster, performs scheduled Well-Architected Framework validation, persists assessments and events in-cluster, and exposes operator status for connected Kube9 tools. The Helm chart does not configure remote product sign-in or API keys; it is open source and self-contained.
 
-- **Status:** In Development (Active Preview)
+- **Status:** Open source (actively maintained)
 - **License:** Open Source & Free
-- **Privacy:** All data stays in your cluster
+- **Privacy:** Data stays in your cluster; no chart-managed remote registration
 
 [Learn more about the Operator →](/kube9/operator)
 
@@ -57,7 +57,7 @@ graph LR
 - ✅ **Well-Architected Framework** - Comprehensive cluster validation
 - ✅ **Multi-Cluster Management** - Handle multiple clusters easily
 - ✅ **Operator Status Signaling** - Tier and health visibility for connected tools
-- ✅ **100% Privacy** - All data stays local or in your cluster
+- ✅ **Privacy-conscious** - Cluster workloads stay in your cluster; the VS Code extension keeps routine cluster data local and limits optional telemetry to non-identifying product events (see extension docs)
 - ✅ **Open Source** - Completely free with full transparency
 
 ## Getting Started
