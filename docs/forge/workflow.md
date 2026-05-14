@@ -86,7 +86,7 @@ Each owns `.forge/<domain>/` and updates it when the Architect delegates.
 1. Resolves the issue; creates or checks out `feature/issue-<N>` with root `main` (top-level) or the parent’s `feature/issue-<parent>` (sub-issue).
 2. Pushes and **links** that branch to **that** issue if needed.
 3. Implements scoped changes.
-4. Runs **unit-test**, **integration-test**, and **lint-test** from `.forge/skill_registry.json`. **Does not commit or open a PR until every check passes** (fix or stop and report).
+4. Runs project validation (**tests**, **lint**, **build** — infer from `package.json`, Makefile, CI, or repo docs). **Does not commit or open a PR until required checks pass** (fix or stop and report).
 5. Scans the diff for security issues.
 6. Commits, pushes, opens a PR (using `.github/pull_request_template.md` when present).
 

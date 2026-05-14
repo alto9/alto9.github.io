@@ -21,7 +21,7 @@ Six phases—**Product Owner → Architect → Planner → Technical Writer → 
 ### Branch and quality discipline
 
 - **Technical Writer** (`/refine-issue`): creates the **parent** issue branch from `main`, pushes it, and links it to the parent issue. Optional **sub-issues** exist only on GitHub—no separate git branch per sub-issue during refine.
-- **Engineer** (`/build-from-github`): creates or checks out `feature/issue-<N>` for the issue being built (from `main` or the parent branch for sub-issues), links it to that issue, implements, then runs **unit-test**, **integration-test**, and **lint-test** from `.forge/skill_registry.json` until all pass **before** commit and PR.
+- **Engineer** (`/build-from-github`): creates or checks out `feature/issue-<N>` for the issue being built (from `main` or the parent branch for sub-issues), links it to that issue, implements, then runs project validation (**tests**, **lint**, **build** per repo conventions) until required checks pass **before** commit and PR.
 
 ### Domain subject matter experts
 
@@ -50,7 +50,7 @@ Forge follows: **Market input → Vision → Knowledge → Roadmap → Refining 
 
 1. Open a repository.
 2. Command Palette → **Forge: Initialize Cursor Agents**.
-3. Confirm `~/.cursor/` (agents, commands, skills, hooks) and project `.forge/` (vision, `skill_registry.json`, schemas, knowledge map).
+3. Confirm **`.cursor/`** at the repo root (agents, commands, skills, hooks as installed) and project **`.forge/`** (vision, schemas, knowledge map).
 
 ## Links
 
