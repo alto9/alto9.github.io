@@ -5,13 +5,13 @@ Kube9 is a comprehensive Kubernetes management platform that combines intelligen
 ## Components
 
 ### 🖥️ VS Code Extension
-**Intelligent Kubernetes management in your IDE**
+**Proactive Kubernetes management in your IDE**
 
-The Kube9 VS Code extension provides intelligent Kubernetes cluster management directly within your IDE. Features context-aware analysis, troubleshooting, and recommendations.
+The extension ships on the VS Code Marketplace as **Kube9 – Kubernetes Cluster Manager**. It connects to clusters using your kubeconfig, with richer views when the Kube9 Operator is present.
 
-- **Status:** MVP
-- **License:** Open Source & Free
-- **Privacy:** Routine cluster data stays local; optional VS Code telemetry follows IDE settings (see extension README)
+- **Status:** Available on Marketplace (actively maintained — open development on GitHub)
+- **License:** Open Source & Free (MIT)
+- **Privacy:** Routine cluster data stays local; optional VS Code / marketplace telemetry follows your IDE settings—never manifests, logs, kubeconfig paths, or API bodies in those payloads (see extension README)
 
 [Learn more about the VS Code Extension →](/kube9/vscode)
 
@@ -27,13 +27,13 @@ The Kube9 Operator runs inside your Kubernetes cluster, performs scheduled Well-
 [Learn more about the Operator →](/kube9/operator)
 
 ### 🤖 Kube9 Desktop
-**AI-powered Kubernetes management**
+**AI-powered Kubernetes IDE (freemium)**
 
-Kube9 Desktop is a cross-platform desktop application with an AI-powered experience that uses operator-backed cluster history and your preferred AI provider.
+Kube9 Desktop is a cross-platform Electron application: **Desktop Free** is full cluster-focused IDE tooling; **Desktop Pro** adds an AI agent that can use historical context from kube9-operator. Pro is designed so **hosted inference can be included with your subscription** (no separate LLM provider account required by default); **bring-your-own-provider (BYOK)** remains available when your organization requires it.
 
-- **Status:** In Development
-- **License:** Freemium (Free tier + Pro/Enterprise subscriptions)
-- **AI Features:** Embedded AI agent with historical context
+- **Status:** Pre-release (shipping roadmap—see product site)
+- **License:** Freemium (Free + paid Pro / Enterprise tiers)
+- **AI (Pro):** Agent + operator-backed context; hosted inference bundled with subscriptions where offered; BYOK remains optional when you route AI yourself
 
 [Learn more about Kube9 Desktop →](/kube9/desktop)
 
@@ -49,16 +49,16 @@ graph LR
 
 1. **Operator (Optional):** Runs in-cluster and provides validation plus status signaling
 2. **VS Code Extension:** Connects directly to Kubernetes and unlocks additional views when operator data is available
-3. **Desktop App:** Uses operator-backed history to improve AI-assisted Kubernetes workflows
+3. **Desktop App:** Direct cluster access; Desktop Pro optionally uses operator-backed history for higher-context AI (install operator for that path—see Desktop docs)
 
 ## Key Features
 
-- ✅ **Context-Aware Analysis** - Intelligent cluster analysis in VS Code
+- ✅ **Cluster IDE workflows** — Tree navigation, resources, Helm, events, logs, port-forwards, and more in VS Code; Desktop targets the same family of workflows standalone
 - ✅ **Well-Architected Framework** - Comprehensive cluster validation
 - ✅ **Multi-Cluster Management** - Handle multiple clusters easily
 - ✅ **Operator Status Signaling** - Tier and health visibility for connected tools
 - ✅ **Privacy-conscious** - Cluster workloads stay in your cluster; the VS Code extension keeps routine cluster data local and limits optional telemetry to non-identifying product events (see extension docs)
-- ✅ **Open Source** - Completely free with full transparency
+- ✅ **Open source core** — VS Code extension and operator are OSS; Desktop is commercial with a Free tier
 
 ## Getting Started
 
@@ -71,5 +71,5 @@ graph LR
 
 - [GitHub - VS Code Extension](https://github.com/alto9/kube9-vscode)
 - [GitHub - Operator](https://github.com/alto9/kube9-operator)
-- [Kube9 Desktop](https://alto9.com) - Freemium desktop application with AI agent
+- [Kube9 Desktop](https://alto9.com) — Freemium desktop IDE; product and pricing updates on the Alto9 site
 

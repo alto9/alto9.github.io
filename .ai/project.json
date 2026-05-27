@@ -1,0 +1,10 @@
+{
+  "name": "alto9.github.io",
+  "description": "Alto9's public website and documentation hub, hosted on GitHub Pages. Includes product overviews, technical documentation, and blog content.",
+  "type": "closedsource",
+  "metadata_path": ".ai",
+  "code_path": ".",
+  "github_url": "https://github.com/alto9/alto9.github.io",
+  "github_board": "https://github.com/orgs/alto9/projects/10",
+  "github_board_type": "scrum"
+}

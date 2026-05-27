@@ -1,35 +1,26 @@
 # Kube9 VS Code Extension
 
 ::: info Status
-MVP - Available Now
+Available on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Alto9.kube9-vscode) — actively maintained (open source).
 :::
 
 ## Overview
 
-The Kube9 VS Code extension provides intelligent Kubernetes cluster management directly within VS Code. It offers real-time cluster visualization, context-aware analysis, and troubleshooting assistance for your clusters.
+**Kube9 – Kubernetes Cluster Manager** runs locally against your kubeconfig: cluster tree navigation, YAML editing and workloads, dashboards and terminals, **Helm**, streaming **pod logs**, **events**, **port forwarding**, drift-aware **Argo CD** actions, metrics/monitoring uplift when kube9-operator is present, cluster organizer tooling, workload launch/apply, and more—the marketplace description reads *“Proactive Kubernetes Intelligence – Right in Your IDE.”*
 
-## Key Features
+With [kube9-operator](/kube9/operator) installed, tooling unlocks scheduled **Well-Architected Framework** assessments and operator health summaries from in-cluster metadata (see the repository for full behavior).
 
-### 📊 Context-Aware Analysis
-Intelligent cluster analysis and troubleshooting assistance. Understand your resources, diagnose deployment issues, and receive actionable recommendations.
+**Optional product telemetry**, when VS Code/marketplace settings allow it, is limited to coarse feature usage/outcomes—not cluster-identifying details, manifests, log lines, kubeconfig paths, or API bodies ([privacy section in README](https://github.com/alto9/kube9-vscode#privacy-and-product-telemetry)).
 
-### 🗂️ Multi-Cluster Management
-Manage multiple clusters and contexts from one place. The extension uses your local kubeconfig and keeps all cluster data on your machine.
+## Key Features (high level)
 
-### 👁️ Real-Time Visualization
-View pods, services, deployments, and other resources in real-time with an intuitive tree view interface.
+- **Multi-cluster explorer** — Navigate clusters namespaces and workloads via kubeconfig. Without kube9-operator installs you still operate clusters normally; the Helm chart activates **operated** mode surfaced by persisted assessment/metrics status (see kube9-operator chart README).
+- **Resource lifecycle** — Describe view/edit YAML scale restart logs delete workloads from tree context menus and the palette.
+- **Helm & Argo CD** — Helm tooling plus Argo CD application sync/actions when clusters include Argo CD.
+- **[Pod logs](/kube9/features/pod-logs/) & events** — kubectl-backed log streams and configurable cluster events workflows.
+- **Port forwards dashboards terminals** — Port-forward dashboards and terminal tooling where bundled.
 
-### 🔍 Resource Details
-Click any resource to get detailed information and analysis. Understand deployment status, pod health, resource consumption, and cluster state.
-
-### 🔐 Privacy-First Design
-Routine cluster operations use your kubeconfig and the Kubernetes API from your machine; manifests, resource names, and log content are not uploaded for normal management. The extension may emit **optional product telemetry** (governed by your VS Code / marketplace telemetry settings) for coarse feature usage and outcomes—never cluster names, kubeconfig paths, manifests, log lines, or API bodies. See the [extension README](https://github.com/alto9/kube9-vscode#privacy-and-product-telemetry).
-
-### 🔄 ArgoCD Integration
-Seamless integration with ArgoCD for enhanced drift detection and GitOps visibility.
-
-### ✅ Well-Architected Framework
-When paired with the Kube9 Operator, view comprehensive Well-Architected Framework assessments directly in VS Code.
+Privacy summaries appear in **Overview**; authoritative detail stays in the [upstream README](https://github.com/alto9/kube9-vscode/blob/main/README.md).
 
 ## Installation
 
@@ -96,6 +87,7 @@ Configure Kube9 in VS Code **Settings**. Common options:
 
 ## Links
 
+- [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Alto9.kube9-vscode)
 - [GitHub Repository](https://github.com/alto9/kube9-vscode)
 - [Report Issues](https://github.com/alto9/kube9-vscode/issues)
 

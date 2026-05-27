@@ -28,7 +28,7 @@ flowchart TD
 
 **What it does:** Maintains product direction. Reads `vision.json` and `project.json`, decides whether vision or project metadata needs updates, and hands off to the Architect when technical alignment is required.
 
-**Owns:** `.forge/vision.json`, `.forge/project.json` (with your review)
+**Owns:** `.ai/vision.json`, `.ai/project.json` (with your review)
 
 ---
 
@@ -51,7 +51,7 @@ flowchart TD
 | **Integration** | APIs, external systems, messaging |
 | **Operations** | Build, deploy, observability, security |
 
-Each owns `.forge/<domain>/` and updates it when the Architect delegates.
+Each owns `.ai/<domain>/` and updates it when the Architect delegates.
 
 ---
 
@@ -108,7 +108,7 @@ Each owns `.forge/<domain>/` and updates it when the Architect delegates.
 
 | Command | Phase | Input | Output |
 |---------|-------|-------|--------|
-| `/architect-this` | Architecting | Prompt | Updated `.forge` docs |
+| `/architect-this` | Architecting | Prompt | Updated `.ai` docs |
 | `/plan-roadmap` | Planning | Vision + knowledge map | Synced GitHub milestones/issues |
 | `/refine-issue` | Refining | Issue URL | Parent branch + link; refined tickets; optional sub-issues |
 | `/build-from-github` | Building | Issue URL | PR (after all tests/lint pass) |

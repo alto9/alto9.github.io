@@ -16,7 +16,7 @@ hero:
 features:
   - icon: 🔨
     title: Forge Studio
-    details: VS Code and Cursor extension for .forge context, staged agents, and GitHub workflows from refine through build—with tests and lint required before merge.
+    details: VS Code and Cursor extension for .ai context, staged agents, and GitHub workflows from refine through build—with tests and lint required before merge.
     link: /forge/
     
   - icon: ☸️

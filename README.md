@@ -4,7 +4,7 @@ Official documentation for Alto9 open source projects, built with [VitePress](ht
 
 ## Projects
 
-- **Forge Studio** — VS Code/Cursor extension: `.forge/` context, staged agents, GitHub refine/build/review workflow, skill registry, and automated test/lint gates before commit.
+- **Forge Studio** — VS Code/Cursor extension: `.ai/` context, staged agents, GitHub refine/build/review workflow, skill registry, and automated test/lint gates before commit.
 - **Kube9** — Kubernetes management ecosystem
   - **VS Code Extension** — Intelligent Kubernetes management in your IDE
   - **Operator** — In-cluster validation and monitoring
